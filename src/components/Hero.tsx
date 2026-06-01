@@ -64,7 +64,7 @@ export default function Hero() {
         <div className="hero-visual reveal" data-delay="2">
           <div className="video-melt">
             <div className="video-glow" />
-            <video src="/porfoliovideo.webm" autoPlay muted loop playsInline />
+            <video src="https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1780231156/porfoliovideo_etbpny.webm" autoPlay muted loop playsInline />
           </div>
         </div>
       </div>

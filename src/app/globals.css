@@ -275,22 +275,41 @@ section{ position:relative; padding:120px 0; }
 .tag:hover{ transform:translateY(-3px); background:var(--peach); color:var(--coral); border-color:rgba(237,106,69,.3); }
 
 /* ============================================================
-   PROJECTS
+   PROJECTS — SNAP-SCROLL CAROUSEL
    ============================================================ */
-.proj-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
-.proj{ position:relative; background:var(--card); border-radius:24px; overflow:hidden;
+.carousel-outer{ position:relative; }
+.proj-track{
+  display:flex; gap:24px; overflow-x:auto; scroll-snap-type:x mandatory;
+  scrollbar-width:none; padding-bottom:8px; padding-inline:4px; }
+.proj-track::-webkit-scrollbar{ display:none; }
+
+/* Card width set via JS --card-w to guarantee exactly 3 per view */
+.proj{ flex:0 0 var(--card-w, 360px); scroll-snap-align:start; position:relative;
+  background:var(--card); border-radius:24px; overflow:hidden;
   border:1px solid rgba(237,106,69,.1); box-shadow:var(--shadow-sm);
-  transition:transform .45s var(--ease), box-shadow .45s var(--ease); display:flex; flex-direction:column; }
-.proj:hover{ transform:translateY(-10px); box-shadow:var(--shadow-lg); }
+  transition:transform .45s var(--ease), box-shadow .45s var(--ease);
+  display:flex; flex-direction:column; }
+.proj:hover{ transform:translateY(-8px); box-shadow:var(--shadow-lg); }
+
+/* Preview area */
 .proj .preview{ position:relative; aspect-ratio:16/10; overflow:hidden;
   display:grid; place-items:center; isolation:isolate; }
 .proj .preview .mono{ font-family:var(--font-display), "Sora", system-ui, sans-serif; font-weight:800; font-size:2.4rem;
-  color:rgba(255,255,255,.92); letter-spacing:-.02em; z-index:2; transition:transform .5s var(--ease); }
+  color:rgba(255,255,255,.92); letter-spacing:-.02em; z-index:2;
+  transition:transform .5s var(--ease), opacity .3s ease; }
 .proj:hover .preview .mono{ transform:scale(1.08); }
 .proj .preview .blob{ position:absolute; border-radius:50%; filter:blur(8px); opacity:.85; mix-blend-mode:screen; }
 .proj .badge{ position:absolute; top:14px; left:14px; z-index:3; font-size:11.5px; font-weight:700;
   letter-spacing:.08em; text-transform:uppercase; padding:6px 12px; border-radius:999px;
   background:rgba(255,251,246,.85); color:var(--ink); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px); }
+
+/* Video fade-in on hover */
+.proj .preview video{ position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; opacity:0; transition:opacity .5s ease; z-index:1; }
+.proj:hover .preview video{ opacity:1; }
+.proj:hover .preview .mono{ opacity:0; }
+
+/* Body */
 .proj .body{ padding:22px; display:flex; flex-direction:column; flex:1; }
 .proj h3{ font-family:var(--font-display), "Sora", system-ui, sans-serif; font-weight:700; font-size:1.28rem; color:var(--ink); }
 .proj .desc{ font-size:14.5px; color:var(--ink-soft); margin-top:9px; flex:1; }
@@ -306,6 +325,26 @@ section{ position:relative; padding:120px 0; }
 .lk-demo:hover{ filter:brightness(1.05); transform:translateY(-2px); }
 .lk-code{ color:var(--ink); background:var(--cream-2); border:1px solid rgba(237,106,69,.16); }
 .lk-code:hover{ color:var(--coral); transform:translateY(-2px); }
+
+/* Arrow nav buttons */
+.arr-prev, .arr-next{
+  position:absolute; top:38%; transform:translateY(-50%); z-index:10;
+  width:44px; height:44px; border-radius:50%;
+  background:var(--card); border:1.5px solid rgba(237,106,69,.22);
+  box-shadow:var(--shadow-sm); cursor:pointer;
+  display:grid; place-items:center;
+  transition:background .25s, color .25s, box-shadow .25s; color:var(--ink); }
+.arr-prev{ left:-22px; }
+.arr-next{ right:-22px; }
+.arr-prev:hover, .arr-next:hover{ background:var(--coral); color:var(--cream); box-shadow:var(--shadow); }
+.arr-prev:disabled, .arr-next:disabled{ opacity:.3; pointer-events:none; }
+
+/* Dot indicators */
+.proj-dots{ display:flex; justify-content:center; align-items:center; gap:8px; margin-top:28px; }
+.proj-dots button{ width:8px; height:8px; border-radius:50%;
+  background:var(--cream-2); border:1.5px solid rgba(237,106,69,.2);
+  cursor:pointer; transition:width .3s var(--ease), background .3s, border-radius .3s; padding:0; }
+.proj-dots button.active{ width:24px; border-radius:4px; background:var(--coral); border-color:var(--coral); }
 
 /* ============================================================
    EXPERIENCE TIMELINE
@@ -432,7 +471,6 @@ section{ position:relative; padding:120px 0; }
    ============================================================ */
 @media (max-width:1080px){
   .stack-grid{ grid-template-columns:1fr; }
-  .proj-grid{ grid-template-columns:repeat(2,1fr); }
   .svc-grid{ grid-template-columns:1fr; }
 }
 @media (max-width:900px){
@@ -451,7 +489,7 @@ section{ position:relative; padding:120px 0; }
 @media (max-width:620px){
   section{ padding:84px 0; }
   .wrap{ padding-inline:20px; }
-  .proj-grid{ grid-template-columns:1fr; }
+  .arr-prev, .arr-next{ display:none; }
   .chips{ grid-template-columns:1fr; max-width:none; }
   .float-card{ transform:scale(.84); }
   .fc-1{ left:-2%; } .fc-2{ right:-2%; }
