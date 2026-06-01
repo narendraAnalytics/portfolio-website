@@ -20,7 +20,7 @@ export default function Hero() {
               </svg>
               View My Work
             </a>
-            <a href="/Narendra-Kumar-Resume.pdf" download className="btn btn-warm" data-magnetic="">
+            <a href="/AISaaSResume[Narendra].pdf" download className="btn btn-warm" data-magnetic="">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M12 3v12M7 11l5 4 5-4M5 21h14" />
               </svg>

@@ -17,7 +17,7 @@ export default function Footer() {
           <a href="#projects">Projects</a>
           <a href="#experience">Experience</a>
           <a href="#contact">Contact</a>
-          <a href="/Narendra-Kumar-Resume.pdf" download>Download CV</a>
+          <a href="/AISaaSResume[Narendra].pdf" download>Download CV</a>
         </nav>
         <div className="copy">
           © {year} Narendra Kumar · Full-Stack AI / SaaS Engineer · Building agentic systems &amp; intelligent products.
