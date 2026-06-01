@@ -3,6 +3,12 @@
 Personal portfolio website built with **Next.js 16**, **React 19**, and **Tailwind CSS v4**. Faithfully ported from a hand-crafted HTML/CSS/JS design into a production-ready Next.js App Router project.
 
 ---
+## Skills (always load before working in these areas)
+
+```
+Frontend / UI work:     C:\Users\ES\.claude\skills\nextstack.skill
+
+----------------------------------------------------------
 
 ## Tech Stack
 
