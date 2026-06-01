@@ -20,10 +20,17 @@ const caveat = Caveat({
   weight: ["600", "700"],
 });
 
+const LOGO = 'https://res.cloudinary.com/dkqbzwicr/image/upload/q_auto/f_auto/v1780297080/porfoliologo_ubnb3l.png';
+
 export const metadata: Metadata = {
   title: "Narendra · Full-Stack AI / SaaS Engineer",
   description:
     "Narendra — Full-Stack AI / SaaS Engineer building agentic systems, automation platforms and intelligent products.",
+  icons: {
+    icon: LOGO,
+    shortcut: LOGO,
+    apple: LOGO,
+  },
 };
 
 export default function RootLayout({

@@ -1,0 +1,11 @@
+QuickSpot
+
+QuickSpot is an innovative brain training platform that uses artificial intelligence to generate unlimited spot-the-difference puzzles. Sharpen your observation skills, improve your focus, and train your brain with engaging challenges.
+
+Next.js 16 · Tailwind CSS,Neon PostgreSQL, Drizzle ORM,Google Gemini API
+
+livedemo : https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1780296519/quickspotvideo_j2yppt.webm
+
+infographic : https://res.cloudinary.com/dkqbzwicr/image/upload/q_auto/f_auto/v1780296297/QuickBook_jfhnst.png
+
+github : https://github.com/narendraAnalytics/diffimages.git

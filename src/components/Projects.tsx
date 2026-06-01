@@ -4,6 +4,26 @@ import { useRef, useState, useEffect, useCallback } from 'react';
 
 const projects = [
   {
+    name: 'NivedanAI', tag: 'Agentic AI', mono: 'NA',
+    c: ['#5B6CF2', '#818CF8'],
+    desc: 'Autonomous multi-agent SaaS platform that transforms how agencies, freelancers, and sales teams respond to RFPs — end-to-end proposal intelligence.',
+    stack: ['Next.js 15', 'Google ADK', 'Neon', 'Inngest', 'Resend', 'Tavily MCP'],
+    video: undefined as string | undefined,
+    demoVideo: 'https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1780070947/nivedanaivideo_fgvlqu.webm',
+    infographic: 'https://res.cloudinary.com/dkqbzwicr/image/upload/q_auto/f_auto/v1780073397/bannerimage_ocjq9t.png',
+    github: 'https://github.com/narendraAnalytics/NivedanAI.git',
+  },
+  {
+    name: 'PratibhaAI', tag: 'Recruiting AI', mono: 'PA',
+    c: ['#0891B2', '#67E8F9'],
+    desc: 'Multi-agent SaaS that autonomously screens resumes, validates GitHub profiles, detects fraud, scores candidates, and delivers explainable hiring reports.',
+    stack: ['Next.js 16', 'Google ADK', 'Neon', 'Drizzle ORM', 'Resend'],
+    video: undefined as string | undefined,
+    demoVideo: 'https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1778912511/prathibaaivideo_mdvppo.webm',
+    infographic: 'https://res.cloudinary.com/dkqbzwicr/image/upload/q_auto/f_auto/v1778775881/openimage_ezbi0q.png',
+    github: 'https://github.com/narendraAnalytics/pratibhaai.git',
+  },
+  {
     name: 'ViswaSethu', tag: 'Voice AI', mono: 'VS',
     c: ['#ED6A45', '#F4A65C'],
     desc: 'Voice-first language learning for migrant workers — teaching job-specific foreign-language communication from native Indian languages.',
@@ -11,6 +31,7 @@ const projects = [
     video: undefined as string | undefined,
     demoVideo: 'https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1777704438/viswasethuvideo_qlhgui.webm',
     infographic: 'https://res.cloudinary.com/dkqbzwicr/image/upload/q_auto/f_auto/v1777618655/projectview_zrelbb.png',
+    github: 'https://github.com/narendraAnalytics/viswasethu.git',
   },
   {
     name: 'TutorTalk', tag: 'Ed-Tech AI', mono: 'TT',
@@ -18,8 +39,9 @@ const projects = [
     desc: 'An AI-powered voice learning SaaS that puts a personal tutor and exam conductor in every student\'s pocket.',
     stack: ['Next.js 16', 'Neon', 'Clerk', 'Gemini Voice'],
     video: undefined as string | undefined,
-    demoVideo: undefined as string | undefined,
-    infographic: undefined as string | undefined,
+    demoVideo: 'https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1777015522/tutortalkvideo_bzd31u.webm',
+    infographic: 'https://res.cloudinary.com/dkqbzwicr/image/upload/q_auto/f_auto/v1780290335/tutortalk_n93cby.png',
+    github: 'https://github.com/narendraAnalytics/tutortalk.git',
   },
   {
     name: 'ActaFlow', tag: 'Meeting AI', mono: 'AF',
@@ -27,8 +49,9 @@ const projects = [
     desc: 'AI meeting intelligence that converts recordings into action items, assignments and automated attendee summaries.',
     stack: ['Next.js 16', 'Neon', 'Inngest', 'Cloudinary', 'Resend'],
     video: undefined as string | undefined,
-    demoVideo: undefined as string | undefined,
-    infographic: undefined as string | undefined,
+    demoVideo: 'https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1776577207/videoactaflow_sx87rc.webm',
+    infographic: 'https://res.cloudinary.com/dkqbzwicr/image/upload/q_auto/f_auto/v1780291917/actaflowinfographic_j0jwyf.png',
+    github: 'https://github.com/narendraAnalytics/actaflow-.git',
   },
   {
     name: 'DueMate', tag: 'Fintech AI', mono: 'DM',
@@ -36,8 +59,19 @@ const projects = [
     desc: 'AI payment-reminder SaaS — Gemini extracts invoice data, Inngest schedules multi-channel reminders, Resend delivers them automatically.',
     stack: ['Gemini 3.1', 'Inngest', 'Resend', 'PostgreSQL'],
     video: undefined as string | undefined,
-    demoVideo: undefined as string | undefined,
-    infographic: undefined as string | undefined,
+    demoVideo: 'https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1776003656/duematevideowebm_ojggt5.webm',
+    infographic: 'https://res.cloudinary.com/dkqbzwicr/image/upload/q_auto/f_auto/v1780292218/BannerImage_vmjj4v.png',
+    github: 'https://github.com/narendraAnalytics/duemate.git',
+  },
+  {
+    name: 'Thumbl', tag: 'Creative AI', mono: 'TH',
+    c: ['#F43F5E', '#FB7185'],
+    desc: 'Viral thumbnails with perfect text — zero design skills needed. AI-powered thumbnail generator that turns ideas into click-worthy visuals instantly.',
+    stack: ['Next.js 16', 'Gemini Pro Vision', 'Neon', 'Drizzle ORM', 'ImageKit.io'],
+    video: undefined as string | undefined,
+    demoVideo: 'https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1780294777/thumblvideo_g1x4j3.webm',
+    infographic: 'https://res.cloudinary.com/dkqbzwicr/image/upload/q_auto/f_auto/v1780294466/thumblinfographic_ondfyy.png',
+    github: 'https://github.com/narendraAnalytics/Thumbl.git',
   },
   {
     name: 'NewsPulseAI', tag: 'Automation', mono: 'NP',
@@ -45,17 +79,29 @@ const projects = [
     desc: 'Monitors your favourite YouTube channels and delivers beautifully designed email digests to your inbox at 6 AM — fully automated.',
     stack: ['Next.js', 'Gemini', 'Cron', 'Resend'],
     video: undefined as string | undefined,
-    demoVideo: undefined as string | undefined,
-    infographic: undefined as string | undefined,
+    demoVideo: 'https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1775216673/videonewspulseai_xl48hl.webm',
+    infographic: 'https://res.cloudinary.com/dkqbzwicr/image/upload/q_auto/f_auto/v1780292398/newspulse_beqmvo.png',
+    github: 'https://github.com/narendraAnalytics/newspulseai.git',
   },
   {
-    name: 'Lifestyle Shoot', tag: 'Generative AI', mono: 'LS',
+    name: 'Professional Lifestyle Shoot', tag: 'Generative AI', mono: 'LS',
     c: ['#93C4A4', '#E7B24C'],
     desc: 'Full-stack app that leverages AI to create professional lifestyle photoshoots — generate, customize and manage AI photography.',
     stack: ['Next.js', 'AI Imaging', 'GCP', 'TypeScript'],
     video: undefined as string | undefined,
-    demoVideo: undefined as string | undefined,
-    infographic: undefined as string | undefined,
+    demoVideo: 'https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1780293178/ProfessionalPhotoShoot_rrrvwx.webm',
+    infographic:'https://res.cloudinary.com/dkqbzwicr/image/upload/q_auto/f_auto/v1780292810/ProfessionalPhotoShoot_vtuksw.png',
+    github: 'https://github.com/narendraAnalytics/ProfessionalLifeStyleShoot.git',
+  },
+  {
+    name: 'QuickSpot', tag: 'Brain Training', mono: 'QS',
+    c: ['#7C3AED', '#A78BFA'],
+    desc: 'AI-powered brain training platform that generates unlimited spot-the-difference puzzles — sharpen observation skills and improve focus with endless challenges.',
+    stack: ['Next.js 16', 'Google Gemini', 'Neon', 'Drizzle ORM', 'Tailwind CSS'],
+    video: undefined as string | undefined,
+    demoVideo: 'https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1780296519/quickspotvideo_j2yppt.webm',
+    infographic: 'https://res.cloudinary.com/dkqbzwicr/image/upload/q_auto/f_auto/v1780296297/QuickBook_jfhnst.png',
+    github: 'https://github.com/narendraAnalytics/diffimages.git',
   },
 ];
 
@@ -545,7 +591,13 @@ export default function Projects() {
                       >
                         <IconDemo /> Live Demo
                       </a>
-                      <a className="lk-code" href="#" aria-label={`GitHub for ${p.name}`}>
+                      <a
+                        className="lk-code"
+                        href={p.github ?? '#'}
+                        target={p.github ? '_blank' : undefined}
+                        rel={p.github ? 'noopener noreferrer' : undefined}
+                        aria-label={`GitHub for ${p.name}`}
+                      >
                         <IconCode /> GitHub
                       </a>
                     </div>

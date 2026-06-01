@@ -20,7 +20,8 @@ No test or lint scripts are configured.
 
 ### Routing & Layout
 
-- `src/app/layout.tsx` — Root layout: loads Google Fonts (Sora, Plus Jakarta Sans, Caveat via `next/font/google`), sets metadata, wraps all pages
+- `src/app/layout.tsx` — Root layout: loads Google Fonts (Sora, Plus Jakarta Sans, Caveat via `next/font/google`), sets metadata + favicon icons, wraps all pages
+- `src/app/icon.png` — Favicon served from this file (takes priority over metadata). Default `favicon.ico` has been deleted.
 - `src/app/page.tsx` — Single-page app: imports and composes all section components
 - `src/app/globals.css` — Design system: CSS custom properties (colors, spacing, typography), keyframe animations, and component-level styles. **Styling lives here, not in utility classes.**
 
@@ -34,7 +35,7 @@ Tailwind CSS v4 via `@tailwindcss/postcss` (configured in `postcss.config.mjs`).
 |-----------|------|
 | `BgLayers.tsx` | Fixed background layers, grid overlay, canvas effects, scroll progress bar |
 | `Nav.tsx` | Top navigation + mobile drawer |
-| `Hero.tsx` | Hero section — video served from Cloudinary (not local) |
+| `Hero.tsx` | Hero section — video served from Cloudinary (not local); `data-count` on counter drives animated number |
 | `About.tsx` | About card + stats |
 | `Skills.tsx` | Tech stack grid |
 | `Projects.tsx` | Horizontal snap-scroll carousel — see below |
@@ -46,22 +47,40 @@ Tailwind CSS v4 via `@tailwindcss/postcss` (configured in `postcss.config.mjs`).
 
 ### Projects carousel (`Projects.tsx`)
 
-`'use client'` component with three layers of interactivity:
-
-**Carousel layout** — horizontal `display:flex` track with `scroll-snap-type:x mandatory`. Card width is set by JS (`useEffect` + `ResizeObserver`-style listener) via a CSS custom property `--card-w` on the track element. Formula: `(containerWidth - 2*24) / 3` for exactly 3 cards per view. CSS `%` inside `overflow-x:auto` containers does not resolve to visible width — that's why JS measurement is used.
+`'use client'` component. 10 projects currently in the `projects` array ordered: NivedanAI → PratibhaAI → ViswaSethu → TutorTalk → ActaFlow → DueMate → Thumbl → NewsPulseAI → Professional Lifestyle Shoot → QuickSpot.
 
 **Per-project data fields:**
-- `video?` — Cloudinary URL, fades in over gradient on card hover (CSS `:hover`)
-- `demoVideo?` — Cloudinary URL, opens `VideoModal` when "Live Demo" is clicked
-- `infographic?` — Cloudinary image URL, displayed in the card preview area; clicking it opens `ImageModal`
+```ts
+{
+  name: string       // display name
+  tag: string        // badge label
+  mono: string       // 2-letter monogram shown when no infographic/video
+  c: [string, string] // gradient stop colors
+  desc: string
+  stack: string[]
+  video?: string     // Cloudinary WebM, fades in on card hover
+  demoVideo?: string // Cloudinary WebM, opens VideoModal on "Live Demo" click
+  infographic?: string // Cloudinary image, shown in preview area; click opens ImageModal
+  github?: string    // repo URL, wired to GitHub button (opens _blank)
+}
+```
 
-**`VideoModal`** — inline component with full custom controls (play/pause, ±10s skip, seek slider, fullscreen). Follows the rules from `C:\Users\ES\.claude\skills\nextstack.skill` for reliable WebM playback: `onTimeUpdate` self-corrects `vidDur` (fixes Cloudinary WebM metadata), seek `onChange` must update both state and `currentTime`, `max={vidDur > 0 ? vidDur : 100}`.
+**Adding a new project:** append an object to the `projects` array and update `data-count` in `Hero.tsx` to match the new total.
 
-**`ImageModal`** — full-viewport lightbox with zoom-at-cursor and drag-to-pan. Transform state is `(zoom, tx, ty)` with `transformOrigin:'0 0'`. Wheel zoom keeps the cursor point fixed using: `newTx = mx - (newZoom/oldZoom) * (mx - oldTx)`. Drag pan is tracked via refs (not state) to avoid stale closures in `mousemove`.
+**Carousel layout** — horizontal `display:flex` track with `scroll-snap-type:x mandatory`. Card width is set by JS (`useEffect` + `window.resize`) via CSS custom property `--card-w` on the track. Formula: `(containerWidth - 2*24) / 3` for exactly 3 cards per view. CSS `%` inside `overflow-x:auto` containers does not resolve to visible width — that's why JS measurement is used. Mobile (<620px): `containerWidth - 40`.
+
+**`VideoModal`** — inline component with full custom controls (play/pause, ±10s skip, seek slider, fullscreen). Rules for reliable Cloudinary WebM playback: `onTimeUpdate` self-corrects `vidDur` (fixes WebM metadata bug), seek `onChange` updates both `setVidTime(val)` AND `vidRef.current.currentTime = val`, `max={vidDur > 0 ? vidDur : 100}`. Title bar shows `{name} Preview`.
+
+**`ImageModal`** — full-viewport lightbox with zoom-at-cursor and drag-to-pan. Transform state `(zoom, tx, ty)` with `transformOrigin:'0 0'`. Wheel zoom formula: `newTx = mx - (newZoom/oldZoom) * (mx - oldTx)`. Drag pan tracked via refs (not state) to avoid stale closures in `mousemove`. `stateRef` keeps current zoom/tx/ty accessible inside the non-reactive wheel listener.
 
 ### Static Assets (`public/`)
 
 - `Narendra-Kumar-Resume.pdf` — CV download
+- Default Vercel SVGs have been deleted (file.svg, globe.svg, next.svg, vercel.svg, window.svg)
+
+### Media Hosting
+
+All video and image assets are hosted on **Cloudinary** (`res.cloudinary.com/dkqbzwicr`). Never reference local video files — use Cloudinary URLs with `q_auto/f_auto` transforms.
 
 ### Path Alias
 
