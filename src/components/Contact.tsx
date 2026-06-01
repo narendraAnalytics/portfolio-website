@@ -12,6 +12,7 @@ export default function Contact() {
   const [output, setOutput] = useState('');
   const [outputColor, setOutputColor] = useState('');
   const [disabled, setDisabled] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   function valid(name: string, v: string) {
     if (name === 'email') return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
@@ -33,6 +34,7 @@ export default function Contact() {
       return;
     }
     setDisabled(true);
+    setLoading(true);
     setOutputColor('');
     setOutput('› connecting…');
 
@@ -47,7 +49,9 @@ export default function Contact() {
         throw new Error('send failed');
       }
 
-      const steps = ['› AI pipeline activated…', '› packaging your brief…', '✓ message delivered — I\'ll reply within 24h.'];
+      setLoading(false);
+      setOutputColor('#22c55e');
+      const steps = ['› AI pipeline activated…', '› packaging your brief…', '✓ Email sent — I\'ll reply within 24 h.'];
       let i = 0;
       setOutput(steps[0]);
       const iv = setInterval(() => {
@@ -60,10 +64,11 @@ export default function Contact() {
           if (nameRef.current) nameRef.current.value = '';
           if (emailRef.current) emailRef.current.value = '';
           if (msgRef.current) msgRef.current.value = '';
-          setTimeout(() => setOutput(''), 6000);
+          setTimeout(() => { setOutput(''); setOutputColor(''); }, 6000);
         }
       }, 750);
     } catch {
+      setLoading(false);
       setOutputColor('#cf4a2c');
       setOutput('› delivery failed — please email me directly.');
       setDisabled(false);
@@ -141,10 +146,13 @@ export default function Contact() {
               <span className="err">Tell me a little about your project.</span>
             </div>
             <button type="submit" className="btn btn-primary submit" id="cfBtn" disabled={disabled}>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M22 2 11 13" /><path d="M22 2 15 22l-4-9-9-4Z" />
-              </svg>
-              Initialize Project
+              {loading
+                ? <span className="spinner" />
+                : <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M22 2 11 13" /><path d="M22 2 15 22l-4-9-9-4Z" />
+                  </svg>
+              }
+              {loading ? 'Sending…' : 'Initialize Project'}
             </button>
             <div className="term-out" id="cfOut" style={outputColor ? { color: outputColor } : undefined}>
               {output}
