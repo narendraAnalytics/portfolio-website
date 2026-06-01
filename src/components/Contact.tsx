@@ -18,7 +18,7 @@ export default function Contact() {
     return v.trim().length > 1;
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     const nv = nameRef.current?.value ?? '';
     const ev = emailRef.current?.value ?? '';
@@ -34,22 +34,40 @@ export default function Contact() {
     }
     setDisabled(true);
     setOutputColor('');
-    const steps = ['› connecting…', '› AI pipeline activated…', '› packaging your brief…', '✓ message delivered — I\'ll reply within 24h.'];
-    let i = 0;
-    setOutput(steps[0]);
-    const iv = setInterval(() => {
-      i++;
-      if (i < steps.length) {
-        setOutput(steps[i]);
-      } else {
-        clearInterval(iv);
-        setDisabled(false);
-        if (nameRef.current) nameRef.current.value = '';
-        if (emailRef.current) emailRef.current.value = '';
-        if (msgRef.current) msgRef.current.value = '';
-        setTimeout(() => setOutput(''), 6000);
+    setOutput('› connecting…');
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: nv, email: ev, message: mv }),
+      });
+
+      if (!res.ok) {
+        throw new Error('send failed');
       }
-    }, 750);
+
+      const steps = ['› AI pipeline activated…', '› packaging your brief…', '✓ message delivered — I\'ll reply within 24h.'];
+      let i = 0;
+      setOutput(steps[0]);
+      const iv = setInterval(() => {
+        i++;
+        if (i < steps.length) {
+          setOutput(steps[i]);
+        } else {
+          clearInterval(iv);
+          setDisabled(false);
+          if (nameRef.current) nameRef.current.value = '';
+          if (emailRef.current) emailRef.current.value = '';
+          if (msgRef.current) msgRef.current.value = '';
+          setTimeout(() => setOutput(''), 6000);
+        }
+      }, 750);
+    } catch {
+      setOutputColor('#cf4a2c');
+      setOutput('› delivery failed — please email me directly.');
+      setDisabled(false);
+    }
   }
 
   return (
