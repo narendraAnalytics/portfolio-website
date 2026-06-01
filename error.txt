@@ -1,0 +1,39 @@
+18:04:31.928 Running build in Washington, D.C., USA (East) – iad1
+18:04:31.929 Build machine configuration: 2 cores, 8 GB
+18:04:32.055 Cloning github.com/narendraAnalytics/portfolio-website (Branch: main, Commit: b87a6b4)
+18:04:32.407 Cloning completed: 352.000ms
+18:04:34.384 Restored build cache from previous deployment (D5KvksEvRq37vQxkfhDmSvnMa3bg)
+18:04:34.576 Running "vercel build"
+18:04:34.595 Vercel CLI 54.4.1
+18:04:34.783 Installing dependencies...
+18:04:35.740 
+18:04:35.741 added 5 packages in 697ms
+18:04:35.742 
+18:04:35.742 21 packages are looking for funding
+18:04:35.742   run `npm fund` for details
+18:04:35.816 Detected Next.js version: 16.2.6
+18:04:35.820 Running "npm run build"
+18:04:35.918 
+18:04:35.919 > porfoliowebsite@0.1.0 build
+18:04:35.919 > next build
+18:04:35.919 
+18:04:36.634   Applying modifyConfig from Vercel
+18:04:36.649 ▲ Next.js 16.2.6 (Turbopack)
+18:04:36.651 
+18:04:36.693   Creating an optimized production build ...
+18:04:42.335 ✓ Compiled successfully in 5.3s
+18:04:42.337   Running TypeScript ...
+18:04:46.907 Failed to type check.
+18:04:46.907 
+18:04:46.907 ./src/app/api/contact/route.ts:19:7
+18:04:46.908 Type error: Object literal may only specify known properties, but 'reply_to' does not exist in type '(Required<Pick<EmailRenderOptions$1, "react">> & Partial<Pick<EmailRenderOptions$1, "html" | "text">> & CreateEmailBaseOptions & { ...; }) | (Required<...> & ... 2 more ... & { ...; }) | (Required<...> & ... 2 more ... & { ...; })'. Did you mean to write 'replyTo'?
+18:04:46.908 
+18:04:46.908   17 |       from,
+18:04:46.908   18 |       to: 'narendra.insights@gmail.com',
+18:04:46.908 > 19 |       reply_to: email.trim(),
+18:04:46.908      |       ^
+18:04:46.908   20 |       subject: `New project brief from ${name.trim()}`,
+18:04:46.908   21 |       html: `
+18:04:46.908   22 |         <div style="font-family:sans-serif;max-width:560px;margin:0 auto;background:#FFFBF...
+18:04:46.939 Next.js build worker exited with code: 1 and signal: null
+18:04:46.985 Error: Command "npm run build" exited with 1

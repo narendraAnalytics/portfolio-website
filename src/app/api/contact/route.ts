@@ -16,7 +16,7 @@ export async function POST(req: NextRequest) {
     const { error } = await resend.emails.send({
       from,
       to: 'narendra.insights@gmail.com',
-      reply_to: email.trim(),
+      replyTo: email.trim(),
       subject: `New project brief from ${name.trim()}`,
       html: `
         <div style="font-family:sans-serif;max-width:560px;margin:0 auto;background:#FFFBF6;border-radius:12px;overflow:hidden;border:1px solid #f0e8df">
