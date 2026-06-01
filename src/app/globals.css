@@ -514,7 +514,7 @@ section{ position:relative; padding:120px 0; }
 .intro-domain{ position:absolute; bottom:28px; left:50%; transform:translateX(-50%); z-index:2;
   font-family:var(--font-display),"Sora",system-ui,sans-serif; font-weight:600; font-size:13px;
   letter-spacing:.18em; text-transform:uppercase; color:var(--ink-mute);
-  display:inline-flex; align-items:center; gap:8px; animation:rise .9s var(--ease) .9s both; }
+  display:inline-flex; align-items:center; gap:8px; animation:rise .9s var(--ease) .9s both; pointer-events:none; }
 .intro-domain::before,.intro-domain::after{ content:""; width:26px; height:1.5px; border-radius:2px;
   background:linear-gradient(90deg, transparent, rgba(237,106,69,.5)); }
 .intro-domain::after{ background:linear-gradient(90deg, rgba(237,106,69,.5), transparent); }
