@@ -86,6 +86,11 @@ All video and image assets are hosted on **Cloudinary** (`res.cloudinary.com/dkq
 
 `@/*` resolves to `./src/*` (configured in `tsconfig.json`).
 
+## Deployment
+
+Production URL: **https://buildflows.shop/**
+Hosting: Vercel (linked to custom domain `buildflows.shop`)
+
 ## Next.js Version Notes
 
 This project uses **Next.js 16**, which has breaking changes from earlier versions. Before modifying routing, middleware, data fetching, or server components, read the relevant guide in `node_modules/next/dist/docs/` (421 markdown files covering App Router, Pages Router, and architecture).

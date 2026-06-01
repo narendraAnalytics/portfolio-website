@@ -19,7 +19,7 @@ Frontend / UI work:     C:\Users\ES\.claude\skills\nextstack.skill
 | Styling | Tailwind CSS v4 + custom CSS (no utility classes) |
 | Fonts | Sora · Plus Jakarta Sans · Caveat (via `next/font/google`) |
 | Animations | CSS keyframes, scroll-reveal, canvas particles |
-| Deployment | Vercel |
+| Deployment | Vercel — [buildflows.shop](https://buildflows.shop/) |
 
 ---
 
@@ -75,6 +75,8 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000)
+
+Production: [https://buildflows.shop/](https://buildflows.shop/)
 
 ```bash
 npm run build   # production build
