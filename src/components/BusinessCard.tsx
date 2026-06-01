@@ -14,14 +14,21 @@ export default function BusinessCard() {
       <div className="wrap">
         <div className="biz-inner reveal" data-reveal>
           <div className="biz-img-col">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-              src={CARD_SRC}
-              alt="Narendra Kumar — Business Card"
-              className="biz-img"
-              onClick={() => setOpen(true)}
-              style={{ cursor: 'zoom-in' }}
-            />
+            <div className="biz-img-wrap" onClick={() => setOpen(true)}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={CARD_SRC}
+                alt="Narendra Kumar — Business Card"
+                className="biz-img"
+                draggable={false}
+              />
+              <div className="biz-img-tip">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/>
+                </svg>
+                <span>View full image</span>
+              </div>
+            </div>
           </div>
           <div className="biz-info">
             <span className="eyebrow"><span className="dot" />Get In Touch</span>

@@ -443,6 +443,13 @@ section{ position:relative; padding:120px 0; }
 .biz-details li a{ color:var(--ink-soft); text-decoration:none; }
 .biz-details li a:hover{ color:var(--coral); }
 .biz-ctas{ display:flex; gap:12px; flex-wrap:wrap; margin-top:6px; }
+.biz-img-wrap{ position:relative; cursor:zoom-in; border-radius:18px; display:inline-block; width:100%; max-width:380px; }
+.biz-img-wrap .biz-img{ transition:transform .3s var(--ease), filter .3s var(--ease); display:block; width:100%; }
+.biz-img-wrap:hover .biz-img{ transform:scale(1.02); filter:brightness(.8); }
+.biz-img-tip{ position:absolute; inset:0; border-radius:18px; background:rgba(10,6,4,.42); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; opacity:0; transform:translateY(6px); transition:opacity .25s var(--ease), transform .25s var(--ease); pointer-events:none; }
+.biz-img-wrap:hover .biz-img-tip{ opacity:1; transform:none; }
+.biz-img-tip svg{ color:#FFF7EF; }
+.biz-img-tip span{ font-size:13px; font-weight:600; color:#FFF7EF; letter-spacing:.5px; }
 
 /* ============================================================
    FOOTER
