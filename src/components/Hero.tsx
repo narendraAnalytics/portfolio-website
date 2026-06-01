@@ -1,10 +1,43 @@
+'use client';
+import { useRef, useState } from 'react';
+
+const GLYPHS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%&*';
+
+function ScrambleText({ text, className }: { text: string; className?: string }) {
+  const [display, setDisplay] = useState(text);
+  const rafRef = useRef<number | null>(null);
+
+  function scramble() {
+    if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    const chars = text.split('');
+    const resolved = new Array(chars.length).fill(false);
+    let tick = 0;
+
+    function frame() {
+      tick++;
+      const next = chars.map((ch, i) => {
+        if (resolved[i]) return ch;
+        if (tick > i * 3 + 9) { resolved[i] = true; return ch; }
+        if (' ,\''.includes(ch)) return ch;
+        return GLYPHS[Math.floor(Math.random() * GLYPHS.length)];
+      });
+      setDisplay(next.join(''));
+      if (!resolved.every(Boolean))
+        rafRef.current = requestAnimationFrame(frame);
+    }
+    rafRef.current = requestAnimationFrame(frame);
+  }
+
+  return <span className={className} onMouseEnter={scramble}>{display}</span>;
+}
+
 export default function Hero() {
   return (
     <section className="hero" id="home" data-screen-label="Hero">
       <div className="wrap">
         {/* copy — left side */}
         <div className="hero-copy">
-          <span className="hi reveal">Hi, I&apos;m Narendra</span>
+          <ScrambleText text="Hi, I'm Narendra" className="hi reveal" />
           <h1 className="reveal" data-delay="1">
             I build scalable <span className="saas">SaaS</span> products{' '}
             <span className="uline">that solve real problems.</span>
