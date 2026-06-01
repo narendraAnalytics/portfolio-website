@@ -201,11 +201,11 @@ function ImageModal({ src, name, onClose }: { src: string; name: string; onClose
   return (
     <div style={{ position:'fixed', inset:0, zIndex:1001, background:'rgba(10,6,4,.92)', display:'flex', flexDirection:'column' }}>
       {/* Title bar */}
-      <div style={{ flexShrink:0, background:card, display:'flex', alignItems:'center', justifyContent:'space-between', padding:'11px 18px', borderBottom:`1px solid rgba(237,106,69,.14)` }}>
-        <span style={{ fontWeight:700, fontSize:'15px', color:ink }}>{name} Preview</span>
+      <div style={{ flexShrink:0, background:'rgba(15,10,7,.85)', display:'flex', alignItems:'center', justifyContent:'space-between', padding:'11px 18px' }}>
+        <span style={{ fontWeight:700, fontSize:'15px', color:cream }}>{name} Preview</span>
         <div style={{ display:'flex', alignItems:'center', gap:8 }}>
-          <span style={{ fontSize:'12px', color:'#6E8076', fontVariantNumeric:'tabular-nums' }}>Scroll to zoom · Drag to pan</span>
-          <button onClick={onClose} aria-label="Close" style={{ width:32, height:32, borderRadius:'50%', border:'none', background:`rgba(237,106,69,.12)`, color:coral, cursor:'pointer', fontSize:'20px', display:'grid', placeItems:'center' }}>×</button>
+          <span style={{ fontSize:'12px', color:'rgba(255,247,239,.5)', fontVariantNumeric:'tabular-nums' }}>Scroll to zoom · Drag to pan</span>
+          <button onClick={onClose} aria-label="Close" style={{ width:32, height:32, borderRadius:'50%', border:'none', background:`rgba(237,106,69,.25)`, color:coral, cursor:'pointer', fontSize:'20px', display:'grid', placeItems:'center' }}>×</button>
         </div>
       </div>
 
