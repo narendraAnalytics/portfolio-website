@@ -13,6 +13,7 @@ export default function Contact() {
   const [outputColor, setOutputColor] = useState('');
   const [disabled, setDisabled] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [shakeKey, setShakeKey] = useState(0);
 
   function valid(name: string, v: string) {
     if (name === 'email') return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
@@ -29,8 +30,7 @@ export default function Contact() {
     const mb = !valid('message', mv);
     setNameBad(nb); setEmailBad(eb); setMsgBad(mb);
     if (nb || eb || mb) {
-      setOutputColor('#cf4a2c');
-      setOutput('› validation failed — check the fields above.');
+      setShakeKey(k => k + 1);
       return;
     }
     setDisabled(true);
@@ -120,14 +120,14 @@ export default function Contact() {
             <span className="d" style={{ background: 'var(--mint)' }} />
             <span className="label">project_initialization.sh</span>
           </div>
-          <form id="contactForm" noValidate onSubmit={handleSubmit}>
+          <form id="contactForm" key={shakeKey} noValidate onSubmit={handleSubmit}>
             <div className={`field${nameBad ? ' bad' : ''}`} data-field="">
               <label htmlFor="cf-name">Your name</label>
               <input
                 id="cf-name" name="name" type="text" placeholder="Jane Founder" ref={nameRef}
                 onChange={() => { if (nameBad && valid('name', nameRef.current?.value ?? '')) setNameBad(false); }}
               />
-              <span className="err">Please enter your name.</span>
+              <span className="err">Name must be at least 2 characters.</span>
             </div>
             <div className={`field${emailBad ? ' bad' : ''}`} data-field="">
               <label htmlFor="cf-email">Email</label>
@@ -143,7 +143,7 @@ export default function Contact() {
                 id="cf-msg" name="message" placeholder="I'm building an AI SaaS that..." ref={msgRef}
                 onChange={() => { if (msgBad && valid('message', msgRef.current?.value ?? '')) setMsgBad(false); }}
               />
-              <span className="err">Tell me a little about your project.</span>
+              <span className="err">Tell us a little about your project.</span>
             </div>
             <button type="submit" className="btn btn-primary submit" id="cfBtn" disabled={disabled}>
               {loading
