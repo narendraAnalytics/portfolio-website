@@ -9,11 +9,13 @@ import Services from '@/components/Services';
 import Contact from '@/components/Contact';
 import BusinessCard from '@/components/BusinessCard';
 import Footer from '@/components/Footer';
+import Intro from '@/components/Intro';
 import ScrollEffects from '@/components/ScrollEffects';
 
 export default function Home() {
   return (
     <>
+      <Intro />
       <BgLayers />
       <Nav />
       <main>
