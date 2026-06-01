@@ -428,6 +428,23 @@ section{ position:relative; padding:120px 0; }
 .cl .s{ font-size:13.5px; color:var(--ink-mute); }
 
 /* ============================================================
+   BUSINESS CARD
+   ============================================================ */
+.biz{ padding:100px 0; background:var(--cream); }
+.biz-inner{ display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; max-width:960px; margin-inline:auto; }
+.biz-img-col{ display:flex; justify-content:center; }
+.biz-img{ width:100%; max-width:380px; border-radius:18px; box-shadow:0 20px 60px -10px rgba(237,106,69,.25), 0 4px 16px rgba(0,0,0,.08); display:block; }
+.biz-info{ display:flex; flex-direction:column; gap:16px; }
+.biz-name{ font-family:var(--font-display), "Sora", system-ui, sans-serif; font-weight:800; font-size:clamp(1.8rem,3vw,2.4rem); color:var(--ink); line-height:1.15; margin-top:4px; }
+.biz-tagline{ font-size:1.05rem; color:var(--ink-soft); line-height:1.65; max-width:38ch; }
+.biz-details{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px; }
+.biz-details li{ display:flex; align-items:center; gap:10px; font-size:14.5px; color:var(--ink-soft); }
+.biz-details li svg{ width:17px; height:17px; color:var(--coral); flex-shrink:0; }
+.biz-details li a{ color:var(--ink-soft); text-decoration:none; }
+.biz-details li a:hover{ color:var(--coral); }
+.biz-ctas{ display:flex; gap:12px; flex-wrap:wrap; margin-top:6px; }
+
+/* ============================================================
    FOOTER
    ============================================================ */
 .foot{ padding:60px 0 40px; border-top:1px solid rgba(237,106,69,.14); margin-top:30px; }
@@ -488,6 +505,8 @@ section{ position:relative; padding:120px 0; }
   .about-img-col{ order:2; }
   .contact .wrap{ grid-template-columns:1fr; gap:34px; }
   .contact-side{ order:-1; }
+  .biz-inner{ grid-template-columns:1fr; gap:36px; }
+  .biz-img{ max-width:100%; }
 }
 @media (max-width:620px){
   section{ padding:84px 0; }
