@@ -43,6 +43,17 @@ export default function BusinessCard() {
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
                 <span>Palakollu, Andhra Pradesh</span>
               </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" />
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                  <rect x="2" y="9" width="4" height="12" />
+                  <circle cx="4" cy="4" r="2" />
+                </svg>
+                <a href="https://www.linkedin.com/in/nk-analytics" target="_blank" rel="noopener noreferrer">
+                  linkedin.com/in/nk-analytics
+                </a>
+              </li>
             </ul>
             <div className="biz-ctas">
               <a href="/AISaaSResume[Narendra].pdf" download className="btn btn-primary">Download CV</a>

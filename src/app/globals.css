@@ -226,6 +226,7 @@ section{ position:relative; padding:120px 0; }
 .tint-mint{ background:rgba(95,164,124,.16); color:var(--mint-deep); }
 .tint-gold{ background:rgba(231,178,76,.2); color:#b9851f; }
 .tint-orange{ background:rgba(244,166,92,.2); color:#c9772a; }
+.tint-blue{ background:rgba(10,102,194,.14); color:#0a66c2; }
 
 /* ============================================================
    ABOUT
