@@ -50,7 +50,9 @@ export default function Skills() {
             <div className="tags">
               <span className="tag">Google ADK</span>
               <span className="tag">Gemini API</span>
+              <span className="tag">Groq</span>
               <span className="tag">LangChain</span>
+              <span className="tag">LangGraph</span>
               <span className="tag">Agno AI</span>
               <span className="tag">Multi-Agent Systems</span>
               <span className="tag">RAG Pipelines</span>
@@ -97,6 +99,7 @@ export default function Skills() {
               <span className="tag">GCP</span>
               <span className="tag">Azure</span>
               <span className="tag">Vercel</span>
+              <span className="tag">Render</span>
               <span className="tag">PostgreSQL</span>
               <span className="tag">REST APIs</span>
               <span className="tag">OAuth</span>
