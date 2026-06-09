@@ -1,11 +1,23 @@
-QuickSpot
+ull-screen video backdrop — Your AI neural network video (teal particle burst → glowing node sphere → golden logo) plays as the full-screen background with a warm dark vignette overlay that lets the neural glow show through the center.
 
-QuickSpot is an innovative brain training platform that uses artificial intelligence to generate unlimited spot-the-difference puzzles. Sharpen your observation skills, improve your focus, and train your brain with engaging challenges.
+Layered text overlay:
 
-Next.js 16 · Tailwind CSS,Neon PostgreSQL, Drizzle ORM,Google Gemini API
+Teal "WELCOME TO MY PORTFOLIO" pill with pulsing dot
+"Narendra" huge (Sora 800) cream with warm coral glow/drop-shadow
+"crafting intelligent products" in gold Caveat script, gently tilted
+Coral→gold gradient divider line
+Full-Stack AI / SaaS Engineer in bright cream
+Muted tagline below
+Coral "View Portfolio" button with shine sweep + pulse glow
+Corner tags ("AI · SaaS Engineer", "2026 · Full-Stack") + domain mark + "Press Enter to continue" hint
+Teal progress bar tracks the video playback
+Interactions — Button click or pressing Enter/Space triggers a smooth fade-out+scale+blur exit transition into index.html.
 
-livedemo : https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1780296519/quickspotvideo_j2yppt.webm
 
-infographic : https://res.cloudinary.com/dkqbzwicr/image/upload/q_auto/f_auto/v1780296297/QuickBook_jfhnst.png
+sound toggle button — bottom-left corner, a frosted glass circle icon that:
 
-github : https://github.com/narendraAnalytics/diffimages.git
+Starts muted (crossed-out speaker icon) — video plays silently by default
+Click to unmute → switches to the wave speaker icon, video plays with sound
+Click again to mute → switches back
+Subtle scale pulse feedback on click
+Fades in with everything else on load, fades out cleanly with the exit transition
