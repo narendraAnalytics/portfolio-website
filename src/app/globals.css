@@ -548,17 +548,24 @@ section{ position:relative; padding:120px 0; }
   transform:skewX(-20deg); animation:shine 3.6s ease 0s infinite; }
 
 .sound-btn{
-  position:absolute; bottom:28px; left:32px; z-index:20;
-  width:44px; height:44px; border-radius:50%; border:1px solid rgba(255,247,239,.18); cursor:pointer;
-  display:grid; place-items:center;
+  position:absolute; bottom:28px; left:110px; z-index:20;
+  display:inline-flex; align-items:center; gap:8px;
+  border-radius:999px; border:1px solid rgba(255,247,239,.18); cursor:pointer;
+  padding:10px 16px 10px 12px;
   background:rgba(255,247,239,.1);
   backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
   color:rgba(255,247,239,.7);
   transition:background .25s, color .25s, transform .25s, box-shadow .25s;
 }
 .sound-btn:hover{ background:rgba(237,106,69,.22); border-color:rgba(237,106,69,.4);
-  color:#FFF7EF; transform:scale(1.1); box-shadow:0 0 20px rgba(237,106,69,.35); }
-.sound-btn svg{ width:20px; height:20px; }
+  color:#FFF7EF; transform:scale(1.04); box-shadow:0 0 20px rgba(237,106,69,.35); }
+.sound-btn svg{ width:18px; height:18px; flex:0 0 auto; }
+.sound-label{
+  font-family:var(--font-display),"Sora",system-ui,sans-serif;
+  font-size:11px; font-weight:600; letter-spacing:.1em; text-transform:uppercase;
+  animation:soundLabelIn .3s cubic-bezier(.22,.61,.36,1) both;
+}
+@keyframes soundLabelIn{ from{ opacity:0; transform:translateX(-4px) } to{ opacity:1; transform:none } }
 
 .intro-domain{
   position:absolute; bottom:28px; left:50%; transform:translateX(-50%); z-index:20;

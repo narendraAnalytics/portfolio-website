@@ -224,6 +224,9 @@ export default function Intro() {
             <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
           </svg>
         )}
+        <span className="sound-label" key={muted ? 'off' : 'on'}>
+          {muted ? 'Sound Off' : 'Sound On'}
+        </span>
       </button>
 
       <span ref={domainRef} className="intro-domain" style={{ opacity: 0 }}>buildflows.shop</span>
