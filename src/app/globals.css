@@ -497,8 +497,8 @@ section{ position:relative; padding:120px 0; }
   background:#4ecdc4; box-shadow:0 0 0 4px rgba(78,205,196,.2); animation:blink 2.4s infinite; }
 
 .intro-name{
-  font-family:var(--font-display),"Sora",system-ui,sans-serif; font-weight:800;
-  font-size:clamp(4.5rem,14vw,11.5rem); line-height:.92; letter-spacing:-.045em;
+  font-family:var(--font-script),"Caveat",cursive; font-weight:800;
+  font-size:100px; line-height:.92; letter-spacing:-.045em;
   color:#FFF7EF;
   text-shadow:0 0 40px rgba(237,106,69,.65), 0 0 90px rgba(237,106,69,.3), 0 0 160px rgba(244,166,92,.2);
 }

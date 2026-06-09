@@ -26,6 +26,7 @@ export default function Intro() {
   const leavingRef = useRef(false);
 
   useEffect(() => {
+    document.documentElement.style.visibility = '';
     if (!sessionStorage.getItem('intro_seen')) setVisible(true);
   }, []);
 

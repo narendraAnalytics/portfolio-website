@@ -42,8 +42,12 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${sora.variable} ${plusJakarta.variable} ${caveat.variable}`}
+      suppressHydrationWarning
     >
-      <body>{children}</body>
+      <body>
+        <script dangerouslySetInnerHTML={{ __html: `(function(){try{if(!sessionStorage.getItem('intro_seen'))document.documentElement.style.visibility='hidden';}catch(e){}})();` }} />
+        {children}
+      </body>
     </html>
   );
 }

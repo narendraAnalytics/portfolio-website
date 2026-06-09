@@ -1,23 +1,36 @@
-ull-screen video backdrop — Your AI neural network video (teal particle burst → glowing node sphere → golden logo) plays as the full-screen background with a warm dark vignette overlay that lets the neural glow show through the center.
+ GET / 200 in 2.8s (next.js: 783ms, application-code: 2.0s)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
 
-Layered text overlay:
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
 
-Teal "WELCOME TO MY PORTFOLIO" pill with pulsing dot
-"Narendra" huge (Sora 800) cream with warm coral glow/drop-shadow
-"crafting intelligent products" in gold Caveat script, gently tilted
-Coral→gold gradient divider line
-Full-Stack AI / SaaS Engineer in bright cream
-Muted tagline below
-Coral "View Portfolio" button with shine sweep + pulse glow
-Corner tags ("AI · SaaS Engineer", "2026 · Full-Stack") + domain mark + "Press Enter to continue" hint
-Teal progress bar tracks the video playback
-Interactions — Button click or pressing Enter/Space triggers a smooth fade-out+scale+blur exit transition into index.html.
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
 
+https://react.dev/link/hydration-mismatch
 
-sound toggle button — bottom-left corner, a frosted glass circle icon that:
-
-Starts muted (crossed-out speaker icon) — video plays silently by default
-Click to unmute → switches to the wave speaker icon, video plays with sound
-Click again to mute → switches back
-Subtle scale pulse feedback on click
-Fades in with everything else on load, fades out cleanly with the exit transition
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html
+                          lang="en"
+                          className="sora_99009b8f-module__Qo-7YW__variable plus_jakarta_sans_96a318a0-module__wr8TrW_..."
+-                         style={{visibility:"hidden"}}
+                        >
+                  ...
