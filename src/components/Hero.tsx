@@ -39,12 +39,11 @@ export default function Hero() {
         <div className="hero-copy">
           <ScrambleText text="Hi, I'm Narendra" className="hi reveal" />
           <h1 className="reveal" data-delay="1">
-            I build scalable <span className="saas">SaaS</span> products{' '}
-            <span className="uline">that solve real problems.</span>
+            Transforming business ideas into{' '}
+            <span className="uline">intelligent products</span>
           </h1>
           <p className="sub reveal" data-delay="2">
-            Full-Stack AI Engineer crafting reliable, high-performance applications, agentic systems
-            and automation platforms — end to end.
+            Freelance Full-Stack AI Engineer Building AI SaaS Products, Agentic Systems &amp; Intelligent Automation Platforms — From Idea to Production.
           </p>
           <div className="hero-cta reveal" data-delay="3">
             <a href="#projects" className="btn btn-primary" data-magnetic="">
