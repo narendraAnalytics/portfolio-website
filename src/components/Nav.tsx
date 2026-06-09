@@ -43,7 +43,6 @@ export default function Nav() {
           <a href="#projects" data-close="">Projects</a>
           <a href="#experience" data-close="">Experience</a>
           <a href="#contact" data-close="">Contact</a>
-          <a href="#howitworks" data-close="">How it Works</a>
           <a href="#contact" className="btn btn-primary" data-close="">Hire Me</a>
         </nav>
       </div>
