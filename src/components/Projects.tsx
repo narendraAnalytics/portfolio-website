@@ -11,7 +11,7 @@ const projects = [
     stack: ['Python', 'FastAPI', 'LangGraph', 'Render','Neon','chromadb','Tavily','Next.js 16'],
     video: undefined as string | undefined,
     demoVideo: 'https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1781071522/orthovideo_oefn9l.mp4',
-    infographic: undefined as string | undefined,
+    infographic: 'https://res.cloudinary.com/dkqbzwicr/image/upload/q_auto/f_auto/v1781088386/Navajeevanaorthoinfographic_vhqped.png',
     github: 'https://github.com/narendraAnalytics/navajeevanaorthohospitals.git',
   },
   {
