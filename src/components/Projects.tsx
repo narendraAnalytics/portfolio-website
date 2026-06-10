@@ -5,6 +5,16 @@ import ImageModal from '@/components/ImageModal';
 
 const projects = [
   {
+    name: 'Navajeevana Ortho', tag: 'Healthcare AI', mono: 'NO',
+    c: ['#0891B2', '#0E7490'],
+    desc: 'AI-Powered Customer Ticketing System: Resolving Patient Queries in Under 3 Seconds and Bokking Appointment with LangGraph, FastAPI,Python ',
+    stack: ['Python', 'FastAPI', 'LangGraph', 'Render','Neon','chromadb','Tavily','Next.js 16'],
+    video: undefined as string | undefined,
+    demoVideo: 'https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1781071522/orthovideo_oefn9l.mp4',
+    infographic: undefined as string | undefined,
+    github: 'https://github.com/narendraAnalytics/navajeevanaorthohospitals.git',
+  },
+  {
     name: 'NivedanAI', tag: 'Agentic AI', mono: 'NA',
     c: ['#5B6CF2', '#818CF8'],
     desc: 'Autonomous multi-agent SaaS platform that transforms how agencies, freelancers, and sales teams respond to RFPs — end-to-end proposal intelligence.',

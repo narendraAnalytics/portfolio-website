@@ -1,36 +1,10 @@
- GET / 200 in 2.8s (next.js: 783ms, application-code: 2.0s)
-[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+Navajeevana Ortho — AI-powered patient support tickiting + appointment booking system for Navajeevana Ortho Hospitals,India.
 
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
+desc : AI-Powered Customer Ticketing System: Resolving Patient Queries in Under 3 Seconds with LangGraph, FastAPI & Multi-Agent AI
 
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+video url : https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1781071522/orthovideo_oefn9l.mp4
 
-https://react.dev/link/hydration-mismatch
+github : https://github.com/narendraAnalytics/navajeevanaorthohospitals.git
 
-  ...
-    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
-      <AppDevOverlayErrorBoundary globalError={[...]}>
-        <ReplaySsrOnlyErrors>
-        <DevRootHTTPAccessFallbackBoundary>
-          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
-              <RedirectBoundary>
-                <RedirectErrorBoundary router={{...}}>
-                  <Head>
-                  <__next_root_layout_boundary__>
-                    <SegmentViewNode type="layout" pagePath="layout.tsx">
-                      <SegmentTrieNode>
-                      <link>
-                      <script>
-                      <script>
-                      <RootLayout>
-                        <html
-                          lang="en"
-                          className="sora_99009b8f-module__Qo-7YW__variable plus_jakarta_sans_96a318a0-module__wr8TrW_..."
--                         style={{visibility:"hidden"}}
-                        >
-                  ...
+
+https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1781071064/orthovideo_oim50p.mp4
