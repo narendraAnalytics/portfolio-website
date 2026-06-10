@@ -317,15 +317,60 @@ section{ position:relative; padding:120px 0; }
 .proj .stack{ display:flex; flex-wrap:wrap; gap:7px; margin-top:16px; }
 .proj .stack span{ font-size:11.5px; font-weight:600; color:var(--ink-mute);
   background:var(--cream-2); border-radius:8px; padding:5px 9px; }
-.proj .links{ display:flex; gap:10px; margin-top:18px; }
-.proj .links a{ flex:1; justify-content:center; display:inline-flex; align-items:center; gap:7px;
-  font-family:var(--font-display), "Sora", system-ui, sans-serif; font-weight:600; font-size:14px; border-radius:12px; padding:11px;
-  transition:transform .25s, filter .25s, background .25s, color .25s; }
-.proj .links a svg{ width:16px; height:16px; }
-.lk-demo{ color:var(--cream); background:linear-gradient(135deg, var(--coral-soft), var(--coral)); }
-.lk-demo:hover{ filter:brightness(1.05); transform:translateY(-2px); }
-.lk-code{ color:var(--ink); background:var(--cream-2); border:1px solid rgba(237,106,69,.16); }
-.lk-code:hover{ color:var(--coral); transform:translateY(-2px); }
+.proj .links{ display:flex; gap:8px; margin-top:18px; align-items:center; }
+
+/* ── Project icon buttons ─────────────────────────── */
+.pib-wrap{
+  position:relative; display:inline-flex; flex-shrink:0;
+}
+.pib{
+  width:40px; height:40px; border-radius:50%; border:none; cursor:pointer;
+  display:inline-flex; align-items:center; justify-content:center;
+  background:rgba(var(--pib-rgb),0.1);
+  color:rgb(var(--pib-rgb));
+  border:1.5px solid rgba(var(--pib-rgb),0.22);
+  text-decoration:none; flex-shrink:0;
+  transition:transform .22s cubic-bezier(.22,.61,.36,1),
+             box-shadow .22s, background .22s;
+  position:relative; overflow:visible;
+}
+.pib svg{ width:16px; height:16px; pointer-events:none; }
+.pib::after{
+  content:""; position:absolute; inset:-1px; border-radius:50%;
+  border:2px solid rgb(var(--pib-rgb)); opacity:0; transform:scale(1);
+  pointer-events:none;
+}
+.pib:hover{
+  transform:scale(1.16);
+  background:rgba(var(--pib-rgb),0.18);
+  box-shadow:0 4px 18px -4px rgba(var(--pib-rgb),.55);
+}
+.pib:hover::after{ animation:pib-ring .6s ease-out forwards; }
+@keyframes pib-ring{
+  0%  { opacity:.6; transform:scale(1); }
+  100%{ opacity:0;  transform:scale(2.4); }
+}
+
+/* Tooltip — rendered by React only when hovered, no CSS hide needed */
+.pib-tip{
+  position:absolute; bottom:calc(100% + 8px); left:50%;
+  transform:translateX(-50%);
+  white-space:nowrap; padding:5px 10px; border-radius:7px;
+  font-family:var(--font-display),"Sora",system-ui,sans-serif;
+  font-size:11px; font-weight:700; letter-spacing:.05em;
+  color:#fff; background:var(--pib-tip,#1a2e28);
+  pointer-events:none; z-index:30;
+  box-shadow:0 4px 14px -3px rgba(0,0,0,.35);
+  animation:tipIn .15s ease both;
+}
+@keyframes tipIn{
+  from{ opacity:0; transform:translateX(-50%) translateY(5px); }
+  to  { opacity:1; transform:translateX(-50%) translateY(0); }
+}
+.pib-tip::after{
+  content:""; position:absolute; top:100%; left:50%; transform:translateX(-50%);
+  border:4px solid transparent; border-top-color:var(--pib-tip,#1a2e28);
+}
 
 /* Arrow nav buttons */
 .arr-prev, .arr-next{

@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState, useEffect, useCallback } from 'react';
+import { useRef, useState, useEffect, useCallback, type ReactNode } from 'react';
 import ImageModal from '@/components/ImageModal';
 
 const projects = [
@@ -13,6 +13,7 @@ const projects = [
     demoVideo: 'https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1781071522/orthovideo_oefn9l.mp4',
     infographic: 'https://res.cloudinary.com/dkqbzwicr/image/upload/q_auto/f_auto/v1781088386/Navajeevanaorthoinfographic_vhqped.png',
     github: 'https://github.com/narendraAnalytics/navajeevanaorthohospitals.git',
+    liveUrl: 'https://navajeevanaorthohospitals.vercel.app/intro',
   },
   {
     name: 'NivedanAI', tag: 'Agentic AI', mono: 'NA',
@@ -338,6 +339,48 @@ const IconCode = () => (
   </svg>
 );
 
+const IconGlobe = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="10" />
+    <line x1="2" y1="12" x2="22" y2="12" />
+    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+  </svg>
+);
+
+function hexToRgb(hex: string) {
+  return `${parseInt(hex.slice(1,3),16)},${parseInt(hex.slice(3,5),16)},${parseInt(hex.slice(5,7),16)}`;
+}
+
+type ProjIconBtnProps = {
+  label: string;
+  color: string;
+  children: ReactNode;
+  href?: string;
+  onClick?: (e: React.MouseEvent) => void;
+};
+
+function ProjIconBtn({ label, color, children, href, onClick }: ProjIconBtnProps) {
+  const [hovered, setHovered] = useState(false);
+  const rgb = hexToRgb(color);
+  const btnStyle = { '--pib-rgb': rgb } as React.CSSProperties;
+  const tipStyle = { '--pib-tip': color } as React.CSSProperties;
+
+  const btn = href ? (
+    <a className="pib" href={href} target="_blank" rel="noopener noreferrer"
+       aria-label={label} style={btnStyle} onClick={onClick}>{children}</a>
+  ) : (
+    <button className="pib" aria-label={label} style={btnStyle}
+            onClick={onClick}>{children}</button>
+  );
+
+  return (
+    <div className="pib-wrap" onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
+      {btn}
+      {hovered && <span className="pib-tip" style={tipStyle}>{label}</span>}
+    </div>
+  );
+}
+
 const IconChevronLeft = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
     <path d="M15 18l-6-6 6-6" />
@@ -448,24 +491,29 @@ export default function Projects() {
                       {p.stack.map(s => <span key={s}>{s}</span>)}
                     </div>
                     <div className="links">
-                      <a
-                        className="lk-demo"
-                        href={p.demoVideo ? undefined : '#'}
-                        aria-label={`Live demo of ${p.name}`}
+                      <ProjIconBtn
+                        label="View Live Demo"
+                        color="#ED6A45"
                         onClick={p.demoVideo ? (e) => { e.preventDefault(); setOpenDemo({ src: p.demoVideo!, name: p.name }); } : undefined}
-                        style={p.demoVideo ? { cursor: 'pointer' } : {}}
                       >
-                        <IconDemo /> Live Demo
-                      </a>
-                      <a
-                        className="lk-code"
+                        <IconDemo />
+                      </ProjIconBtn>
+                      <ProjIconBtn
+                        label="View GitHub"
+                        color="#234B43"
                         href={p.github ?? '#'}
-                        target={p.github ? '_blank' : undefined}
-                        rel={p.github ? 'noopener noreferrer' : undefined}
-                        aria-label={`GitHub for ${p.name}`}
                       >
-                        <IconCode /> GitHub
-                      </a>
+                        <IconCode />
+                      </ProjIconBtn>
+                      {(p as typeof p & { liveUrl?: string }).liveUrl && (
+                        <ProjIconBtn
+                          label="View Live Site"
+                          color="#4ECDC4"
+                          href={(p as typeof p & { liveUrl?: string }).liveUrl}
+                        >
+                          <IconGlobe />
+                        </ProjIconBtn>
+                      )}
                     </div>
                   </div>
                 </article>
