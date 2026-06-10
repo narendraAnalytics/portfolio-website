@@ -24,6 +24,7 @@ const projects = [
     demoVideo: 'https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1780070947/nivedanaivideo_fgvlqu.webm',
     infographic: 'https://res.cloudinary.com/dkqbzwicr/image/upload/q_auto/f_auto/v1780073397/bannerimage_ocjq9t.png',
     github: 'https://github.com/narendraAnalytics/NivedanAI.git',
+    liveUrl: 'https://nivedan-ai.vercel.app/',
   },
   {
     name: 'PratibhaAI', tag: 'Recruiting AI', mono: 'PA',
@@ -34,6 +35,7 @@ const projects = [
     demoVideo: 'https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1778912511/prathibaaivideo_mdvppo.webm',
     infographic: 'https://res.cloudinary.com/dkqbzwicr/image/upload/q_auto/f_auto/v1778775881/openimage_ezbi0q.png',
     github: 'https://github.com/narendraAnalytics/pratibhaai.git',
+    liveUrl: 'https://pratibhaai.vercel.app/',
   },
   {
     name: 'ViswaSethu', tag: 'Voice AI', mono: 'VS',
@@ -44,6 +46,7 @@ const projects = [
     demoVideo: 'https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1777704438/viswasethuvideo_qlhgui.webm',
     infographic: 'https://res.cloudinary.com/dkqbzwicr/image/upload/q_auto/f_auto/v1777618655/projectview_zrelbb.png',
     github: 'https://github.com/narendraAnalytics/viswasethu.git',
+    liveUrl: 'https://viswasethu.vercel.app/',
   },
   {
     name: 'TutorTalk', tag: 'Ed-Tech AI', mono: 'TT',
@@ -54,6 +57,7 @@ const projects = [
     demoVideo: 'https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1777015522/tutortalkvideo_bzd31u.webm',
     infographic: 'https://res.cloudinary.com/dkqbzwicr/image/upload/q_auto/f_auto/v1780290335/tutortalk_n93cby.png',
     github: 'https://github.com/narendraAnalytics/tutortalk.git',
+    liveUrl: 'https://tutortalk.vercel.app/',
   },
   {
     name: 'ActaFlow', tag: 'Meeting AI', mono: 'AF',
@@ -64,6 +68,7 @@ const projects = [
     demoVideo: 'https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1776577207/videoactaflow_sx87rc.webm',
     infographic: 'https://res.cloudinary.com/dkqbzwicr/image/upload/q_auto/f_auto/v1780291917/actaflowinfographic_j0jwyf.png',
     github: 'https://github.com/narendraAnalytics/actaflow-.git',
+    liveUrl: 'https://actaflow.vercel.app/',
   },
   {
     name: 'DueMate', tag: 'Fintech AI', mono: 'DM',
@@ -74,6 +79,7 @@ const projects = [
     demoVideo: 'https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1776003656/duematevideowebm_ojggt5.webm',
     infographic: 'https://res.cloudinary.com/dkqbzwicr/image/upload/q_auto/f_auto/v1780292218/BannerImage_vmjj4v.png',
     github: 'https://github.com/narendraAnalytics/duemate.git',
+    liveUrl: 'https://duemate-opal.vercel.app/',
   },
   {
     name: 'Thumbl', tag: 'Creative AI', mono: 'TH',
@@ -84,6 +90,7 @@ const projects = [
     demoVideo: 'https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1780294777/thumblvideo_g1x4j3.webm',
     infographic: 'https://res.cloudinary.com/dkqbzwicr/image/upload/q_auto/f_auto/v1780294466/thumblinfographic_ondfyy.png',
     github: 'https://github.com/narendraAnalytics/Thumbl.git',
+    liveUrl: 'https://thumbl-phi.vercel.app/',
   },
   {
     name: 'NewsPulseAI', tag: 'Automation', mono: 'NP',
@@ -94,6 +101,7 @@ const projects = [
     demoVideo: 'https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1775216673/videonewspulseai_xl48hl.webm',
     infographic: 'https://res.cloudinary.com/dkqbzwicr/image/upload/q_auto/f_auto/v1780292398/newspulse_beqmvo.png',
     github: 'https://github.com/narendraAnalytics/newspulseai.git',
+    liveUrl: 'https://newspulseai-alpha.vercel.app/',
   },
   {
     name: 'Professional Lifestyle Shoot', tag: 'Generative AI', mono: 'LS',
@@ -104,6 +112,7 @@ const projects = [
     demoVideo: 'https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1780293178/ProfessionalPhotoShoot_rrrvwx.webm',
     infographic:'https://res.cloudinary.com/dkqbzwicr/image/upload/q_auto/f_auto/v1780292810/ProfessionalPhotoShoot_vtuksw.png',
     github: 'https://github.com/narendraAnalytics/ProfessionalLifeStyleShoot.git',
+    liveUrl: 'https://professional-life-style-shoot.vercel.app/',
   },
   {
     name: 'QuickSpot', tag: 'Brain Training', mono: 'QS',
@@ -114,6 +123,7 @@ const projects = [
     demoVideo: 'https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1780296519/quickspotvideo_j2yppt.webm',
     infographic: 'https://res.cloudinary.com/dkqbzwicr/image/upload/q_auto/f_auto/v1780296297/QuickBook_jfhnst.png',
     github: 'https://github.com/narendraAnalytics/diffimages.git',
+    liveUrl: 'https://quickspot-nine.vercel.app/',
   },
 ];
 
