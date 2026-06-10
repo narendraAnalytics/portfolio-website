@@ -31,6 +31,23 @@ export default function Intro() {
     if (!sessionStorage.getItem('intro_seen')) setVisible(true);
   }, []);
 
+  // sound button appears immediately on mount (no delay tied to video)
+  useEffect(() => {
+    if (!visible) return;
+    const el = soundRef.current;
+    if (!el) return;
+    const ease = 'cubic-bezier(.22,.61,.36,1)';
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(28px) scale(0.97)';
+    el.style.filter = 'blur(8px)';
+    el.style.transition = `opacity .9s ${ease} 1300ms, transform .9s ${ease} 1300ms, filter .9s ${ease} 1300ms`;
+    setTimeout(() => {
+      el.style.opacity = '.9';
+      el.style.transform = 'none';
+      el.style.filter = 'blur(0px)';
+    }, 1360);
+  }, [visible]);
+
   // cinematic text reveal — called when near video end
   function triggerReveal() {
     if (hasRevealedRef.current) return;
@@ -60,8 +77,6 @@ export default function Intro() {
     reveal(ctTlRef.current, 1200, { opacity: '.32' });
     reveal(ctBlRef.current, 1200, { opacity: '.32' });
     reveal(domainRef.current, 1200, { opacity: '.35' });
-    reveal(soundRef.current, 1300, { opacity: '.9' });
-
     setTimeout(() => {
       if (dividerRef.current) dividerRef.current.style.width = 'min(300px,38vw)';
     }, 620);
