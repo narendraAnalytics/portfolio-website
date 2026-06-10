@@ -24,25 +24,29 @@ export default function Intro() {
   const progressRef = useRef<HTMLDivElement>(null);
   const wrapRef = useRef<HTMLDivElement>(null);
   const leavingRef = useRef(false);
+  const hasRevealedRef = useRef(false);
 
   useEffect(() => {
     document.documentElement.style.visibility = '';
     if (!sessionStorage.getItem('intro_seen')) setVisible(true);
   }, []);
 
-  // staggered JS reveal
-  useEffect(() => {
-    if (!visible) return;
+  // cinematic text reveal — called when near video end
+  function triggerReveal() {
+    if (hasRevealedRef.current) return;
+    hasRevealedRef.current = true;
     const ease = 'cubic-bezier(.22,.61,.36,1)';
 
     function reveal(el: HTMLElement | null, delay: number, opts?: { opacity?: string; endTransform?: string }) {
       if (!el) return;
       el.style.opacity = '0';
-      el.style.transform = 'translateY(24px)';
-      el.style.transition = `opacity .75s ${ease} ${delay}ms, transform .75s ${ease} ${delay}ms`;
+      el.style.transform = 'translateY(28px) scale(0.97)';
+      el.style.filter = 'blur(8px)';
+      el.style.transition = `opacity .9s ${ease} ${delay}ms, transform .9s ${ease} ${delay}ms, filter .9s ${ease} ${delay}ms`;
       setTimeout(() => {
         el.style.opacity = opts?.opacity ?? '1';
         el.style.transform = opts?.endTransform ?? 'none';
+        el.style.filter = 'blur(0px)';
       }, delay + 60);
     }
 
@@ -58,24 +62,49 @@ export default function Intro() {
     reveal(domainRef.current, 1200, { opacity: '.35' });
     reveal(soundRef.current, 1300, { opacity: '.9' });
 
-    const t1 = setTimeout(() => {
+    setTimeout(() => {
       if (dividerRef.current) dividerRef.current.style.width = 'min(300px,38vw)';
     }, 620);
-    const t2 = setTimeout(() => {
+    setTimeout(() => {
       if (btnRef.current) btnRef.current.style.animation = 'pulseBtn 3.2s ease-in-out infinite';
     }, 1600);
+  }
 
-    return () => { clearTimeout(t1); clearTimeout(t2); };
-  }, [visible]);
-
-  // video progress bar
+  // video progress bar + near-end reveal trigger
   useEffect(() => {
     if (!visible) return;
     const vid = videoRef.current;
     if (!vid) return;
-    const onTime = () => { if (vid.duration) setProgress(vid.currentTime / vid.duration * 100); };
+
+    const REVEAL_BEFORE = 3.5; // seconds before end to show text
+
+    const onTime = () => {
+      if (vid.duration) {
+        setProgress(vid.currentTime / vid.duration * 100);
+        if (!hasRevealedRef.current && vid.duration > 0 && vid.currentTime >= vid.duration - REVEAL_BEFORE) {
+          triggerReveal();
+        }
+      }
+    };
+
+    // fallback: if video is very short or duration never triggers, reveal after 8s
+    const fallback = setTimeout(() => triggerReveal(), 8000);
+
+    const onMeta = () => {
+      if (vid.duration <= 5) {
+        // short clip — reveal after a brief hold
+        setTimeout(() => triggerReveal(), 800);
+      }
+    };
+
     vid.addEventListener('timeupdate', onTime);
-    return () => vid.removeEventListener('timeupdate', onTime);
+    vid.addEventListener('loadedmetadata', onMeta);
+    return () => {
+      vid.removeEventListener('timeupdate', onTime);
+      vid.removeEventListener('loadedmetadata', onMeta);
+      clearTimeout(fallback);
+    };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [visible]);
 
   // canvas particles
