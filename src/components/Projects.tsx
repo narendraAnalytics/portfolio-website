@@ -5,6 +5,17 @@ import ImageModal from '@/components/ImageModal';
 
 const projects = [
   {
+    name: 'Vaakya', tag: 'Legal AI', mono: 'VA',
+    c: ['#4C1D95', '#6D28D9'],
+    desc: 'Autonomous multi-agent AI platform that eliminates the legal document bottleneck for Indian SMBs — handles drafting, contract review, redlining, risk detection, and obligation tracking.',
+    stack: ['Python', 'FastAPI', 'Supabase', 'LangGraph', 'Tavily', 'Next.js 16', 'pgvector'],
+    video: undefined as string | undefined,
+    demoVideo: 'https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1782625568/vaakyavideo_uiuy6q.webm',
+    infographic: 'https://res.cloudinary.com/dkqbzwicr/image/upload/q_auto/f_auto/v1782628191/vaakyainfographic_blyard.png',
+    github: 'https://github.com/narendraAnalytics/Vaakya.git',
+    liveUrl: 'https://vaakya-tau.vercel.app/',
+  },
+  {
     name: 'Navajeevana Ortho', tag: 'Healthcare AI', mono: 'NO',
     c: ['#0891B2', '#0E7490'],
     desc: 'AI-Powered Customer Ticketing System: Resolving Patient Queries in Under 3 Seconds and Bokking Appointment with LangGraph, FastAPI,Python ',

@@ -1,10 +1,13 @@
-Navajeevana Ortho — AI-powered patient support tickiting + appointment booking system for Navajeevana Ortho Hospitals,India.
+VAAKYA — Vaakya is an autonomous, multi-agent AI platform that eliminates the legal document bottleneck for Indian small and medium businesses (SMBs). Powered by LangGraph, FastAPI, and Claude AI, Vaakya handles the entire legal document lifecycle - from a user typing a plain-English request or uploading a PDF
 
-desc : AI-Powered Customer Ticketing System: Resolving Patient Queries in Under 3 Seconds with LangGraph, FastAPI & Multi-Agent AI
+desc : Vaakya transforms legal document management with intelligent AI agents that automate drafting, contract review, redlining, risk detection, and obligation tracking. Built for businesses, it simplifies complex legal workflows into a fast, secure, and efficient experience
 
-video url : https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1781071522/orthovideo_oefn9l.mp4
+video url : https://res.cloudinary.com/dkqbzwicr/video/upload/v1782625568/vaakyavideo_uiuy6q.webm
 
-github : https://github.com/narendraAnalytics/navajeevanaorthohospitals.git
+github : https://github.com/narendraAnalytics/Vaakya.git
 
+live site : https://vaakya-tau.vercel.app/
 
-https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1781071064/orthovideo_oim50p.mp4
+techstack : python , FastAPI , supabase , langgraph , Tavily , Next.js 16, pgvector , 
+
+cardimage : https://res.cloudinary.com/dkqbzwicr/image/upload/v1782628191/vaakyainfographic_blyard.png
