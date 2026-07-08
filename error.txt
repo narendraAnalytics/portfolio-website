@@ -1,39 +1,73 @@
-18:04:31.928 Running build in Washington, D.C., USA (East) – iad1
-18:04:31.929 Build machine configuration: 2 cores, 8 GB
-18:04:32.055 Cloning github.com/narendraAnalytics/portfolio-website (Branch: main, Commit: b87a6b4)
-18:04:32.407 Cloning completed: 352.000ms
-18:04:34.384 Restored build cache from previous deployment (D5KvksEvRq37vQxkfhDmSvnMa3bg)
-18:04:34.576 Running "vercel build"
-18:04:34.595 Vercel CLI 54.4.1
-18:04:34.783 Installing dependencies...
-18:04:35.740 
-18:04:35.741 added 5 packages in 697ms
-18:04:35.742 
-18:04:35.742 21 packages are looking for funding
-18:04:35.742   run `npm fund` for details
-18:04:35.816 Detected Next.js version: 16.2.6
-18:04:35.820 Running "npm run build"
-18:04:35.918 
-18:04:35.919 > porfoliowebsite@0.1.0 build
-18:04:35.919 > next build
-18:04:35.919 
-18:04:36.634   Applying modifyConfig from Vercel
-18:04:36.649 ▲ Next.js 16.2.6 (Turbopack)
-18:04:36.651 
-18:04:36.693   Creating an optimized production build ...
-18:04:42.335 ✓ Compiled successfully in 5.3s
-18:04:42.337   Running TypeScript ...
-18:04:46.907 Failed to type check.
-18:04:46.907 
-18:04:46.907 ./src/app/api/contact/route.ts:19:7
-18:04:46.908 Type error: Object literal may only specify known properties, but 'reply_to' does not exist in type '(Required<Pick<EmailRenderOptions$1, "react">> & Partial<Pick<EmailRenderOptions$1, "html" | "text">> & CreateEmailBaseOptions & { ...; }) | (Required<...> & ... 2 more ... & { ...; }) | (Required<...> & ... 2 more ... & { ...; })'. Did you mean to write 'replyTo'?
-18:04:46.908 
-18:04:46.908   17 |       from,
-18:04:46.908   18 |       to: 'narendra.insights@gmail.com',
-18:04:46.908 > 19 |       reply_to: email.trim(),
-18:04:46.908      |       ^
-18:04:46.908   20 |       subject: `New project brief from ${name.trim()}`,
-18:04:46.908   21 |       html: `
-18:04:46.908   22 |         <div style="font-family:sans-serif;max-width:560px;margin:0 auto;background:#FFFBF...
-18:04:46.939 Next.js build worker exited with code: 1 and signal: null
-18:04:46.985 Error: Command "npm run build" exited with 1
+GOAL
+Elevate this portfolio (buildflows.shop, Next.js 16 / React 19 / TypeScript, App Router) from a
+polished template to an award-tier, cinematic site — WITHOUT changing the warm brand palette,
+without adding a tailwind.config, and without moving styling out of src/app/globals.css into
+utility classes. Read AGENTS.md and CLAUDE.md before touching anything; this project runs a
+pre-release Next.js 16, so check node_modules/next/dist/docs/ before touching routing, data
+fetching, or server components.
+
+CURRENT STATE (do not rediscover — use this)
+- Palette: warm light-mode glassmorphism. Cream/peach surfaces (--cream, --cream-2, --peach,
+  --peach-deep, --card), coral/orange/gold/mint brand accents (--coral, --coral-soft, --orange,
+  --gold, --mint, --mint-deep), green-family ink text (--ink, --ink-soft, --ink-mute), warm
+  brown-tinted shadows (--shadow-sm/--shadow/--shadow-lg), glass surfaces (--glass, --glass-brd),
+  shared timing curve --ease. Keep this palette — do not pivot to dark mode or a different hue family.
+- Fonts: Sora (--font-display, headings/UI), Plus Jakarta Sans (--font-body), Caveat
+  (--font-script, handwritten accents like "Hi, I'm Narendra" and the signature).
+- Two-tier reality: Intro.tsx and Projects.tsx (plus the shared ScrollEffects.tsx interaction
+  layer — magnetic buttons via data-magnetic, scroll-triggered .reveal fades, parallax, animated
+  counters, canvas particles) already have real production polish: video intro, particle canvas,
+  staged text reveal, scramble-text hero greeting, custom video/image modals with zoom-and-pan.
+  KEEP and EXTEND this tier, don't rebuild it.
+- Weak tier — these reuse one generic "rounded card + soft shadow + hover-lift" recipe with no
+  distinctive per-section identity: About.tsx, Skills.tsx, Experience.tsx, Services.tsx,
+  Contact.tsx, BusinessCard.tsx, Footer.tsx, Nav.tsx. This is where the redesign should focus —
+  give each section its own visual signature instead of the shared card recipe.
+- Known bug/gap: globals.css defines .float-card (glass stat card styles) but Hero.tsx never
+  renders any element using that class — either wire it up with real floating stat cards or
+  remove the dead CSS.
+
+DIRECTION (informed by 2026 award-site trends — Awwwards-tier portfolios)
+1. Motion with intent, not decoration: every animation/hover/scroll transition should communicate
+   something (reveal hierarchy, guide attention, confirm interaction) — not just spin/fade for its
+   own sake. Reuse --ease everywhere for consistency.
+2. Layered, asymmetrical composition: break the repeated 3-column-grid-of-cards pattern in
+   Skills/Services/Experience. Introduce offset layouts, overlapping elements, varied card sizes,
+   editorial-style section intros — while staying within the existing spacing/radius tokens.
+3. Cinematic depth via the existing gradient/shadow system: lean harder into the warm
+   gradient/glass tokens already defined (--glass, --shadow-lg, radial gradient washes) rather than
+   introducing a new visual language. Depth and mood should come from lighting/gradient/contrast
+   tuning, not from switching to dark mode.
+4. Typographic hierarchy: use the Sora/Plus Jakarta Sans/Caveat trio more expressively — bigger
+   contrast between display and body sizes, more intentional use of Caveat for accent moments
+   (not just the two current spots).
+5. Section-by-section priorities:
+   - Hero.tsx: implement the missing .float-card floating stat cards; strengthen the
+     mouse-parallax on the melting video treatment.
+   - Nav.tsx: currently a plain pill-link bar with only underline hover — give it a distinctive
+     scroll-aware treatment beyond the existing shrink/blur.
+   - About.tsx / Skills.tsx: replace generic stat/skill cards with a more expressive, asymmetrical
+     visualization (e.g. varied-size tiles, connecting motion) instead of a uniform grid.
+   - Experience.tsx: the timeline reads as plain — add more visual weight/motion to the
+     "current" node and connecting line, vary node presentation instead of a repeated pattern.
+   - Services.tsx: break the standard 3-column card grid into something with more editorial
+     personality.
+   - Contact.tsx / BusinessCard.tsx / Footer.tsx: these are the last impression — give them
+     distinct character (the form's terminal-style status text is a good existing pattern to build
+     on further; Footer/BusinessCard currently have almost no motion).
+
+PERFORMANCE GUARDRAILS (non-negotiable)
+- Respect prefers-reduced-motion everywhere new motion is added, matching the existing pattern in
+  ScrollEffects.tsx/Intro.tsx.
+- Don't regress LCP/Lighthouse — no new heavy synchronous work on initial paint, keep any new
+  canvas/particle work resize-aware and cleaned up via refs like the existing implementations.
+- All media stays on Cloudinary (res.cloudinary.com/dkqbzwicr) with q_auto/f_auto — never add
+  local video/image assets.
+- Path alias @/* only; no new config files unless truly required.
+
+PROCESS
+Before writing any code, propose a section-by-section implementation plan (what changes per
+component, in what order) so it can be reviewed before anything ships. Then implement
+incrementally, one section at a time, so each can be checked in the browser before moving to the
+next.
+</content>

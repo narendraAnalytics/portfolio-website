@@ -15,12 +15,13 @@ export default function Footer() {
           <a href="#about">About</a>
           <a href="#skills">Skills</a>
           <a href="#projects">Projects</a>
-          <a href="#experience">Experience</a>
+          <a href="#services">Services</a>
+          <a href="#howitworks">How I Work</a>
           <a href="#contact">Contact</a>
           <a href="/AISaaSResume[Narendra].pdf" download>Download CV</a>
         </nav>
         <div className="copy">
-          © {year} Narendra Kumar · Full-Stack AI / SaaS Engineer · Building agentic systems &amp; intelligent products.
+          © {year} Narendra Kumar · Freelance Full-Stack AI Engineer · Palakollu, India.
         </div>
       </div>
     </footer>

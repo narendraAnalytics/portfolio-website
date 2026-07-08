@@ -5,7 +5,10 @@ export default function Experience() {
         <div className="sec-head reveal">
           <span className="eyebrow"><span className="dot" /> Evolution Path</span>
           <h2 className="h-sec">A journey from operations <span className="accent">to AI products.</span></h2>
-          <p className="lead">Thirteen years compounding business insight into the way I architect software today.</p>
+          <p className="lead">
+            Thirteen years inside finance, compliance and operations — the experience that tells me
+            where your business is losing time before I write any code.
+          </p>
         </div>
         <div className="timeline">
           <div className="tl-item cur reveal">
@@ -15,8 +18,9 @@ export default function Experience() {
               <h3>Business Analyst → Full-Stack AI Developer</h3>
               <div className="org">Kalyani Textiles, Palakollu · &amp; independent AI SaaS</div>
               <p>
-                Supported operational reporting and compliance workflows while building production AI SaaS
-                products — agents, automation pipelines and dashboards.
+                Building and shipping production AI SaaS — agents, automation pipelines and
+                dashboards — while running operational reporting and compliance for a working
+                business. Every product gets tested against real operations first.
               </p>
             </div>
           </div>
@@ -27,8 +31,8 @@ export default function Experience() {
               <h3>Accountant</h3>
               <div className="org">Phani GST Services · Remote</div>
               <p>
-                Owned operational reporting, compliance workflows and client coordination across finance
-                and administration.
+                Ran GST compliance, reporting and client coordination end to end — the years that
+                taught me exactly how businesses lose time and money to manual workflow.
               </p>
             </div>
           </div>
@@ -38,7 +42,10 @@ export default function Experience() {
               <div className="yr">2014 — 2016</div>
               <h3>Executive</h3>
               <div className="org">GOLOORY Logistics</div>
-              <p>Coordinated office administration, logistics support and client billing across teams.</p>
+              <p>
+                Coordinated administration, logistics and client billing across teams — early
+                lessons in the operational handoffs good software should absorb.
+              </p>
             </div>
           </div>
           <div className="tl-item reveal" data-delay="3">
@@ -48,8 +55,8 @@ export default function Experience() {
               <h3>Office Admin</h3>
               <div className="org">Siri Garments, Tirupur</div>
               <p>
-                Inventory reporting and petty-cash management for daily office operations.
-                MCA, Master of Computer Applications.
+                Inventory reporting and cash management for daily operations, alongside completing
+                an MCA — Master of Computer Applications.
               </p>
             </div>
           </div>

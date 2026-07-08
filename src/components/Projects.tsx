@@ -7,7 +7,7 @@ const projects = [
   {
     name: 'Vaakya', tag: 'Legal AI', mono: 'VA',
     c: ['#4C1D95', '#6D28D9'],
-    desc: 'Autonomous multi-agent AI platform that eliminates the legal document bottleneck for Indian SMBs — handles drafting, contract review, redlining, risk detection, and obligation tracking.',
+    desc: 'Removes the legal-document bottleneck for Indian SMBs — autonomous agents draft, review and redline contracts, flag risk early and track every obligation to its deadline.',
     stack: ['Python', 'FastAPI', 'Supabase', 'LangGraph', 'Tavily', 'Next.js 16', 'pgvector'],
     video: undefined as string | undefined,
     demoVideo: 'https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1782625568/vaakyavideo_uiuy6q.webm',
@@ -18,7 +18,7 @@ const projects = [
   {
     name: 'Navajeevana Ortho', tag: 'Healthcare AI', mono: 'NO',
     c: ['#0891B2', '#0E7490'],
-    desc: 'AI-Powered Customer Ticketing System: Resolving Patient Queries in Under 3 Seconds and Bokking Appointment with LangGraph, FastAPI,Python ',
+    desc: 'Resolves patient queries in under 3 seconds and books appointments automatically — an AI ticketing system built for a working orthopaedic practice.',
     stack: ['Python', 'FastAPI', 'LangGraph', 'Render','Neon','chromadb','Tavily','Next.js 16'],
     video: undefined as string | undefined,
     demoVideo: 'https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1781071522/orthovideo_oefn9l.mp4',
@@ -29,7 +29,7 @@ const projects = [
   {
     name: 'NivedanAI', tag: 'Agentic AI', mono: 'NA',
     c: ['#5B6CF2', '#818CF8'],
-    desc: 'Autonomous multi-agent SaaS platform that transforms how agencies, freelancers, and sales teams respond to RFPs — end-to-end proposal intelligence.',
+    desc: 'Cuts RFP response from days to hours — autonomous agents read the brief, research the client and assemble the proposal for agencies, freelancers and sales teams.',
     stack: ['Next.js 15', 'Google ADK', 'Neon', 'Inngest', 'Resend', 'Tavily MCP'],
     video: undefined as string | undefined,
     demoVideo: 'https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1780070947/nivedanaivideo_fgvlqu.webm',
@@ -40,7 +40,7 @@ const projects = [
   {
     name: 'PratibhaAI', tag: 'Recruiting AI', mono: 'PA',
     c: ['#0891B2', '#67E8F9'],
-    desc: 'Multi-agent SaaS that autonomously screens resumes, validates GitHub profiles, detects fraud, scores candidates, and delivers explainable hiring reports.',
+    desc: 'Screens resumes, validates GitHub profiles, flags fraud and scores candidates — every hiring recommendation delivered as an explainable report your team can defend.',
     stack: ['Next.js 16', 'Google ADK', 'Neon', 'Drizzle ORM', 'Resend'],
     video: undefined as string | undefined,
     demoVideo: 'https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1778912511/prathibaaivideo_mdvppo.webm',
@@ -51,7 +51,7 @@ const projects = [
   {
     name: 'ViswaSethu', tag: 'Voice AI', mono: 'VS',
     c: ['#ED6A45', '#F4A65C'],
-    desc: 'Voice-first language learning for migrant workers — teaching job-specific foreign-language communication from native Indian languages.',
+    desc: 'Teaches migrant workers job-specific foreign-language phrases from their own native Indian language — voice-first lessons for people who learn by speaking, not reading.',
     stack: ['Next.js 16', 'Neon', 'Google ADK', 'Resend', 'Vercel'],
     video: undefined as string | undefined,
     demoVideo: 'https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1777704438/viswasethuvideo_qlhgui.webm',
@@ -62,7 +62,7 @@ const projects = [
   {
     name: 'TutorTalk', tag: 'Ed-Tech AI', mono: 'TT',
     c: ['#5FA47C', '#93C4A4'],
-    desc: 'An AI-powered voice learning SaaS that puts a personal tutor and exam conductor in every student\'s pocket.',
+    desc: 'A personal tutor and exam conductor in every student\'s pocket — voice-based AI lessons that adapt to how each student actually answers.',
     stack: ['Next.js 16', 'Neon', 'Clerk', 'Gemini Voice'],
     video: undefined as string | undefined,
     demoVideo: 'https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1777015522/tutortalkvideo_bzd31u.webm',
@@ -73,7 +73,7 @@ const projects = [
   {
     name: 'ActaFlow', tag: 'Meeting AI', mono: 'AF',
     c: ['#E7B24C', '#F4A65C'],
-    desc: 'AI meeting intelligence that converts recordings into action items, assignments and automated attendee summaries.',
+    desc: 'Turns meeting recordings into action items, owner assignments and attendee summaries — delivered automatically, minutes after the call ends.',
     stack: ['Next.js 16', 'Neon', 'Inngest', 'Cloudinary', 'Resend'],
     video: undefined as string | undefined,
     demoVideo: 'https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1776577207/videoactaflow_sx87rc.webm',
@@ -84,7 +84,7 @@ const projects = [
   {
     name: 'DueMate', tag: 'Fintech AI', mono: 'DM',
     c: ['#ED6A45', '#5FA47C'],
-    desc: 'AI payment-reminder SaaS — Gemini extracts invoice data, Inngest schedules multi-channel reminders, Resend delivers them automatically.',
+    desc: 'Gets invoices paid without the chasing — Gemini reads the invoice, Inngest schedules the reminders and Resend delivers them across channels, automatically.',
     stack: ['Gemini 3.1', 'Inngest', 'Resend', 'PostgreSQL'],
     video: undefined as string | undefined,
     demoVideo: 'https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1776003656/duematevideowebm_ojggt5.webm',
@@ -95,7 +95,7 @@ const projects = [
   {
     name: 'Thumbl', tag: 'Creative AI', mono: 'TH',
     c: ['#F43F5E', '#FB7185'],
-    desc: 'Viral thumbnails with perfect text — zero design skills needed. AI-powered thumbnail generator that turns ideas into click-worthy visuals instantly.',
+    desc: 'Produces click-worthy video thumbnails with clean, legible text — no designer needed. Type the idea, get the visual.',
     stack: ['Next.js 16', 'Gemini Pro Vision', 'Neon', 'Drizzle ORM', 'ImageKit.io'],
     video: undefined as string | undefined,
     demoVideo: 'https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1780294777/thumblvideo_g1x4j3.webm',
@@ -106,7 +106,7 @@ const projects = [
   {
     name: 'NewsPulseAI', tag: 'Automation', mono: 'NP',
     c: ['#F4A65C', '#E7B24C'],
-    desc: 'Monitors your favourite YouTube channels and delivers beautifully designed email digests to your inbox at 6 AM — fully automated.',
+    desc: 'Watches the YouTube channels you choose and delivers a designed email digest at 6 AM every morning — fully hands-off after setup.',
     stack: ['Next.js', 'Gemini', 'Cron', 'Resend'],
     video: undefined as string | undefined,
     demoVideo: 'https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1775216673/videonewspulseai_xl48hl.webm',
@@ -117,7 +117,7 @@ const projects = [
   {
     name: 'Professional Lifestyle Shoot', tag: 'Generative AI', mono: 'LS',
     c: ['#93C4A4', '#E7B24C'],
-    desc: 'Full-stack app that leverages AI to create professional lifestyle photoshoots — generate, customize and manage AI photography.',
+    desc: 'Professional lifestyle photography on demand — generate, customise and manage AI photoshoots without a studio, a crew or a shoot day.',
     stack: ['Next.js', 'AI Imaging', 'GCP', 'TypeScript'],
     video: undefined as string | undefined,
     demoVideo: 'https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1780293178/ProfessionalPhotoShoot_rrrvwx.webm',
@@ -128,7 +128,7 @@ const projects = [
   {
     name: 'QuickSpot', tag: 'Brain Training', mono: 'QS',
     c: ['#7C3AED', '#A78BFA'],
-    desc: 'AI-powered brain training platform that generates unlimited spot-the-difference puzzles — sharpen observation skills and improve focus with endless challenges.',
+    desc: 'Daily brain training with unlimited AI-generated spot-the-difference puzzles — a fresh challenge for observation and focus, every time you play.',
     stack: ['Next.js 16', 'Google Gemini', 'Neon', 'Drizzle ORM', 'Tailwind CSS'],
     video: undefined as string | undefined,
     demoVideo: 'https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1780296519/quickspotvideo_j2yppt.webm',
@@ -473,7 +473,25 @@ export default function Projects() {
           <div className="sec-head reveal">
             <span className="eyebrow"><span className="dot" /> AI &amp; SaaS Projects</span>
             <h2 className="h-sec">Intelligent products, <span className="accent">shipped end to end.</span></h2>
-            <p className="lead">Real SaaS platforms blending agentic AI, automation and clean full-stack engineering.</p>
+            <p className="lead">
+              Twelve products, all live in production — each with a working demo, a public repo and
+              a real user problem behind it. Explore them below.
+            </p>
+          </div>
+
+          <div className="results-strip reveal" data-delay="1">
+            <div className="rs-item">
+              <div className="rs-n" data-count="12">0</div>
+              <div className="rs-l">products live in production</div>
+            </div>
+            <div className="rs-item">
+              <div className="rs-n">&lt;3s</div>
+              <div className="rs-l">patient-query resolution, in a live clinic</div>
+            </div>
+            <div className="rs-item">
+              <div className="rs-n">100%</div>
+              <div className="rs-l">shipped with live URL, demo &amp; repo</div>
+            </div>
           </div>
 
           <div className="carousel-outer" ref={outerRef}>

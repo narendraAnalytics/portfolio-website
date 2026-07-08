@@ -4,10 +4,11 @@ export default function Skills() {
       <div className="wrap">
         <div className="sec-head reveal">
           <span className="eyebrow"><span className="dot" /> Tech Stack</span>
-          <h2 className="h-sec">The toolkit behind <span className="accent">every product.</span></h2>
+          <h2 className="h-sec">A stack chosen for shipping, <span className="accent">not for show.</span></h2>
           <p className="lead">
-            Modern, production-proven technologies across the full lifecycle — from agentic AI
-            orchestration to deployment and analytics.
+            Every technology here has carried at least one live product to production — from agent
+            orchestration to deployment and analytics. Your project runs on tools already proven
+            under real users.
           </p>
         </div>
         <div className="stack-grid">
@@ -20,7 +21,7 @@ export default function Skills() {
               </span>
               <div>
                 <h3>Full-Stack Development</h3>
-                <p>Frontend, backend &amp; data layer</p>
+                <p>Your product&apos;s interface, API &amp; data layer</p>
               </div>
             </div>
             <div className="tags">
@@ -44,7 +45,7 @@ export default function Skills() {
               </span>
               <div>
                 <h3>Agentic AI &amp; Automation</h3>
-                <p>Agents, orchestration &amp; RAG</p>
+                <p>Agents that do real work in production</p>
               </div>
             </div>
             <div className="tags">
@@ -70,7 +71,7 @@ export default function Skills() {
               </span>
               <div>
                 <h3>Data Analytics &amp; Viz</h3>
-                <p>Insight from raw data</p>
+                <p>Numbers your team can act on</p>
               </div>
             </div>
             <div className="tags">
@@ -92,7 +93,7 @@ export default function Skills() {
               </span>
               <div>
                 <h3>Cloud, Deploy &amp; Integrations</h3>
-                <p>Ship, scale &amp; connect</p>
+                <p>Live, scalable &amp; connected from day one</p>
               </div>
             </div>
             <div className="tags">

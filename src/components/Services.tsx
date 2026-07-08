@@ -5,6 +5,10 @@ export default function Services() {
         <div className="sec-head reveal">
           <span className="eyebrow"><span className="dot" /> Services</span>
           <h2 className="h-sec">How I can help <span className="accent">you ship.</span></h2>
+          <p className="lead">
+            Three ways to engage — each ends with something live in production, not a handover
+            document.
+          </p>
         </div>
         <div className="svc-grid">
           <div className="svc reveal">
@@ -16,9 +20,11 @@ export default function Services() {
             </span>
             <h3>Agentic AI Systems</h3>
             <p>
-              Multi-agent workflows, RAG pipelines and orchestration built on Google ADK, Gemini and
-              LangChain — reliable in production.
+              Multi-agent workflows, RAG pipelines and orchestration on Google ADK, Gemini and
+              LangChain. You get a system that holds up in production — not a demo that breaks on
+              the edge cases.
             </p>
+            <a className="svc-link" href="#contact">Discuss this →</a>
           </div>
           <div className="svc reveal" data-delay="1">
             <span className="ic tint-mint">
@@ -29,9 +35,10 @@ export default function Services() {
             </span>
             <h3>Full-Stack SaaS Builds</h3>
             <p>
-              End-to-end Next.js applications — auth, database, payments and polished UI/UX — taken
-              from idea to live, scalable product.
+              Your idea taken to a live product — Next.js frontend, auth, database, payments and
+              polished UI/UX, deployed and ready for your first users.
             </p>
+            <a className="svc-link" href="#contact">Discuss this →</a>
           </div>
           <div className="svc reveal" data-delay="2">
             <span className="ic tint-gold">
@@ -42,9 +49,10 @@ export default function Services() {
             </span>
             <h3>Automation &amp; Dashboards</h3>
             <p>
-              Workflow automation, scheduled jobs and analytics dashboards that turn manual effort
-              into hands-off, data-driven systems.
+              Manual workflows turned into scheduled, hands-off systems — with dashboards that show
+              your team what&apos;s actually happening, in numbers they can act on.
             </p>
+            <a className="svc-link" href="#contact">Discuss this →</a>
           </div>
         </div>
       </div>

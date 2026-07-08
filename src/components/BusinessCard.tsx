@@ -33,7 +33,7 @@ export default function BusinessCard() {
           <div className="biz-info">
             <span className="eyebrow"><span className="dot" />Get In Touch</span>
             <h2 className="biz-name">Narendra Kumar</h2>
-            <p className="biz-tagline">Full-Stack AI / SaaS Engineer building agentic systems &amp; intelligent products.</p>
+            <p className="biz-tagline">Freelance full-stack AI engineer — available for project and contract work on agentic systems, SaaS builds and automation.</p>
             <ul className="biz-details">
               <li>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>

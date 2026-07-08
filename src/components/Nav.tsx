@@ -19,8 +19,9 @@ export default function Nav() {
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
             <a href="#experience">Experience</a>
+            <a href="#services">Services</a>
+            <a href="#howitworks">How I Work</a>
             <a href="#contact">Contact</a>
-            <a href="#howitworks">How it Works</a>
           </nav>
           <a href="#contact" className="btn btn-primary" data-magnetic="">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -42,6 +43,8 @@ export default function Nav() {
           <a href="#skills" data-close="">Skills</a>
           <a href="#projects" data-close="">Projects</a>
           <a href="#experience" data-close="">Experience</a>
+          <a href="#services" data-close="">Services</a>
+          <a href="#howitworks" data-close="">How I Work</a>
           <a href="#contact" data-close="">Contact</a>
           <a href="#contact" className="btn btn-primary" data-close="">Hire Me</a>
         </nav>

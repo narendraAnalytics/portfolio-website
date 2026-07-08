@@ -82,8 +82,9 @@ export default function Contact() {
           <span className="eyebrow"><span className="dot" /> Contact</span>
           <h2>Let&apos;s start an <span className="accent">AI project.</span></h2>
           <p>
-            Have a SaaS idea, an automation headache or an agent system in mind? Send a brief and
-            I&apos;ll reply within 24 hours.
+            Have a SaaS idea, an automation headache or an agent system in mind? Tell me what
+            you&apos;re building, who it&apos;s for and your timeline — I&apos;ll reply within 24
+            hours with honest next steps.
           </p>
           <div className="contact-links">
             <a className="cl" href="mailto:narendra.insights@gmail.com">
@@ -139,7 +140,7 @@ export default function Contact() {
             <div className={`field${nameBad ? ' bad' : ''}`} data-field="">
               <label htmlFor="cf-name">Your name</label>
               <input
-                id="cf-name" name="name" type="text" placeholder="Jane Founder" ref={nameRef}
+                id="cf-name" name="name" type="text" placeholder="Your full name" ref={nameRef}
                 onChange={() => { if (nameBad && valid('name', nameRef.current?.value ?? '')) setNameBad(false); }}
               />
               <span className="err">Name must be at least 2 characters.</span>
@@ -147,7 +148,7 @@ export default function Contact() {
             <div className={`field${emailBad ? ' bad' : ''}`} data-field="">
               <label htmlFor="cf-email">Email</label>
               <input
-                id="cf-email" name="email" type="email" placeholder="jane@startup.com" ref={emailRef}
+                id="cf-email" name="email" type="email" placeholder="you@company.com" ref={emailRef}
                 onChange={() => { if (emailBad && valid('email', emailRef.current?.value ?? '')) setEmailBad(false); }}
               />
               <span className="err">Enter a valid email address.</span>
@@ -155,10 +156,10 @@ export default function Contact() {
             <div className={`field${msgBad ? ' bad' : ''}`} data-field="">
               <label htmlFor="cf-msg">Project brief</label>
               <textarea
-                id="cf-msg" name="message" placeholder="I'm building an AI SaaS that..." ref={msgRef}
+                id="cf-msg" name="message" placeholder="What are you building, who is it for, and when do you need it?" ref={msgRef}
                 onChange={() => { if (msgBad && valid('message', msgRef.current?.value ?? '')) setMsgBad(false); }}
               />
-              <span className="err">Tell us a little about your project.</span>
+              <span className="err">Tell me a little about your project.</span>
             </div>
             <button type="submit" className="btn btn-primary submit" id="cfBtn" disabled={disabled}>
               {loading

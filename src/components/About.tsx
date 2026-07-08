@@ -11,7 +11,7 @@ export default function About() {
             <div className="sig">— Narendra</div>
             <div className="about-stats">
               <div className="s">
-                <div className="n" data-count="6" data-suffix="">0</div>
+                <div className="n" data-count="12" data-suffix="">0</div>
                 <div className="l">Products shipped</div>
               </div>
               <div className="s">
@@ -26,19 +26,20 @@ export default function About() {
           </div>
         </div>
         <div className="about-copy reveal" data-delay="1">
-          <span className="eyebrow"><span className="dot" /> About Me</span>
+          <span className="eyebrow"><span className="dot" /> Why Work With Me</span>
           <h2 className="h-sec">
             From business operations to <span className="accent">AI product engineering.</span>
           </h2>
           <p>
-            I&apos;m a Full-Stack AI Developer focused on building AI-powered SaaS platforms,
-            automation systems and intelligent web applications using Next.js, Python, the Gemini
-            API and AI agents.
+            I design and build AI-powered SaaS platforms, agentic systems and automation for
+            founders and teams — using Next.js, Python, the Gemini API and modern agent
+            frameworks. Every product I&apos;ve shipped is live, with a demo and a public repo.
           </p>
           <p>
-            My edge is a rare blend — over a decade across finance, operations and business
-            analysis, now channelled into shipping real, revenue-ready AI products. I don&apos;t
-            just write code; I understand the business problem it solves.
+            You&apos;re not just hiring a developer. Thirteen years across finance, compliance and
+            operations taught me to scope the business problem before writing a line of code —
+            which is why my products target invoice chasing, contract review, hiring screens and
+            patient ticketing, not tech demos.
           </p>
           <div className="spec">
             <span className="pill">AI SaaS Development</span>
@@ -47,6 +48,9 @@ export default function About() {
             <span className="pill">RAG Applications</span>
             <span className="pill">AI Dashboards</span>
             <span className="pill">Full-Stack Development</span>
+          </div>
+          <div className="about-cta">
+            <a href="#contact" className="btn btn-ghost" data-magnetic="">Tell me about your project</a>
           </div>
         </div>
       </div>

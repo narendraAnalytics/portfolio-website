@@ -238,7 +238,7 @@ export default function Intro() {
           Full-Stack AI <span className="sep">/</span> SaaS Engineer
         </p>
         <p ref={taglineRef} className="intro-tagline" style={{ opacity: 0 }}>
-          Building agentic systems &amp; intelligent products that solve real problems.
+          Twelve AI products shipped — from first brief to production.
         </p>
         <button ref={btnRef} className="intro-btn" onClick={enter} style={{ opacity: 0 }}>
           View Portfolio

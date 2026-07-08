@@ -1,0 +1,224 @@
+================================================================================
+                                  NARENDRA
+                Full-Stack AI Developer — AI SaaS & Agentic Systems
+                              buildflows.shop
+================================================================================
+
+
+ABOUT
+-----
+I transform complex ideas into scalable, business-ready products with modern
+UI/UX and real-world impact.
+
+I'm a Full-Stack AI Developer focused on building AI-powered SaaS platforms,
+automation systems, and intelligent web applications using Next.js, Python,
+the Gemini API, and AI agents.
+
+My edge is a rare blend — over a decade across finance, operations, and
+business analysis, now channelled into shipping real, revenue-ready AI
+products. I don't just write code; I understand the business problem it
+solves.
+
+  6      Products shipped
+  13+    Years across business + tech
+  20+    Tools & APIs integrated
+
+Specializations: AI SaaS Development · Agentic AI Systems · Workflow
+Automation · RAG Applications · AI Dashboards · Full-Stack Development
+
+
+CAREER EVOLUTION — FROM OPERATIONS TO AI PRODUCTS
+--------------------------------------------------
+2021 — Present   Business Analyst → Full-Stack AI Developer
+                 Kalyani Textiles, Palakollu & independent AI SaaS
+                 Supported operational reporting and compliance workflows
+                 while building production AI SaaS products — agents,
+                 automation pipelines, and dashboards.
+
+2017 — 2021      Accountant, Phani GST Services (Remote)
+                 Owned operational reporting, compliance workflows, and
+                 client coordination across finance and administration.
+
+2014 — 2016      Executive, GOLOORY Logistics
+                 Coordinated office administration, logistics support, and
+                 client billing across teams.
+
+2011 — 2013      Office Admin, Siri Garments, Tirupur
+                 Inventory reporting and petty-cash management. MCA, Master
+                 of Computer Applications.
+
+This is the differentiator most AI developers don't have: thirteen years of
+real finance, compliance, and operations experience compounded into how I
+scope, architect, and ship software today.
+
+
+PROJECTS SHIPPED (12 AI SaaS PRODUCTS)
+----------------------------------------
+
+1. VAAKYA — Legal AI
+   Autonomous multi-agent platform eliminating the legal document bottleneck
+   for Indian SMBs — drafting, contract review, redlining, risk detection,
+   obligation tracking.
+   Stack: Python, FastAPI, Supabase, LangGraph, Tavily, Next.js 16, pgvector
+
+2. NAVAJEEVANA ORTHO — Healthcare AI
+   AI-powered customer ticketing system resolving patient queries in under
+   3 seconds, with appointment booking.
+   Stack: Python, FastAPI, LangGraph, Render, Neon, ChromaDB, Tavily, Next.js 16
+
+3. NIVEDANAI — Agentic AI
+   Autonomous multi-agent SaaS transforming how agencies, freelancers, and
+   sales teams respond to RFPs — end-to-end proposal intelligence.
+   Stack: Next.js 15, Google ADK, Neon, Inngest, Resend, Tavily MCP
+
+4. PRATIBHAAI — Recruiting AI
+   Multi-agent SaaS that autonomously screens resumes, validates GitHub
+   profiles, detects fraud, scores candidates, and delivers explainable
+   hiring reports.
+   Stack: Next.js 16, Google ADK, Neon, Drizzle ORM, Resend
+
+5. VISWASETHU — Voice AI
+   Voice-first language learning for migrant workers — job-specific
+   foreign-language communication taught from native Indian languages.
+   Stack: Next.js 16, Neon, Google ADK, Resend, Vercel
+
+6. TUTORTALK — Ed-Tech AI
+   AI-powered voice learning SaaS putting a personal tutor and exam
+   conductor in every student's pocket.
+   Stack: Next.js 16, Neon, Clerk, Gemini Voice
+
+7. ACTAFLOW — Meeting AI
+   AI meeting intelligence converting recordings into action items,
+   assignments, and automated attendee summaries.
+   Stack: Next.js 16, Neon, Inngest, Cloudinary, Resend
+
+8. DUEMATE — Fintech AI
+   AI payment-reminder SaaS — Gemini extracts invoice data, Inngest
+   schedules multi-channel reminders, Resend delivers them automatically.
+   Stack: Gemini 3.1, Inngest, Resend, PostgreSQL
+
+9. THUMBL — Creative AI
+   Viral thumbnails with perfect text, zero design skills needed — turns
+   ideas into click-worthy visuals instantly.
+   Stack: Next.js 16, Gemini Pro Vision, Neon, Drizzle ORM, ImageKit.io
+
+10. NEWSPULSEAI — Automation
+    Monitors YouTube channels and delivers designed email digests at 6 AM,
+    fully automated.
+    Stack: Next.js, Gemini, Cron, Resend
+
+11. PROFESSIONAL LIFESTYLE SHOOT — Generative AI
+    Full-stack app leveraging AI to generate, customize, and manage
+    professional lifestyle photoshoots.
+    Stack: Next.js, AI Imaging, GCP, TypeScript
+
+12. QUICKSPOT — Brain Training
+    AI-powered brain training platform generating unlimited spot-the-
+    difference puzzles to sharpen observation and focus.
+    Stack: Next.js 16, Google Gemini, Neon, Drizzle ORM, Tailwind CSS
+
+Every project ships with a live URL, demo video, and public GitHub repo —
+not prototypes, real deployed products.
+
+
+TECH STACK
+----------
+
+Full-Stack Development (frontend, backend & data layer)
+  Next.js · React · TypeScript · FastAPI · Tailwind CSS · Prisma ·
+  Drizzle ORM · Clerk Auth
+
+Agentic AI & Automation (agents, orchestration & RAG)
+  Google ADK · Gemini API · Groq · LangChain · LangGraph · Agno AI ·
+  Multi-Agent Systems · RAG Pipelines · Prompt Engineering ·
+  AI Orchestration
+
+Data Analytics & Visualization (insight from raw data)
+  Python · SQL · Pandas · NumPy · Plotly · Power BI · Streamlit
+
+Cloud, Deploy & Integrations (ship, scale & connect)
+  GCP · Azure · Vercel · Render · PostgreSQL · REST APIs · OAuth ·
+  GitHub · Inngest
+
+
+SERVICES OFFERED
+-----------------
+Agentic AI Systems
+  Multi-agent workflows, RAG pipelines, and orchestration built on Google
+  ADK, Gemini, and LangChain — reliable in production.
+
+Full-Stack SaaS Builds
+  End-to-end Next.js applications — auth, database, payments, and polished
+  UI/UX — taken from idea to live, scalable product.
+
+Automation & Dashboards
+  Workflow automation, scheduled jobs, and analytics dashboards that turn
+  manual effort into hands-off, data-driven systems.
+
+
+================================================================================
+FREELANCE MARKET FIT — WHERE THIS STACK STANDS IN 2026
+================================================================================
+
+The tech stack and project types in this portfolio line up closely with
+where freelance AI demand is actually moving in 2026, not just where it
+was a year or two ago.
+
+DEMAND IS SHIFTING SHARPLY TOWARD AGENTIC AI
+  Gartner projects 40% of enterprise applications will embed task-specific
+  AI agents by the end of 2026, up from less than 5% in 2025. On Upwork,
+  demand for AI-referenced freelance skills grew 109% year-over-year, with
+  "AI integration" specifically up 178%. This is exactly the category
+  Vaakya, NivedanAI, PratibhaAI, and Navajeevana Ortho fall into —
+  multi-agent systems solving a specific business workflow, not generic
+  chatbots.
+
+LANGGRAPH, RAG, AND MULTI-AGENT ORCHESTRATION COMMAND PREMIUM RATES
+  Industry surveys (LangChain's State of AI Agents) show 57.3% of
+  organizations now run agents in production, up from 51% the year before.
+  The skills tied to the steepest freelance rate premiums are LangChain,
+  RAG, multi-agent orchestration, and vector databases — all present
+  across this portfolio (pgvector, ChromaDB, LangGraph, Google ADK, RAG
+  pipelines).
+
+NEXT.JS REMAINS THE STANDARD SAAS DELIVERY LAYER
+  Next.js is still the framework teams reach for once a SaaS idea needs
+  real infrastructure — edge functions, incremental static regen, and
+  preview deploys per PR. Every project here (11 of 12) is built and
+  shipped on Next.js 15/16, keeping the stack current rather than legacy.
+
+RATES FOR THIS SKILL COMBINATION
+  Full-stack development: $70–$200+/hr freelance, top freelancers clearing
+  $150K+/yr.
+  AI agent development: $20–$250+/hr freelance; agencies quote $5K–$50K+
+  per engagement.
+  Combining both — full-stack SaaS delivery AND agentic AI — is the
+  highest-leverage freelance position available right now, since most
+  freelancers specialize in only one side.
+
+WHY THE BUSINESS BACKGROUND MATTERS HERE
+  Reports consistently note that the clearest path to higher freelance
+  rates is combining a sought-after technical skill with strong business/
+  communication skills. Thirteen years in finance, compliance, and
+  operations is not a detour from this AI SaaS work — it's the reason
+  these products (invoice reminders, legal contract review, hiring
+  fraud detection, patient ticketing) target real operational pain points
+  instead of tech demos.
+
+Sources:
+  - Upwork's In-Demand Skills 2026 (investors.upwork.com)
+  - LangChain — State of AI Agents (langchain.com/state-of-agent-engineering)
+  - The State of AI Freelancing in 2026 (botpool.ai)
+  - Hire an AI Agent Developer in 2026 — Rates (creolestudios.com)
+  - RapidBrains — Top 20 In-Demand Freelance Skills (rapidbrains.com)
+
+
+CLOSING
+-------
+Twelve shipped AI SaaS products, a modern agentic-AI-and-Next.js stack, and
+thirteen years of real business operations experience behind every product
+decision. Open to freelance and contract engagements building agentic AI
+systems, full-stack SaaS products, and automation platforms.
+
+Portfolio: https://buildflows.shop/
+================================================================================
