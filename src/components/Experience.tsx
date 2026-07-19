@@ -14,17 +14,28 @@ export default function Experience() {
           <div className="tl-item cur reveal">
             <div className="node"><span className="core" /></div>
             <div className="tl-card now">
-              <div className="yr">2021 — Present</div>
-              <h3>Business Analyst → Full-Stack AI Developer</h3>
-              <div className="org">Kalyani Textiles, Palakollu · &amp; independent AI SaaS</div>
+              <div className="yr">Jul 2025 — Present</div>
+              <h3>Independent — Full-Stack AI Developer</h3>
+              <div className="org">Self-Employed · Freelance / Contract</div>
               <p>
                 Building and shipping production AI SaaS — agents, automation pipelines and
-                dashboards — while running operational reporting and compliance for a working
-                business. Every product gets tested against real operations first.
+                dashboards — for freelance and contract clients, full time.
               </p>
             </div>
           </div>
           <div className="tl-item reveal" data-delay="1">
+            <div className="node"><span className="core" /></div>
+            <div className="tl-card">
+              <div className="yr">Mar 2021 — Jul 2025</div>
+              <h3>Business Analyst</h3>
+              <div className="org">Kalyani Textiles · Andhra Pradesh, India · On-site</div>
+              <p>
+                Ran operational reporting and compliance for a working textile business while
+                building production AI SaaS products on the side.
+              </p>
+            </div>
+          </div>
+          <div className="tl-item reveal" data-delay="2">
             <div className="node"><span className="core" /></div>
             <div className="tl-card">
               <div className="yr">2017 — 2021</div>
@@ -36,7 +47,7 @@ export default function Experience() {
               </p>
             </div>
           </div>
-          <div className="tl-item reveal" data-delay="2">
+          <div className="tl-item reveal" data-delay="3">
             <div className="node"><span className="core" /></div>
             <div className="tl-card">
               <div className="yr">2014 — 2016</div>
@@ -48,7 +59,7 @@ export default function Experience() {
               </p>
             </div>
           </div>
-          <div className="tl-item reveal" data-delay="3">
+          <div className="tl-item reveal" data-delay="4">
             <div className="node"><span className="core" /></div>
             <div className="tl-card">
               <div className="yr">2011 — 2013</div>
