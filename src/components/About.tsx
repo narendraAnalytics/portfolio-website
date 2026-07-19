@@ -11,7 +11,7 @@ export default function About() {
             <div className="sig">— Narendra</div>
             <div className="about-stats">
               <div className="s">
-                <div className="n" data-count="12" data-suffix="">0</div>
+                <div className="n" data-count="13" data-suffix="">0</div>
                 <div className="l">Products shipped</div>
               </div>
               <div className="s">

@@ -59,6 +59,8 @@ export default function Skills() {
               <span className="tag">RAG Pipelines</span>
               <span className="tag">Prompt Engineering</span>
               <span className="tag">AI Orchestration</span>
+              <span className="tag">Qdrant Cloud</span>
+              <span className="tag">Sarvam AI</span>
             </div>
           </div>
           <div className="stack-card reveal">
@@ -106,6 +108,8 @@ export default function Skills() {
               <span className="tag">OAuth</span>
               <span className="tag">GitHub</span>
               <span className="tag">Inngest</span>
+              <span className="tag">Convex</span>
+              <span className="tag">CI/CD</span>
             </div>
           </div>
         </div>

@@ -5,6 +5,17 @@ import ImageModal from '@/components/ImageModal';
 
 const projects = [
   {
+    name: 'ClaimSense-AI', tag: 'Insurance AI', mono: 'CS',
+    c: ['#0F766E', '#059669'],
+    desc: 'Transform insurance claim processing with a 10-agent AI pipeline that reads documents, validates policies and medical/billing evidence, scores fraud risk, searches historical precedent, recommends a settlement, pauses for human sign-off, and generates an adjuster-ready PDF — in minutes instead of days.',
+    stack: ['Next.js 16', 'FastAPI', 'Python', 'LangGraph', 'Sarvam Vision', 'Convex', 'Qdrant Cloud', 'Razorpay', 'CI/CD', 'Railway'],
+    video: undefined as string | undefined,
+    demoVideo: 'https://res.cloudinary.com/dkqbzwicr/video/upload/v1784432840/claimsenseaivideo_vlfwnt.webm',
+    infographic: 'https://res.cloudinary.com/dkqbzwicr/image/upload/v1784434397/infographicclaimsense_kyc1wp.png',
+    github: 'https://github.com/narendraAnalytics/ClaimSense-AI.git',
+    liveUrl: 'https://claimsense-ai-rust.vercel.app/',
+  },
+  {
     name: 'Vaakya', tag: 'Legal AI', mono: 'VA',
     c: ['#4C1D95', '#6D28D9'],
     desc: 'Removes the legal-document bottleneck for Indian SMBs — autonomous agents draft, review and redline contracts, flag risk early and track every obligation to its deadline.',
@@ -474,14 +485,14 @@ export default function Projects() {
             <span className="eyebrow"><span className="dot" /> AI &amp; SaaS Projects</span>
             <h2 className="h-sec">Intelligent products, <span className="accent">shipped end to end.</span></h2>
             <p className="lead">
-              Twelve products, all live in production — each with a working demo, a public repo and
+              Thirteen products, all live in production — each with a working demo, a public repo and
               a real user problem behind it. Explore them below.
             </p>
           </div>
 
           <div className="results-strip reveal" data-delay="1">
             <div className="rs-item">
-              <div className="rs-n" data-count="12">0</div>
+              <div className="rs-n" data-count="13">0</div>
               <div className="rs-l">products live in production</div>
             </div>
             <div className="rs-item">

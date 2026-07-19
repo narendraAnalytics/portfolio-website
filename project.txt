@@ -1,13 +1,13 @@
-VAAKYA — Vaakya is an autonomous, multi-agent AI platform that eliminates the legal document bottleneck for Indian small and medium businesses (SMBs). Powered by LangGraph, FastAPI, and Claude AI, Vaakya handles the entire legal document lifecycle - from a user typing a plain-English request or uploading a PDF
+ClaimSense-AI : Transform insurance claim processing with autonomous AI agents that analyze documents, validate policies, detect fraud, calculate settlements, and generate decision-ready reports within minutes instead of days.
 
-desc : Vaakya transforms legal document management with intelligent AI agents that automate drafting, contract review, redlining, risk detection, and obligation tracking. Built for businesses, it simplifies complex legal workflows into a fast, secure, and efficient experience
+desc : Transform insurance claim processing with a 10-agent AI pipeline that reads documents, validates policies and medical/billing evidence, scores fraud risk, searches historical precedent, recommends a settlement, pauses for human sign-off, and generates an adjuster-ready PDF — in minutes instead of days.
 
-video url : https://res.cloudinary.com/dkqbzwicr/video/upload/v1782625568/vaakyavideo_uiuy6q.webm
+video url : https://res.cloudinary.com/dkqbzwicr/video/upload/v1784432840/claimsenseaivideo_vlfwnt.webm
 
-github : https://github.com/narendraAnalytics/Vaakya.git
+github : https://github.com/narendraAnalytics/ClaimSense-AI.git
 
-live site : https://vaakya-tau.vercel.app/
+live site : https://claimsense-ai-rust.vercel.app/
 
-techstack : python , FastAPI , supabase , langgraph , Tavily , Next.js 16, pgvector , 
+techstack : Next.js 16 , FastAPI , Python , LangGraph ,  Sarvam Vision , Convex [Auth , DataBase] ,  Qudrant Cloud , Razorpay payment , CI/CD, Railway 
 
-cardimage : https://res.cloudinary.com/dkqbzwicr/image/upload/v1782628191/vaakyainfographic_blyard.png
+cardimage : https://res.cloudinary.com/dkqbzwicr/image/upload/v1784434397/infographicclaimsense_kyc1wp.png

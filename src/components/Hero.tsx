@@ -66,7 +66,7 @@ export default function Hero() {
                   <path d="m18 16 4-4-4-4M6 8l-4 4 4 4M14.5 4l-5 16" />
                 </svg>
               </span>
-              <div className="big" data-count="12">0</div>
+              <div className="big" data-count="13">0</div>
               <div className="lbl">AI products live</div>
             </div>
             <div className="chip">
