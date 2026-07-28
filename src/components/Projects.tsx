@@ -496,14 +496,14 @@ export default function Projects() {
             <span className="eyebrow"><span className="dot" /> AI &amp; SaaS Projects</span>
             <h2 className="h-sec">Intelligent products, <span className="accent">shipped end to end.</span></h2>
             <p className="lead">
-              Thirteen products, all live in production — each with a working demo, a public repo and
+              Fourteen products, all live in production — each with a working demo, a public repo and
               a real user problem behind it. Explore them below.
             </p>
           </div>
 
           <div className="results-strip reveal" data-delay="1">
             <div className="rs-item">
-              <div className="rs-n" data-count="13">0</div>
+              <div className="rs-n" data-count="14">0</div>
               <div className="rs-l">products live in production</div>
             </div>
             <div className="rs-item">

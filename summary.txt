@@ -19,7 +19,7 @@ business analysis, now channelled into shipping real, revenue-ready AI
 products. I don't just write code; I understand the business problem it
 solves.
 
-  13     Products shipped
+  14     Products shipped
   13+    Years across business + tech
   20+    Tools & APIs integrated
 
@@ -57,10 +57,21 @@ real finance, compliance, and operations experience compounded into how I
 scope, architect, and ship software today.
 
 
-PROJECTS SHIPPED (13 AI SaaS PRODUCTS)
+PROJECTS SHIPPED (14 AI SaaS PRODUCTS)
 ----------------------------------------
 
-1. CLAIMSENSE-AI — Insurance AI
+1. NIDHIFLOW-AI — Lending AI
+   Enterprise agentic loan operations platform that orchestrates the
+   complete operational lifecycle of Home, Personal, and Business Loans
+   for banks and NBFCs — document intake, validation, data pipelines,
+   monitoring, and audit reporting — while keeping the final lending
+   decision with human underwriters. AI accelerates operations, not
+   approval.
+   Stack: Next.js 16, FastAPI, Python, LangGraph, Sarvam Vision, Google
+   Cloud Platform (Cloud Run, Cloud SQL, Secret Manager, Artifact
+   Registry), Firebase (Auth, Storage), Docker, CI/CD, Kubernetes (GKE)
+
+2. CLAIMSENSE-AI — Insurance AI
    10-agent AI pipeline that reads claim documents, validates policies and
    medical/billing evidence, scores fraud risk, searches historical
    precedent, recommends a settlement, pauses for human sign-off, and
@@ -68,64 +79,64 @@ PROJECTS SHIPPED (13 AI SaaS PRODUCTS)
    Stack: Next.js 16, FastAPI, Python, LangGraph, Sarvam Vision, Convex,
    Qdrant Cloud, Razorpay, CI/CD, Railway
 
-2. VAAKYA — Legal AI
+3. VAAKYA — Legal AI
    Autonomous multi-agent platform eliminating the legal document bottleneck
    for Indian SMBs — drafting, contract review, redlining, risk detection,
    obligation tracking.
    Stack: Python, FastAPI, Supabase, LangGraph, Tavily, Next.js 16, pgvector
 
-3. NAVAJEEVANA ORTHO — Healthcare AI
+4. NAVAJEEVANA ORTHO — Healthcare AI
    AI-powered customer ticketing system resolving patient queries in under
    3 seconds, with appointment booking.
    Stack: Python, FastAPI, LangGraph, Render, Neon, ChromaDB, Tavily, Next.js 16
 
-4. NIVEDANAI — Agentic AI
+5. NIVEDANAI — Agentic AI
    Autonomous multi-agent SaaS transforming how agencies, freelancers, and
    sales teams respond to RFPs — end-to-end proposal intelligence.
    Stack: Next.js 15, Google ADK, Neon, Inngest, Resend, Tavily MCP
 
-5. PRATIBHAAI — Recruiting AI
+6. PRATIBHAAI — Recruiting AI
    Multi-agent SaaS that autonomously screens resumes, validates GitHub
    profiles, detects fraud, scores candidates, and delivers explainable
    hiring reports.
    Stack: Next.js 16, Google ADK, Neon, Drizzle ORM, Resend
 
-6. VISWASETHU — Voice AI
+7. VISWASETHU — Voice AI
    Voice-first language learning for migrant workers — job-specific
    foreign-language communication taught from native Indian languages.
    Stack: Next.js 16, Neon, Google ADK, Resend, Vercel
 
-7. TUTORTALK — Ed-Tech AI
+8. TUTORTALK — Ed-Tech AI
    AI-powered voice learning SaaS putting a personal tutor and exam
    conductor in every student's pocket.
    Stack: Next.js 16, Neon, Clerk, Gemini Voice
 
-8. ACTAFLOW — Meeting AI
+9. ACTAFLOW — Meeting AI
    AI meeting intelligence converting recordings into action items,
    assignments, and automated attendee summaries.
    Stack: Next.js 16, Neon, Inngest, Cloudinary, Resend
 
-9. DUEMATE — Fintech AI
+10. DUEMATE — Fintech AI
    AI payment-reminder SaaS — Gemini extracts invoice data, Inngest
    schedules multi-channel reminders, Resend delivers them automatically.
    Stack: Gemini 3.1, Inngest, Resend, PostgreSQL
 
-10. THUMBL — Creative AI
+11. THUMBL — Creative AI
    Viral thumbnails with perfect text, zero design skills needed — turns
    ideas into click-worthy visuals instantly.
    Stack: Next.js 16, Gemini Pro Vision, Neon, Drizzle ORM, ImageKit.io
 
-11. NEWSPULSEAI — Automation
+12. NEWSPULSEAI — Automation
     Monitors YouTube channels and delivers designed email digests at 6 AM,
     fully automated.
     Stack: Next.js, Gemini, Cron, Resend
 
-12. PROFESSIONAL LIFESTYLE SHOOT — Generative AI
+13. PROFESSIONAL LIFESTYLE SHOOT — Generative AI
     Full-stack app leveraging AI to generate, customize, and manage
     professional lifestyle photoshoots.
     Stack: Next.js, AI Imaging, GCP, TypeScript
 
-13. QUICKSPOT — Brain Training
+14. QUICKSPOT — Brain Training
     AI-powered brain training platform generating unlimited spot-the-
     difference puzzles to sharpen observation and focus.
     Stack: Next.js 16, Google Gemini, Neon, Drizzle ORM, Tailwind CSS
@@ -150,8 +161,10 @@ Data Analytics & Visualization (insight from raw data)
   Python · SQL · Pandas · NumPy · Plotly · Power BI · Streamlit
 
 Cloud, Deploy & Integrations (ship, scale & connect)
-  GCP · Azure · Vercel · Render · PostgreSQL · REST APIs · OAuth ·
-  GitHub · Inngest · Convex · CI/CD
+  Google Cloud Platform (Cloud Run, Cloud SQL, Secret Manager, Artifact
+  Registry) · Firebase · Docker · Kubernetes (GKE) · Azure · Vercel ·
+  Render · PostgreSQL · REST APIs · OAuth · GitHub · Inngest · Convex ·
+  CI/CD
 
 
 SERVICES OFFERED
@@ -182,9 +195,9 @@ DEMAND IS SHIFTING SHARPLY TOWARD AGENTIC AI
   AI agents by the end of 2026, up from less than 5% in 2025. On Upwork,
   demand for AI-referenced freelance skills grew 109% year-over-year, with
   "AI integration" specifically up 178%. This is exactly the category
-  ClaimSense-AI, Vaakya, NivedanAI, PratibhaAI, and Navajeevana Ortho fall
-  into — multi-agent systems solving a specific business workflow, not
-  generic chatbots.
+  NidhiFlow-AI, ClaimSense-AI, Vaakya, NivedanAI, PratibhaAI, and
+  Navajeevana Ortho fall into — multi-agent systems solving a specific
+  business workflow, not generic chatbots.
 
 LANGGRAPH, RAG, AND MULTI-AGENT ORCHESTRATION COMMAND PREMIUM RATES
   Industry surveys (LangChain's State of AI Agents) show 57.3% of
@@ -197,7 +210,7 @@ LANGGRAPH, RAG, AND MULTI-AGENT ORCHESTRATION COMMAND PREMIUM RATES
 NEXT.JS REMAINS THE STANDARD SAAS DELIVERY LAYER
   Next.js is still the framework teams reach for once a SaaS idea needs
   real infrastructure — edge functions, incremental static regen, and
-  preview deploys per PR. Every project here (12 of 13) is built and
+  preview deploys per PR. Every project here (13 of 14) is built and
   shipped on Next.js 15/16, keeping the stack current rather than legacy.
 
 RATES FOR THIS SKILL COMBINATION
@@ -228,7 +241,7 @@ Sources:
 
 CLOSING
 -------
-Thirteen shipped AI SaaS products, a modern agentic-AI-and-Next.js stack, and
+Fourteen shipped AI SaaS products, a modern agentic-AI-and-Next.js stack, and
 thirteen years of real business operations experience behind every product
 decision. Open to freelance and contract engagements building agentic AI
 systems, full-stack SaaS products, and automation platforms.

@@ -15,7 +15,7 @@ export default function About() {
                 <div className="l">Products shipped</div>
               </div>
               <div className="s">
-                <div className="n" data-count="13" data-suffix="+">0</div>
+                <div className="n" data-count="14" data-suffix="+">0</div>
                 <div className="l">Yrs business + tech</div>
               </div>
               <div className="s">
