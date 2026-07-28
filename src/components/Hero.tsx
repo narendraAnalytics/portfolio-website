@@ -43,7 +43,7 @@ export default function Hero() {
             <span className="uline">working AI products</span>
           </h1>
           <p className="sub reveal" data-delay="2">
-            I&apos;m a freelance full-stack AI engineer with Thirteen production AI SaaS products behind me — and thirteen years in finance and operations before that. I scope the business problem first, then build the system that solves it.
+            I&apos;m a freelance full-stack AI engineer with Fourteen production AI SaaS products behind me — and thirteen years in finance and operations before that. I scope the business problem first, then build the system that solves it.
           </p>
           <div className="hero-cta reveal" data-delay="3">
             <a href="#projects" className="btn btn-primary" data-magnetic="">
@@ -66,7 +66,7 @@ export default function Hero() {
                   <path d="m18 16 4-4-4-4M6 8l-4 4 4 4M14.5 4l-5 16" />
                 </svg>
               </span>
-              <div className="big" data-count="13">0</div>
+              <div className="big" data-count="14">0</div>
               <div className="lbl">AI products live</div>
             </div>
             <div className="chip">

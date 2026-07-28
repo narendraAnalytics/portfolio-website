@@ -1,13 +1,13 @@
-ClaimSense-AI : Transform insurance claim processing with autonomous AI agents that analyze documents, validate policies, detect fraud, calculate settlements, and generate decision-ready reports within minutes instead of days.
+NidhiFlow-AI : Enterprise Agentic Loan Operations Platform designed to automate and orchestrate the complete operational lifecycle of Home Loans, Personal Loans, and Business Loans for banks and NBFCs.
 
-desc : Transform insurance claim processing with a 10-agent AI pipeline that reads documents, validates policies and medical/billing evidence, scores fraud risk, searches historical precedent, recommends a settlement, pauses for human sign-off, and generates an adjuster-ready PDF — in minutes instead of days.
+desc : orchestrates the operational lifecycle of Home, Personal, and Business Loans for banks and NBFCs — document intake, validation, data pipelines, monitoring, and audit reporting — while keeping the final lending decision with human underwriters. AI accelerates operations, not approval.
 
-video url : https://res.cloudinary.com/dkqbzwicr/video/upload/v1784432840/claimsenseaivideo_vlfwnt.webm
+video url : https://res.cloudinary.com/dkqbzwicr/video/upload/v1785155313/nidhiflowvideo_e85bqi.webm
 
-github : https://github.com/narendraAnalytics/ClaimSense-AI.git
+github : https://github.com/narendraAnalytics/NidhiFlow-AI.git
 
-live site : https://claimsense-ai-rust.vercel.app/
+live site : https://nidhiflow-ai.vercel.app/
 
-techstack : Next.js 16 , FastAPI , Python , LangGraph ,  Sarvam Vision , Convex [Auth , DataBase] ,  Qudrant Cloud , Razorpay payment , CI/CD, Railway 
+techstack : Next.js 16 , FastAPI , Python , LangGraph ,  Sarvam Vision , Google Cloud Platform (Cloud Run, Cloud SQL, Secret Manager, Artifact Registry), Firebase (Auth, Storage), Docker,CI/CD, Kubernetes (GKE).
 
-cardimage : https://res.cloudinary.com/dkqbzwicr/image/upload/v1784434397/infographicclaimsense_kyc1wp.png
+cardimage : https://res.cloudinary.com/dkqbzwicr/image/upload/v1785211433/nidhiflowinfographic_gzrpeb.png

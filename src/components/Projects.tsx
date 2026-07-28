@@ -5,6 +5,17 @@ import ImageModal from '@/components/ImageModal';
 
 const projects = [
   {
+    name: 'NidhiFlow-AI', tag: 'Lending AI', mono: 'NF',
+    c: ['#1D4ED8', '#3B82F6'],
+    desc: 'Orchestrates the operational lifecycle of Home, Personal, and Business Loans for banks and NBFCs — document intake, validation, data pipelines, monitoring, and audit reporting — while keeping the final lending decision with human underwriters. AI accelerates operations, not approval.',
+    stack: ['Next.js 16', 'FastAPI', 'Python', 'LangGraph', 'Sarvam Vision', 'Google Cloud Platform', 'Firebase', 'Docker', 'CI/CD', 'Kubernetes (GKE)'],
+    video: undefined as string | undefined,
+    demoVideo: 'https://res.cloudinary.com/dkqbzwicr/video/upload/v1785155313/nidhiflowvideo_e85bqi.webm',
+    infographic: 'https://res.cloudinary.com/dkqbzwicr/image/upload/v1785211433/nidhiflowinfographic_gzrpeb.png',
+    github: 'https://github.com/narendraAnalytics/NidhiFlow-AI.git',
+    liveUrl: 'https://nidhiflow-ai.vercel.app/',
+  },
+  {
     name: 'ClaimSense-AI', tag: 'Insurance AI', mono: 'CS',
     c: ['#0F766E', '#059669'],
     desc: 'Transform insurance claim processing with a 10-agent AI pipeline that reads documents, validates policies and medical/billing evidence, scores fraud risk, searches historical precedent, recommends a settlement, pauses for human sign-off, and generates an adjuster-ready PDF — in minutes instead of days.',
