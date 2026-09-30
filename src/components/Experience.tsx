@@ -11,6 +11,7 @@ export default function Experience() {
           </p>
         </div>
         <div className="timeline">
+          <div className="tl-line" aria-hidden="true"><span /></div>
           <div className="tl-item cur reveal">
             <div className="node"><span className="core" /></div>
             <div className="tl-card now">

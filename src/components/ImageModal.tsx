@@ -84,7 +84,7 @@ export default function ImageModal({ src, name, onClose }: { src: string; name: 
   const cursor = zoom > 1 ? (dragging ? 'grabbing' : 'grab') : 'default';
 
   return (
-    <div style={{ position:'fixed', inset:0, zIndex:1001, background:'rgba(10,6,4,.92)', display:'flex', flexDirection:'column' }}>
+    <div data-lenis-prevent style={{ position:'fixed', inset:0, zIndex:1001, background:'rgba(10,6,4,.92)', display:'flex', flexDirection:'column' }}>
       <div style={{ flexShrink:0, background:'rgba(15,10,7,.85)', display:'flex', alignItems:'center', justifyContent:'space-between', padding:'11px 18px' }}>
         <span style={{ fontWeight:700, fontSize:'15px', color:cream }}>{name} Preview</span>
         <div style={{ display:'flex', alignItems:'center', gap:8 }}>

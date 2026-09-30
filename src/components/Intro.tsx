@@ -192,6 +192,8 @@ export default function Intro() {
       el.style.transform = 'scale(1.04)';
       el.style.filter = 'blur(5px)';
     });
+    // let the hero start animating while the splash is still fading out
+    setTimeout(() => dispatchEvent(new Event('intro:done')), 380);
     setTimeout(() => setVisible(false), 700);
   }
 

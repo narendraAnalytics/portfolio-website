@@ -210,6 +210,7 @@ function VideoModal({ src, name, onClose }: { src: string; name: string; onClose
 
   return (
     <div
+      data-lenis-prevent
       onClick={onClose}
       style={{
         position: 'fixed', inset: 0, zIndex: 1000,

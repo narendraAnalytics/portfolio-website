@@ -12,6 +12,11 @@ import BusinessCard from '@/components/BusinessCard';
 import Footer from '@/components/Footer';
 import Intro from '@/components/Intro';
 import ScrollEffects from '@/components/ScrollEffects';
+import SmoothScroll from '@/components/SmoothScroll';
+import Motion from '@/components/Motion';
+import Cursor from '@/components/Cursor';
+import Marquee from '@/components/Marquee';
+import BigStatement from '@/components/BigStatement';
 
 export default function Home() {
   return (
@@ -21,17 +26,22 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
+        <Marquee />
         <About />
         <Skills />
         <Projects />
         <Experience />
         <Services />
         <HowIWork />
+        <BigStatement />
         <Contact />
       </main>
       <BusinessCard />
       <Footer />
       <ScrollEffects />
+      <SmoothScroll />
+      <Motion />
+      <Cursor />
     </>
   );
 }

@@ -1,7 +1,10 @@
 'use client';
 
 import { useEffect } from 'react';
+import { getLenis } from '@/lib/lenis';
 
+/* Nav state, progress bar, drawer, counters and background particles.
+   Reveals, parallax and magnetic buttons live in Motion.tsx (GSAP). */
 export default function ScrollEffects() {
   useEffect(() => {
     const reduce = matchMedia('(prefers-reduced-motion:reduce)').matches;
@@ -27,7 +30,7 @@ export default function ScrollEffects() {
     /* ---------- active nav link ---------- */
     const navEl = document.getElementById('navlinks');
     const links = navEl ? [...navEl.querySelectorAll('a')] : [];
-    const sectionIds = ['home', 'about', 'skills', 'projects', 'experience', 'contact'];
+    const sectionIds = ['home', 'about', 'skills', 'projects', 'experience', 'services', 'howitworks', 'contact'];
     const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean) as HTMLElement[];
     function navCheck() {
       const mid = scrollY + innerHeight * 0.35;
@@ -45,27 +48,14 @@ export default function ScrollEffects() {
       drawer?.classList.toggle('open', open);
       burger?.classList.toggle('open', open);
       document.body.style.overflow = open ? 'hidden' : '';
+      const lenis = getLenis();
+      if (open) lenis?.stop(); else lenis?.start();
     }
-    burger?.addEventListener('click', () => setDrawer(!drawer?.classList.contains('open')));
-    drawer?.querySelectorAll('[data-close]').forEach(el =>
-      el.addEventListener('click', () => setDrawer(false))
-    );
-
-    /* ---------- scroll reveal ---------- */
-    const revealEls = [...document.querySelectorAll<HTMLElement>('.reveal')];
-    function revealCheck() {
-      const vh = innerHeight;
-      for (const el of revealEls) {
-        if (el.classList.contains('in')) continue;
-        const r = el.getBoundingClientRect();
-        if (r.top < vh * 0.9 && r.bottom > 0) el.classList.add('in');
-      }
-    }
-    addEventListener('scroll', revealCheck, { passive: true });
-    addEventListener('resize', revealCheck);
-    revealCheck();
-    let rb = 0;
-    const rbIv = setInterval(() => { revealCheck(); if (++rb > 10) clearInterval(rbIv); }, 140);
+    const onBurger = () => setDrawer(!drawer?.classList.contains('open'));
+    const onClose = () => setDrawer(false);
+    const closers = drawer ? [...drawer.querySelectorAll('[data-close]')] : [];
+    burger?.addEventListener('click', onBurger);
+    closers.forEach(el => el.addEventListener('click', onClose));
 
     /* ---------- animated counters ---------- */
     function runCount(el: HTMLElement) {
@@ -93,66 +83,10 @@ export default function ScrollEffects() {
     let cb = 0;
     const cbIv = setInterval(() => { countCheck(); if (++cb > 12) clearInterval(cbIv); }, 140);
 
-    /* ---------- magnetic buttons ---------- */
-    const cleanupMagnetic: (() => void)[] = [];
-    if (!reduce && matchMedia('(pointer:fine)').matches) {
-      document.querySelectorAll<HTMLElement>('[data-magnetic]').forEach(btn => {
-        const strength = 0.35;
-        function onMove(e: MouseEvent) {
-          const r = btn.getBoundingClientRect();
-          const x = e.clientX - r.left - r.width / 2;
-          const y = e.clientY - r.top - r.height / 2;
-          btn.style.transform = `translate(${x * strength}px, ${y * strength}px)`;
-        }
-        function onLeave() { btn.style.transform = ''; }
-        btn.addEventListener('mousemove', onMove);
-        btn.addEventListener('mouseleave', onLeave);
-        cleanupMagnetic.push(() => {
-          btn.removeEventListener('mousemove', onMove);
-          btn.removeEventListener('mouseleave', onLeave);
-        });
-      });
-    }
-
-    /* ---------- parallax: hero visual + floating cards ---------- */
-    const heroVisual = document.querySelector<HTMLElement>('.video-melt');
-    const cards = [...document.querySelectorAll<HTMLElement>('.float-card')];
-    let heroMouseMove: ((e: MouseEvent) => void) | null = null;
-    let heroMouseLeave: (() => void) | null = null;
-    if (!reduce && matchMedia('(pointer:fine)').matches) {
-      const hero = document.querySelector<HTMLElement>('.hero');
-      if (hero) {
-        heroMouseMove = (e: MouseEvent) => {
-          const r = hero.getBoundingClientRect();
-          const dx = (e.clientX - r.left - r.width / 2) / r.width;
-          const dy = (e.clientY - r.top - r.height / 2) / r.height;
-          if (heroVisual) heroVisual.style.transform = `translate(${dx * 12}px, ${dy * 10}px)`;
-          cards.forEach((c, i) => {
-            const f = (i + 1) * 9;
-            c.style.transform = `translate(${dx * -f}px, ${dy * -f}px)`;
-          });
-        };
-        heroMouseLeave = () => {
-          if (heroVisual) heroVisual.style.transform = '';
-          cards.forEach(c => c.style.transform = '');
-        };
-        hero.addEventListener('mousemove', heroMouseMove);
-        hero.addEventListener('mouseleave', heroMouseLeave);
-      }
-    }
-
-    /* scroll parallax on hero visual */
-    function scrollParallax() {
-      const y = scrollY;
-      if (y < innerHeight && heroVisual) {
-        heroVisual.style.setProperty('--py', (y * 0.06) + 'px');
-      }
-    }
-    if (!reduce) addEventListener('scroll', scrollParallax, { passive: true });
-
     /* ---------- floating particles ---------- */
     const canvas = document.getElementById('particles') as HTMLCanvasElement | null;
-    let raf: number;
+    let raf = 0;
+    let onResize: (() => void) | null = null;
     if (canvas && !reduce) {
       const ctx = canvas.getContext('2d')!;
       let w: number, h: number;
@@ -188,39 +122,20 @@ export default function ScrollEffects() {
         }
         raf = requestAnimationFrame(draw);
       }
-      function onResize() { cancelAnimationFrame(raf); resize(); draw(); }
+      onResize = () => { cancelAnimationFrame(raf); resize(); draw(); };
       resize(); draw();
       addEventListener('resize', onResize);
-
-      return () => {
-        removeEventListener('scroll', onScroll);
-        removeEventListener('scroll', navCheck);
-        removeEventListener('scroll', revealCheck);
-        removeEventListener('resize', revealCheck);
-        removeEventListener('scroll', countCheck);
-        if (!reduce) removeEventListener('scroll', scrollParallax);
-        clearInterval(rbIv); clearInterval(cbIv);
-        cleanupMagnetic.forEach(fn => fn());
-        const hero = document.querySelector<HTMLElement>('.hero');
-        if (hero && heroMouseMove) hero.removeEventListener('mousemove', heroMouseMove);
-        if (hero && heroMouseLeave) hero.removeEventListener('mouseleave', heroMouseLeave);
-        cancelAnimationFrame(raf);
-        removeEventListener('resize', onResize);
-      };
     }
 
     return () => {
       removeEventListener('scroll', onScroll);
       removeEventListener('scroll', navCheck);
-      removeEventListener('scroll', revealCheck);
-      removeEventListener('resize', revealCheck);
       removeEventListener('scroll', countCheck);
-      if (!reduce) removeEventListener('scroll', scrollParallax);
-      clearInterval(rbIv); clearInterval(cbIv);
-      cleanupMagnetic.forEach(fn => fn());
-      const hero = document.querySelector<HTMLElement>('.hero');
-      if (hero && heroMouseMove) hero.removeEventListener('mousemove', heroMouseMove);
-      if (hero && heroMouseLeave) hero.removeEventListener('mouseleave', heroMouseLeave);
+      clearInterval(cbIv);
+      burger?.removeEventListener('click', onBurger);
+      closers.forEach(el => el.removeEventListener('click', onClose));
+      cancelAnimationFrame(raf);
+      if (onResize) removeEventListener('resize', onResize);
     };
   }, []);
 
