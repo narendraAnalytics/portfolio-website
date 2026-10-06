@@ -4,6 +4,12 @@ export default function About() {
       <div className="wrap">
         <div className="about-img-col reveal">
           <div className="about-card">
+            <span className="about-orb o1" aria-hidden="true" />
+            <span className="about-orb o2" aria-hidden="true" />
+            <div className="about-status">
+              <span className="dot" />
+              Available for new projects
+            </div>
             <p className="quote">
               I transform complex ideas into{' '}
               <em>scalable, business-ready</em> products with modern UI/UX and real-world impact.

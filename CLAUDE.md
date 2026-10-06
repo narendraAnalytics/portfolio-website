@@ -30,7 +30,7 @@ No test or lint scripts are configured. Verify with `npx tsc --noEmit -p .` (fas
 Tailwind CSS v4 via `@tailwindcss/postcss` (configured in `postcss.config.mjs`). No `tailwind.config` file — v4 uses CSS-native configuration. Custom styles in `globals.css` are preferred over Tailwind utilities for this project.
 
 - Palette: warm cream / coral / soft orange / gold / mint. **No pure black, white, blue or violet** — dark surfaces use the ink-green family (`--ink` `#234B43`, footer `#17362F`).
-- Tinted cards share tokens `:is(.hiw-card,.bento).t-coral|t-gold|t-mint|t-orange` → `--bg`, `--acc`, `--orb`.
+- Tinted cards share tokens `:is(.hiw-card,.bento,.stack-card).t-coral|t-gold|t-mint|t-orange` → `--bg`, `--acc`, `--orb`.
 - Cards in Motion.tsx's `SPOT` list get a cursor spotlight via `--mx/--my` (`::after`, `z-index:-1` inside an `isolation:isolate` card) and a gradient hairline on hover (`::before`).
 - `.sec-head::before` renders the big outlined chapter numeral via a CSS counter on `main` — no markup needed.
 - `body::after` is a fixed SVG film-grain overlay (`pointer-events:none`).
@@ -72,7 +72,7 @@ Tailwind CSS v4 via `@tailwindcss/postcss` (configured in `postcss.config.mjs`).
 | `Hero.tsx` | Hero section — video served from Cloudinary (not local); `data-count` on counter drives animated number |
 | `Marquee.tsx` | Two opposing CSS marquee rows of stack keywords |
 | `About.tsx` | About card + stats (paragraphs get a scroll-scrubbed word highlight) |
-| `Skills.tsx` | Tech stack grid |
+| `Skills.tsx` | Tech stack bento (data-driven `groups` array): tall ink-green Agentic AI card + frosted glass cards, tool chips with auto monograms, oversized watermark icon |
 | `Projects.tsx` | Horizontal snap-scroll carousel — see below. Cards tilt via `--rx/--ry` CSS vars |
 | `Experience.tsx` | Career timeline — `.tl-line span` is drawn by GSAP on scroll |
 | `Services.tsx` | Bento grid (`.svc-bento`, big card spans 2 rows); each card has a looping SVG/CSS motion graphic (agent graph, app mock, live chart) that only runs while `.bento.play` |
