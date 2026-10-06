@@ -370,10 +370,15 @@ const btnStyle: React.CSSProperties = {
   transition: 'background .18s',
 };
 
+/* chips shown before collapsing the rest into "+N more" */
+const STACK_SHOWN = 5;
+
+const liveUrl = (p: (typeof projects)[number]) => (p as typeof p & { liveUrl?: string }).liveUrl;
+
 /* ── Icons ───────────────────────────────────────────── */
-const IconDemo = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M15 3h6v6M10 14 21 3M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5" />
+const IconPlay = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.6-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5Z" />
   </svg>
 );
 
@@ -543,39 +548,49 @@ export default function Projects() {
                       />
                     )}
                     <span className="badge">{p.tag}</span>
+                    {liveUrl(p) && <span className="live"><span className="dot" />Live</span>}
                     <span className="mono" style={p.infographic ? { opacity:0 } : {}}>{p.mono}</span>
                     {p.video && <video src={p.video} muted loop playsInline />}
                   </div>
                   <div className="body">
                     <h3>{p.name}</h3>
                     <p className="desc">{p.desc}</p>
-                    <div className="stack">
-                      {p.stack.map(s => <span key={s}>{s}</span>)}
-                    </div>
-                    <div className="links">
-                      <ProjIconBtn
-                        label="View Live Demo"
-                        color="#ED6A45"
-                        onClick={p.demoVideo ? (e) => { e.preventDefault(); setOpenDemo({ src: p.demoVideo!, name: p.name }); } : undefined}
-                      >
-                        <IconDemo />
-                      </ProjIconBtn>
-                      <ProjIconBtn
-                        label="View GitHub"
-                        color="#234B43"
-                        href={p.github ?? '#'}
-                      >
-                        <IconCode />
-                      </ProjIconBtn>
-                      {(p as typeof p & { liveUrl?: string }).liveUrl && (
-                        <ProjIconBtn
-                          label="View Live Site"
-                          color="#4ECDC4"
-                          href={(p as typeof p & { liveUrl?: string }).liveUrl}
-                        >
-                          <IconGlobe />
-                        </ProjIconBtn>
+                    <ul className="stack">
+                      {p.stack.slice(0, STACK_SHOWN).map(s => <li key={s}>{s}</li>)}
+                      {p.stack.length > STACK_SHOWN && (
+                        <li className="more" title={p.stack.slice(STACK_SHOWN).join(', ')}>
+                          +{p.stack.length - STACK_SHOWN} more
+                        </li>
                       )}
+                    </ul>
+                    <div className="links">
+                      {p.demoVideo && (
+                        <button
+                          className="proj-demo"
+                          onClick={() => setOpenDemo({ src: p.demoVideo!, name: p.name })}
+                        >
+                          <IconPlay />
+                          Watch demo
+                        </button>
+                      )}
+                      <div className="proj-icons">
+                        <ProjIconBtn
+                          label="View GitHub"
+                          color="#234B43"
+                          href={p.github ?? '#'}
+                        >
+                          <IconCode />
+                        </ProjIconBtn>
+                        {liveUrl(p) && (
+                          <ProjIconBtn
+                            label="View Live Site"
+                            color="#ED6A45"
+                            href={liveUrl(p)}
+                          >
+                            <IconGlobe />
+                          </ProjIconBtn>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </article>
