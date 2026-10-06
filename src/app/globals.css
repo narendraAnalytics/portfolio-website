@@ -548,31 +548,98 @@ main{ counter-reset:sec; }
 /* ============================================================
    EXPERIENCE TIMELINE
    ============================================================ */
-.timeline{ position:relative; margin-top:20px; }
+/* two columns: sticky year scrubber (left) + timeline (right) */
+.xp-grid{ display:grid; grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr); gap:72px; align-items:start; margin-top:20px; }
+.xp-aside{ position:sticky; top:calc(var(--nav-h) + 48px); }
+.xp-year{ display:flex; font-family:var(--font-display), "Sora", system-ui, sans-serif; font-weight:800;
+  font-size:clamp(5rem,10vw,9rem); line-height:.9; letter-spacing:-.06em; color:var(--ink);
+  font-variant-numeric:tabular-nums; }
+/* each digit is a masked cell; old + new spans share the cell while they slide */
+.xp-year .d{ display:inline-grid; overflow:hidden; padding-bottom:.04em; }
+.xp-year .d > span{ grid-area:1/1; }
+.xp-year .d:nth-child(n+3) > span{ background:linear-gradient(160deg, var(--coral), var(--gold));
+  -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+.xp-role{ margin-top:16px; max-width:22ch; min-height:2.5em; font-family:var(--font-display), "Sora", system-ui, sans-serif;
+  font-weight:700; font-size:1.15rem; line-height:1.25; letter-spacing:-.015em; color:var(--ink-soft); }
+.xp-index{ list-style:none; margin-top:30px; border-top:1px solid rgba(35,75,67,.12); }
+.xp-index a{ position:relative; display:flex; align-items:baseline; gap:18px; padding:13px 0;
+  border-bottom:1px solid rgba(35,75,67,.12); color:var(--ink-mute); transition:color .4s var(--ease); }
+.xp-index a::after{ content:""; position:absolute; left:0; bottom:-1px; height:2px; width:100%; border-radius:2px;
+  background:linear-gradient(90deg, var(--coral), var(--gold)); transform:scaleX(0); transform-origin:left;
+  transition:transform .7s var(--ease-out); }
+.xp-index .y{ font-family:var(--font-display), "Sora", system-ui, sans-serif; font-weight:700; font-size:13px;
+  font-variant-numeric:tabular-nums; transition:color .4s; }
+.xp-index .t{ font-weight:600; font-size:15px; transition:transform .5s var(--ease-out); }
+.xp-index a:hover{ color:var(--ink); }
+.xp-index a.on{ color:var(--ink); }
+.xp-index a.on .y{ color:var(--coral); }
+.xp-index a.on .t{ transform:translateX(6px); }
+.xp-index a.on::after{ transform:scaleX(1); }
+.xp-index a:focus-visible{ outline:2px solid var(--coral); outline-offset:4px; border-radius:6px; }
+
+.timeline{ position:relative; }
 /* faint base track; .tl-line span is the bright fill GSAP draws on scroll */
 .timeline::before{ content:""; position:absolute; left:31px; top:6px; bottom:6px; width:3px; border-radius:3px;
-  background:rgba(237,106,69,.14); }
+  background:rgba(35,75,67,.1); }
 .tl-line{ position:absolute; left:31px; top:6px; bottom:6px; width:3px; border-radius:3px; z-index:1; }
 .tl-line span{ display:block; height:100%; border-radius:3px; transform-origin:top;
   background:linear-gradient(var(--gold), var(--coral), var(--mint-deep)); box-shadow:0 0 14px rgba(237,106,69,.45); }
-.tl-item{ position:relative; padding:0 0 38px 86px; }
+/* glowing head riding the tip of the drawn line (only once GSAP is live) */
+.tl-comet{ position:absolute; left:25.5px; top:0; z-index:3; width:14px; height:14px; margin-top:-7px; border-radius:50%;
+  background:var(--cream); box-shadow:0 0 0 4px rgba(237,106,69,.4), 0 0 26px 8px rgba(237,106,69,.55); display:none; }
+.experience.is-live .tl-comet{ display:block; }
+
+.tl-item{ position:relative; padding:0 0 30px 86px; }
 .tl-item:last-child{ padding-bottom:0; }
-.tl-item .node{ position:absolute; left:14px; top:2px; width:38px; height:38px; border-radius:50%;
+.tl-item .node{ position:absolute; left:14px; top:22px; width:38px; height:38px; border-radius:50%;
   background:var(--card); display:grid; place-items:center; box-shadow:0 0 0 5px var(--cream), var(--shadow-sm);
-  z-index:2; }
-.tl-item .node .core{ width:14px; height:14px; border-radius:50%;
-  background:linear-gradient(135deg, var(--coral-soft), var(--coral)); box-shadow:0 0 0 0 var(--ring); }
-.tl-item.cur .node .core{ animation:pulse 2.2s infinite; }
-.tl-card{ background:var(--card); border-radius:20px; padding:22px 24px; box-shadow:var(--shadow-sm);
-  border:1px solid rgba(237,106,69,.1); transition:transform .35s var(--ease), box-shadow .35s var(--ease); }
-.tl-card:hover{ transform:translateX(6px); box-shadow:var(--shadow); }
-.tl-card .yr{ font-family:var(--font-display), "Sora", system-ui, sans-serif; font-weight:700; font-size:13px; color:var(--coral);
-  letter-spacing:.05em; }
-.tl-card h3{ font-family:var(--font-display), "Sora", system-ui, sans-serif; font-weight:700; font-size:1.18rem; color:var(--ink); margin-top:4px; }
-.tl-card .org{ font-size:14px; color:var(--mint-deep); font-weight:600; }
-.tl-card p{ font-size:14px; color:var(--ink-soft); margin-top:8px; }
-.tl-card.now{ background:linear-gradient(135deg, rgba(237,106,69,.1), rgba(244,166,92,.12));
-  border-color:rgba(237,106,69,.25); }
+  z-index:2; transition:background .5s var(--ease); }
+.tl-item .node .core{ width:14px; height:14px; border-radius:50%; background:rgba(35,75,67,.22);
+  box-shadow:0 0 0 0 var(--ring); transition:background .5s var(--ease), transform .5s var(--ease-out); }
+.tl-item.on .node .core{ background:linear-gradient(135deg, var(--coral-soft), var(--coral)); transform:scale(1.15); }
+.tl-item.cur .node .core{ background:linear-gradient(135deg, var(--coral-soft), var(--coral)); animation:pulse 2.2s infinite; }
+
+.tl-card{ position:relative; overflow:hidden; border-radius:24px; padding:24px 26px;
+  background:rgba(255,251,246,.72); -webkit-backdrop-filter:blur(14px) saturate(1.2); backdrop-filter:blur(14px) saturate(1.2);
+  border:1px solid rgba(255,251,246,.95); box-shadow:var(--shadow-sm), inset 0 1px 0 rgba(255,251,246,.95);
+  transition:transform .6s var(--ease-out), box-shadow .5s var(--ease), opacity .6s var(--ease), filter .6s var(--ease); }
+/* roles not in focus step back; hover or focus brings them forward */
+.experience.is-live .tl-item:not(.on) .tl-card{ opacity:.5; filter:saturate(.5); transform:scale(.97); }
+.experience.is-live .tl-item .tl-card:hover{ opacity:1; filter:none; transform:translateX(6px); box-shadow:var(--shadow); }
+.experience.is-live .tl-item.on .tl-card{ box-shadow:var(--shadow); }
+.tl-card .yr{ display:inline-flex; align-items:center; gap:8px; padding:5px 12px; border-radius:999px;
+  font-family:var(--font-display), "Sora", system-ui, sans-serif; font-weight:700; font-size:12.5px; color:var(--coral);
+  background:rgba(237,106,69,.08); border:1px solid rgba(237,106,69,.2); font-variant-numeric:tabular-nums; }
+.tl-card .yr .live{ position:relative; width:7px; height:7px; border-radius:50%; background:var(--mint); }
+.tl-card .yr .live::after{ content:""; position:absolute; inset:0; border-radius:50%; background:var(--mint);
+  animation:ping 1.8s var(--ease-out) infinite; }
+.tl-card h3{ font-family:var(--font-display), "Sora", system-ui, sans-serif; font-weight:700;
+  font-size:clamp(1.15rem,1.7vw,1.35rem); line-height:1.2; letter-spacing:-.02em; color:var(--ink); margin-top:14px; }
+.tl-card .org{ font-size:14px; color:var(--mint-deep); font-weight:600; margin-top:4px; }
+.tl-card p{ font-size:14.5px; line-height:1.65; color:var(--ink-soft); margin-top:10px; }
+
+/* current role: the ink card */
+.tl-card.now{ color:var(--cream); border-color:rgba(255,247,239,.1);
+  background:
+    radial-gradient(360px circle at 100% 0%, rgba(147,196,164,.24), transparent 60%),
+    radial-gradient(320px circle at 0% 100%, rgba(237,106,69,.26), transparent 62%),
+    linear-gradient(160deg, #22483F 0%, #1B3F37 45%, #17362F 100%); }
+.tl-card.now .yr{ color:var(--mint); background:rgba(147,196,164,.1); border-color:rgba(147,196,164,.3); }
+.tl-card.now h3{ color:var(--cream); }
+.tl-card.now .org{ color:var(--mint); }
+.tl-card.now p{ color:rgba(255,247,239,.72); }
+
+@media (max-width:900px){
+  .xp-grid{ grid-template-columns:1fr; gap:0; }
+  .xp-aside{ display:none; }
+}
+@media (max-width:620px){
+  .tl-item{ padding-left:58px; }
+  .timeline::before, .tl-line{ left:17px; }
+  .tl-comet{ left:11.5px; }
+  .tl-item .node{ left:0; width:34px; height:34px; }
+  .tl-card{ padding:20px; }
+}
 
 /* ============================================================
    SERVICES

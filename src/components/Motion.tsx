@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SplitText } from 'gsap/SplitText';
+import { getLenis } from '@/lib/lenis';
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -122,18 +123,73 @@ export default function Motion() {
       });
     }
 
-    /* ---------- experience: line draws itself, nodes pop as it passes ---------- */
+    /* ---------- experience: line + comet draw on scroll, active role drives the sticky year ---------- */
     function timeline() {
-      const fill = document.querySelector('.tl-line span');
-      if (fill) gsap.fromTo(fill, { scaleY: 0 }, {
-        scaleY: 1, ease: 'none',
-        scrollTrigger: { trigger: '.timeline', start: 'top 65%', end: 'bottom 65%', scrub: true },
-      });
+      const root = document.querySelector<HTMLElement>('.timeline');
+      if (!root) return;
+      const draw = { trigger: root, start: 'top 60%', end: 'bottom 60%', scrub: true };
+      const fill = root.querySelector('.tl-line span');
+      if (fill) gsap.fromTo(fill, { scaleY: 0 }, { scaleY: 1, ease: 'none', scrollTrigger: draw });
+      const comet = root.querySelector('.tl-comet');
+      if (comet) gsap.fromTo(comet, { top: '0%' }, { top: '100%', ease: 'none', scrollTrigger: draw });
       gsap.utils.toArray<HTMLElement>('.tl-item .node').forEach(node => {
         gsap.from(node, {
           scale: 0.2, opacity: 0, duration: 0.8, ease: 'back.out(2.4)',
           scrollTrigger: { trigger: node, start: 'top 66%', once: true },
         });
+      });
+
+      const items = gsap.utils.toArray<HTMLElement>('.tl-item');
+      const links = gsap.utils.toArray<HTMLAnchorElement>('.xp-index a');
+      const year = document.querySelector<HTMLElement>('.xp-year');
+      const role = document.querySelector<HTMLElement>('.xp-role');
+      root.closest('.experience')?.classList.add('is-live');
+
+      // odometer: each digit cell stacks old/new spans and slides them past each other
+      const roll = (text: string, dir: number) => {
+        if (!year) return;
+        const cells = [...year.querySelectorAll<HTMLElement>('.d')];
+        text.split('').forEach((ch, k) => {
+          const cell = cells[k];
+          const old = cell?.lastElementChild as HTMLElement | null;
+          if (!cell || old?.textContent === ch) return;
+          const nu = document.createElement('span');
+          nu.textContent = ch;
+          cell.appendChild(nu);
+          const d = k * 0.07;
+          gsap.fromTo(nu, { yPercent: 110 * dir }, { yPercent: 0, duration: 0.9, ease: 'expo.out', delay: d });
+          if (old) gsap.to(old, { yPercent: -110 * dir, duration: 0.9, ease: 'expo.out', delay: d, onComplete: () => old.remove() });
+        });
+      };
+
+      let cur = 0;
+      const setActive = (i: number) => {
+        if (i === cur) return;
+        const dir = i > cur ? 1 : -1;
+        cur = i;
+        items.forEach((el, k) => el.classList.toggle('on', k === i));
+        links.forEach((el, k) => el.classList.toggle('on', k === i));
+        roll(items[i].dataset.year ?? '', dir);
+        if (role) {
+          role.textContent = items[i].querySelector('h3')?.textContent ?? '';
+          gsap.fromTo(role, { opacity: 0, y: 14 * dir }, { opacity: 1, y: 0, duration: 0.6, ease: EASE });
+        }
+      };
+      items.forEach((el, i) => ScrollTrigger.create({
+        trigger: el, start: 'top 60%', end: 'bottom 60%',
+        onToggle: self => { if (self.isActive) setActive(i); },
+      }));
+
+      // index jumps land the role just past the activation line
+      links.forEach((a, i) => {
+        const go = (e: MouseEvent) => {
+          const lenis = getLenis();
+          if (!lenis) return;
+          e.preventDefault();
+          lenis.scrollTo(items[i], { offset: -innerHeight * 0.4 });
+        };
+        a.addEventListener('click', go);
+        cleanups.push(() => a.removeEventListener('click', go));
       });
     }
 

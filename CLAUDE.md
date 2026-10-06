@@ -74,7 +74,7 @@ Tailwind CSS v4 via `@tailwindcss/postcss` (configured in `postcss.config.mjs`).
 | `About.tsx` | About card + stats (paragraphs get a scroll-scrubbed word highlight) |
 | `Skills.tsx` | Tech stack bento (data-driven `groups` array): tall ink-green Agentic AI card + frosted glass cards, tool chips with auto monograms, oversized watermark icon |
 | `Projects.tsx` | Horizontal snap-scroll carousel — see below. Cards tilt via `--rx/--ry` CSS vars |
-| `Experience.tsx` | Career timeline — `.tl-line span` is drawn by GSAP on scroll |
+| `Experience.tsx` | Career timeline (data-driven `roles` array) with sticky `.xp-aside` year scrubber. Motion.tsx draws `.tl-line span` + `.tl-comet`, sets `.on` on the active `.tl-item` + `.xp-index a`, rolls the `.xp-year` digits; dimming only applies under `.experience.is-live` (GSAP running) |
 | `Services.tsx` | Bento grid (`.svc-bento`, big card spans 2 rows); each card has a looping SVG/CSS motion graphic (agent graph, app mock, live chart) that only runs while `.bento.play` |
 | `HowIWork.tsx` | Stacking sticky cards (`.hiw-card`, `top` offset by `--i`); GSAP shrinks/dims the card underneath; numerals fill on `.lit` |
 | `BigStatement.tsx` | Giant filled/outline type rows scrubbed sideways |
