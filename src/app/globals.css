@@ -329,8 +329,8 @@ main{ counter-reset:sec; }
    ============================================================ */
 .skills{ background:linear-gradient(180deg, transparent, rgba(251,227,212,.5), transparent); }
 /* asymmetric bento: agentic AI (the specialty) is the tall ink card, the rest are frosted glass */
-.stack-grid{ display:grid; grid-template-columns:1.1fr 1fr 1fr; grid-template-areas:"ai fs fs" "ai da cl"; gap:22px; }
-.sc-ai{ grid-area:ai; } .sc-fs{ grid-area:fs; } .sc-da{ grid-area:da; } .sc-cl{ grid-area:cl; }
+.stack-grid{ display:grid; grid-template-columns:1.1fr 1fr 1fr; grid-template-areas:"ai fs fs" "ai da cl" "cr cr cr"; gap:22px; }
+.sc-ai{ grid-area:ai; } .sc-fs{ grid-area:fs; } .sc-da{ grid-area:da; } .sc-cl{ grid-area:cl; } .sc-cr{ grid-area:cr; }
 .stack-card{ position:relative; overflow:hidden; display:flex; flex-direction:column; padding:28px; border-radius:28px;
   background:
     radial-gradient(420px circle at 100% 0%, color-mix(in srgb, var(--orb) 45%, transparent), transparent 62%),
@@ -394,11 +394,11 @@ main{ counter-reset:sec; }
 .sc-ai .tag:hover .mono{ background:var(--mint); color:var(--ink); }
 
 @media (max-width:1080px){
-  .stack-grid{ grid-template-columns:1fr 1fr; grid-template-areas:"ai ai" "fs fs" "da cl"; }
+  .stack-grid{ grid-template-columns:1fr 1fr; grid-template-areas:"ai ai" "fs fs" "da cl" "cr cr"; }
   .sc-ai .sc-mark{ width:260px; height:260px; top:auto; bottom:-50px; right:-40px; }
 }
 @media (max-width:700px){
-  .stack-grid{ grid-template-columns:1fr; grid-template-areas:"ai" "fs" "da" "cl"; gap:16px; }
+  .stack-grid{ grid-template-columns:1fr; grid-template-areas:"ai" "fs" "da" "cl" "cr"; gap:16px; }
   .stack-card, .stack-card.sc-ai{ padding:24px 20px; border-radius:24px; }
 }
 

@@ -56,6 +56,22 @@ const groups: Group[] = [
     icon: <path d="M17.5 19a4.5 4.5 0 0 0 .5-9 6 6 0 0 0-11.6-1.5A4 4 0 0 0 6 19Z" />,
     tools: ['GCP', 'Azure', 'Vercel', 'Render', 'PostgreSQL', 'REST APIs', 'OAuth', 'GitHub', 'Inngest', 'Convex', 'CI/CD'],
   },
+  {
+    key: 'cr',
+    tint: 'gold',
+    title: 'Brand, Motion & Launch Video',
+    sub: 'Brand sites, dashboards & launch films — built with Claude Code',
+    icon: (
+      <>
+        <rect x="3" y="5" width="18" height="14" rx="3" />
+        <path d="m10 9.5 5 2.5-5 2.5Z" />
+      </>
+    ),
+    tools: [
+      'Claude Code', 'Remotion', 'Blender', 'GSAP', 'Lenis', 'Product Launch Videos',
+      'Motion Graphics', 'Brand Websites', 'Dashboard Design', 'Design Systems',
+    ],
+  },
 ];
 
 /* "Tailwind CSS" → TC, "Next.js" → N, "GCP" → GC */
