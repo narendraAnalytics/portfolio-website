@@ -5,6 +5,17 @@ import ImageModal from '@/components/ImageModal';
 
 const projects = [
   {
+    name: 'Taskora', tag: 'Voice AI', mono: 'TA',
+    c: ['#C2410C', '#F59E0B'],
+    desc: 'Voice-first AI work coordinator for internship programs, training institutes and small teams (5–50 people). Organizers talk to it like Jarvis; interns give 20-second voice standups.',
+    stack: ['Next.js 16', 'FastAPI', 'Python', 'Clerk', 'Sarvam Bulbul v3', 'Resend', 'Neon Postgres'],
+    video: undefined as string | undefined,
+    demoVideo: 'https://res.cloudinary.com/dkqbzwicr/video/upload/v1792594914/taskora-tutorial_qwaqs4.mp4',
+    infographic: 'https://res.cloudinary.com/dkqbzwicr/image/upload/v1794051428/Friendly_AI_Robot_in_Sunset_Office_zemyit.png',
+    github: 'https://github.com/narendraAnalytics/taskora-the-voice-assistant-.git',
+    liveUrl: 'https://taskora-kappa-seven.vercel.app/',
+  },
+  {
     name: 'NidhiFlow-AI', tag: 'Lending AI', mono: 'NF',
     c: ['#1D4ED8', '#3B82F6'],
     desc: 'Orchestrates the operational lifecycle of Home, Personal, and Business Loans for banks and NBFCs — document intake, validation, data pipelines, monitoring, and audit reporting — while keeping the final lending decision with human underwriters. AI accelerates operations, not approval.',
@@ -502,14 +513,14 @@ export default function Projects() {
             <span className="eyebrow"><span className="dot" /> AI &amp; SaaS Projects</span>
             <h2 className="h-sec">Intelligent products, <span className="accent">shipped end to end.</span></h2>
             <p className="lead">
-              Fourteen products, all live in production — each with a working demo, a public repo and
+              Fifteen products, all live in production — each with a working demo, a public repo and
               a real user problem behind it. Explore them below.
             </p>
           </div>
 
           <div className="results-strip reveal" data-delay="1">
             <div className="rs-item">
-              <div className="rs-n" data-count="14">0</div>
+              <div className="rs-n" data-count="15">0</div>
               <div className="rs-l">products live in production</div>
             </div>
             <div className="rs-item">
