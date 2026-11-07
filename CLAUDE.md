@@ -102,7 +102,7 @@ Tailwind CSS v4 via `@tailwindcss/postcss` (configured in `postcss.config.mjs`).
 
 ### Projects carousel (`Projects.tsx`)
 
-`'use client'` component. 15 projects currently in the `projects` array ordered: Taskora → NidhiFlow-AI → ClaimSense-AI → Vaakya → Navajeevana Ortho → NivedanAI → PratibhaAI → ViswaSethu → TutorTalk → ActaFlow → DueMate → Thumbl → NewsPulseAI → Professional Lifestyle Shoot → QuickSpot.
+`'use client'` component. 16 projects currently in the `projects` array ordered: Taskora → InsightsFlow → NidhiFlow-AI → ClaimSense-AI → Vaakya → Navajeevana Ortho → NivedanAI → PratibhaAI → ViswaSethu → TutorTalk → ActaFlow → DueMate → Thumbl → NewsPulseAI → Professional Lifestyle Shoot → QuickSpot.
 
 **Per-project data fields:**
 ```ts
@@ -120,7 +120,7 @@ Tailwind CSS v4 via `@tailwindcss/postcss` (configured in `postcss.config.mjs`).
 }
 ```
 
-**Adding a new project:** append an object to the `projects` array, then update the product count everywhere it appears: `data-count` in `Hero.tsx`, the results-strip `rs-n` `data-count` in `Projects.tsx`, the spelled-out number in the Hero subtitle ("Fifteen…"), and the "Products shipped" `data-count` in `About.tsx`.
+**Adding a new project:** append an object to the `projects` array, then update the product count everywhere it appears: `data-count` in `Hero.tsx`, the results-strip `rs-n` `data-count` in `Projects.tsx`, the spelled-out number in the Hero subtitle ("Sixteen…"), and the "Products shipped" `data-count` in `About.tsx`.
 
 **Carousel layout** — horizontal `display:flex` track with `scroll-snap-type:x mandatory`. Card width is set by JS (`useEffect` + `window.resize`) via CSS custom property `--card-w` on the track. Formula: `(containerWidth - 2*24) / 3` for exactly 3 cards per view. CSS `%` inside `overflow-x:auto` containers does not resolve to visible width — that's why JS measurement is used. Mobile (<620px): `containerWidth - 40`.
 

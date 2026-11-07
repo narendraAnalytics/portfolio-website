@@ -37,7 +37,7 @@ src/
     Hero.tsx          # Hero section with autoplay video (right column)
     About.tsx         # About card, stats, specialisation pills
     Skills.tsx        # 4-card tech stack grid
-    Projects.tsx      # 15 AI/SaaS project cards (client component)
+    Projects.tsx      # 16 AI/SaaS project cards (client component)
     Experience.tsx    # Career timeline (2011 → present)
     Services.tsx      # 3 service cards
     Contact.tsx       # Contact form with validation + info links
@@ -90,7 +90,7 @@ npm run start   # serve production build locally
 - **Hero** — autoplay video (feathered radial-gradient mask), coral CTAs, animated chips
 - **About** — quote card, animated stats counters, specialisation pills
 - **Skills** — Full-Stack · Agentic AI · Data Analytics · Cloud/Deploy
-- **Projects** — Taskora · NidhiFlow-AI · ClaimSense-AI · Vaakya · Navajeevana Ortho · NivedanAI · PratibhaAI · ViswaSethu · TutorTalk · ActaFlow · DueMate · Thumbl · NewsPulseAI · Lifestyle Shoot · QuickSpot
+- **Projects** — Taskora · InsightsFlow · NidhiFlow-AI · ClaimSense-AI · Vaakya · Navajeevana Ortho · NivedanAI · PratibhaAI · ViswaSethu · TutorTalk · ActaFlow · DueMate · Thumbl · NewsPulseAI · Lifestyle Shoot · QuickSpot
 - **Experience** — Career timeline from 2011 to present
 - **Services** — Agentic AI Systems · Full-Stack SaaS · Automation & Dashboards
 - **Contact** — Terminal-style form with step-by-step submission feedback

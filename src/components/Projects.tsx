@@ -16,6 +16,17 @@ const projects = [
     liveUrl: 'https://taskora-kappa-seven.vercel.app/',
   },
   {
+    name: 'InsightsFlow', tag: 'Business Intelligence AI', mono: 'IF',
+    c: ['#0F766E', '#F59E0B'],
+    desc: 'AI Business Intelligence Agent — a production-grade, multi-step agent that connects Google Sheets, Slack and Notion to an intelligent analytics system, so you can ask questions about your business data in natural language or by voice.',
+    stack: ['Next.js 16', 'FastAPI', 'Python', 'Clerk', 'LangGraph', 'Sarvam-105B', 'Razorpay', 'Render'],
+    video: undefined as string | undefined,
+    demoVideo: 'https://res.cloudinary.com/dkqbzwicr/video/upload/v1791442938/insightflowvideo_hxuxmb.webm',
+    infographic: 'https://res.cloudinary.com/dkqbzwicr/image/upload/v1794052701/Neon_Insights_Flow_Office_at_Night_rugagk.png',
+    github: 'https://github.com/narendraAnalytics/insightsflow.git',
+    liveUrl: 'https://insightsflow.vercel.app/',
+  },
+  {
     name: 'NidhiFlow-AI', tag: 'Lending AI', mono: 'NF',
     c: ['#1D4ED8', '#3B82F6'],
     desc: 'Orchestrates the operational lifecycle of Home, Personal, and Business Loans for banks and NBFCs — document intake, validation, data pipelines, monitoring, and audit reporting — while keeping the final lending decision with human underwriters. AI accelerates operations, not approval.',
@@ -513,14 +524,14 @@ export default function Projects() {
             <span className="eyebrow"><span className="dot" /> AI &amp; SaaS Projects</span>
             <h2 className="h-sec">Intelligent products, <span className="accent">shipped end to end.</span></h2>
             <p className="lead">
-              Fifteen products, all live in production — each with a working demo, a public repo and
+              Sixteen products, all live in production — each with a working demo, a public repo and
               a real user problem behind it. Explore them below.
             </p>
           </div>
 
           <div className="results-strip reveal" data-delay="1">
             <div className="rs-item">
-              <div className="rs-n" data-count="15">0</div>
+              <div className="rs-n" data-count="16">0</div>
               <div className="rs-l">products live in production</div>
             </div>
             <div className="rs-item">
