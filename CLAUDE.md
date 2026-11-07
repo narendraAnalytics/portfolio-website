@@ -102,7 +102,7 @@ Tailwind CSS v4 via `@tailwindcss/postcss` (configured in `postcss.config.mjs`).
 
 ### Projects carousel (`Projects.tsx`)
 
-`'use client'` component. 14 projects currently in the `projects` array ordered: NidhiFlow-AI → ClaimSense-AI → Vaakya → Navajeevana Ortho → NivedanAI → PratibhaAI → ViswaSethu → TutorTalk → ActaFlow → DueMate → Thumbl → NewsPulseAI → Professional Lifestyle Shoot → QuickSpot.
+`'use client'` component. 15 projects currently in the `projects` array ordered: Taskora → NidhiFlow-AI → ClaimSense-AI → Vaakya → Navajeevana Ortho → NivedanAI → PratibhaAI → ViswaSethu → TutorTalk → ActaFlow → DueMate → Thumbl → NewsPulseAI → Professional Lifestyle Shoot → QuickSpot.
 
 **Per-project data fields:**
 ```ts
@@ -120,7 +120,7 @@ Tailwind CSS v4 via `@tailwindcss/postcss` (configured in `postcss.config.mjs`).
 }
 ```
 
-**Adding a new project:** append an object to the `projects` array, then update the product count everywhere it appears: `data-count` in `Hero.tsx`, the spelled-out number in the Hero subtitle ("Fourteen…"), and the "Products shipped" `data-count` in `About.tsx`.
+**Adding a new project:** append an object to the `projects` array, then update the product count everywhere it appears: `data-count` in `Hero.tsx`, the results-strip `rs-n` `data-count` in `Projects.tsx`, the spelled-out number in the Hero subtitle ("Fifteen…"), and the "Products shipped" `data-count` in `About.tsx`.
 
 **Carousel layout** — horizontal `display:flex` track with `scroll-snap-type:x mandatory`. Card width is set by JS (`useEffect` + `window.resize`) via CSS custom property `--card-w` on the track. Formula: `(containerWidth - 2*24) / 3` for exactly 3 cards per view. CSS `%` inside `overflow-x:auto` containers does not resolve to visible width — that's why JS measurement is used. Mobile (<620px): `containerWidth - 40`.
 
@@ -149,6 +149,26 @@ All video and image assets are hosted on **Cloudinary** (`res.cloudinary.com/dkq
 
 Production URL: **https://buildflows.shop/**
 Hosting: Vercel (linked to custom domain `buildflows.shop`)
+
+## Promo Video (separate project)
+
+A 60s motion-graphic promo of the portfolio lives in the **sibling folder `../portfolio-video`** — deliberately outside this repo so it never touches the Next.js build, `tsconfig`, or pages. Built with **Remotion 4** (React → MP4).
+
+```bash
+cd ../portfolio-video
+npm run studio   # preview in Remotion Studio
+npm run render   # → out/portfolio-promo.mp4 (1920×1080, 30fps, h264)
+npm run music    # regenerate public/music.wav
+```
+
+- **Composition** `PortfolioPromo` (`src/Root.tsx`); scenes are chained in `src/Promo.tsx` with a `TransitionSeries` (15-frame slide/wipe/fade). Scene lengths sum to 1905 frames minus 7 overlaps = 1800 (60s). Change a scene length → re-check the cut points noted in `Promo.tsx`.
+- **Scenes** (`src/scenes/`): Intro → Tagline (agent graph) → Stats → Projects (3D carousel + name marquee) → Stack (bento) → Journey (odometer year) → Statement (kinetic rows) → Outro (CTA on the 56s drop).
+- **Shared**: `theme.ts` mirrors this site's palette + fonts (Sora / Plus Jakarta Sans / Caveat via `@remotion/google-fonts`); `data.ts` holds a copy of project/stack/role content — **update it when the site's projects, product count or roles change**. `components/Background.tsx` = drifting blobs, dot grid, beat pulse, film grain, bottom progress line.
+- **Moods** (`components/Moods.tsx`) replace the old single backdrop: each scene has its own environment (dawn sun → neural constellation → data floor grid → studio spotlights → circuit traces → terrain contours → dark "night" warp → sunburst + confetti), crossfading over 22 frames at the cut points. Statement plays on the dark night mood, so its rows use cream instead of ink.
+- **Flow, the robot narrator** (`components/Robot.tsx` SVG + `components/Host.tsx` director) is rendered above the `TransitionSeries`, so it flies between spots across cuts (`path` waypoints in Host.tsx). Lines live in `src/narration.json` (`at` frame, bubble `text`, spoken `say`); `npm run voice` (`scripts/make-voice.mjs`) synthesizes them with the offline Windows SAPI voice (`VOICE`/`RATE` env vars), adds a robot filter, writes `public/voice/NN.wav`, and writes `src/voice.json` (clip length + per-frame loudness used for lip-sync). It warns if a line overruns the next one. Re-run it after editing narration. Music ducks under each line (`musicVolume`).
+- **Music** is original, synthesized by `scripts/make-music.mjs` (120 BPM, I–V–vi–IV, no samples → no licensing). Beat = 15 frames, bar = 60 frames; kick plays 8s–50s and at the 56s drop, which `Background.tsx`'s `onBeat` mirrors.
+- Project images are the Cloudinary infographics, fetched with a `w_1100,q_auto,f_jpg` transform; `public/logo.png` is a copy of `src/app/icon.png`.
+- The first `remotion still/render` may time out while Remotion downloads its headless Chrome — just re-run.
 
 ## Next.js Version Notes
 
