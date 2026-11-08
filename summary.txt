@@ -1,6 +1,6 @@
 ================================================================================
                                   NARENDRA
-                Full-Stack AI Developer — AI SaaS & Agentic Systems
+                Full-Stack AI Engineer — AI SaaS & Agentic Systems
                               buildflows.shop
 ================================================================================
 
@@ -10,7 +10,7 @@ ABOUT
 I transform complex ideas into scalable, business-ready products with modern
 UI/UX and real-world impact.
 
-I'm a Full-Stack AI Developer focused on building AI-powered SaaS platforms,
+I'm a Full-Stack AI Engineer focused on building AI-powered SaaS platforms,
 automation systems, and intelligent web applications using Next.js, Python,
 the Gemini API, and AI agents.
 
@@ -29,7 +29,7 @@ Automation · RAG Applications · AI Dashboards · Full-Stack Development
 
 CAREER EVOLUTION — FROM OPERATIONS TO AI PRODUCTS
 --------------------------------------------------
-Jul 2025 — Present   Independent — Full-Stack AI Developer (Freelance / Contract)
+Jul 2025 — Present   Independent — Full-Stack AI Engineer (Freelance / Contract)
                      Self-Employed
                      Building production AI SaaS products — agents,
                      automation pipelines, and dashboards — for freelance
