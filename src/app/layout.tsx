@@ -23,9 +23,9 @@ const caveat = Caveat({
 const LOGO = 'https://res.cloudinary.com/dkqbzwicr/image/upload/q_auto/f_auto/v1780297080/porfoliologo_ubnb3l.png';
 
 export const metadata: Metadata = {
-  title: "Narendra · Full-Stack AI / SaaS Engineer",
+  title: "Narendra · Full-Stack AI Engineer",
   description:
-    "Narendra — Full-Stack AI / SaaS Engineer building agentic systems, automation platforms and intelligent products.",
+    "Narendra — Full-Stack AI Engineer building agentic systems, automation platforms, SaaS products and intelligent apps.",
   icons: {
     icon: LOGO,
     shortcut: LOGO,

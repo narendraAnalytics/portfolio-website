@@ -228,7 +228,7 @@ export default function Intro() {
       <span ref={hintRef} className="intro-hint" style={{ opacity: 0 }}>
         Press <kbd>Enter</kbd> to continue
       </span>
-      <span ref={ctTlRef} className="corner-tag ct-tl" style={{ opacity: 0 }}>AI · SaaS Engineer</span>
+      <span ref={ctTlRef} className="corner-tag ct-tl" style={{ opacity: 0 }}>AI · Agentic Systems</span>
       <span ref={ctBlRef} className="corner-tag ct-bl" style={{ opacity: 0 }}>2026 · Full-Stack</span>
 
       <div ref={wrapRef} className="intro-wrap">
@@ -237,7 +237,7 @@ export default function Intro() {
         <p ref={scriptRef} className="intro-script" style={{ opacity: 0 }}>crafting intelligent products</p>
         <div ref={dividerRef} className="intro-divider" aria-hidden="true" />
         <p ref={roleRef} className="intro-role" style={{ opacity: 0 }}>
-          Full-Stack AI <span className="sep">/</span> SaaS Engineer
+          Full-Stack AI Engineer
         </p>
         <p ref={taglineRef} className="intro-tagline" style={{ opacity: 0 }}>
           Twelve AI products shipped — from first brief to production.

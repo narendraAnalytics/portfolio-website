@@ -1,4 +1,4 @@
-# Narendra · Full-Stack AI / SaaS Engineer — Portfolio
+# Narendra · Full-Stack AI Engineer — Portfolio
 
 Personal portfolio website built with **Next.js 16**, **React 19**, and **Tailwind CSS v4**. Faithfully ported from a hand-crafted HTML/CSS/JS design into a production-ready Next.js App Router project.
 

@@ -1,7 +1,7 @@
 const roles = [
   {
     year: '2025', range: 'Jul 2025 — Present', cur: true,
-    title: 'Independent — Full-Stack AI Developer',
+    title: 'Independent — Full-Stack AI Engineer',
     org: 'Self-Employed · Freelance / Contract',
     desc: 'Building and shipping production AI SaaS — agents, automation pipelines and dashboards — for freelance and contract clients, full time.',
   },

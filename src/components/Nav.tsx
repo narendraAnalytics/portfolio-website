@@ -10,7 +10,7 @@ export default function Nav() {
             <span>
               <span className="name">Narendra</span>
               <br />
-              <span className="role">Full-Stack AI / SaaS Engineer</span>
+              <span className="role">Full-Stack AI Engineer</span>
             </span>
           </a>
           <nav className="navlinks" id="navlinks">
