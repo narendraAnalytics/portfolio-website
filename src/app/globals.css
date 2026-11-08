@@ -253,6 +253,74 @@ main{ counter-reset:sec; }
 .hero-cta{ display:flex; flex-wrap:wrap; gap:14px; margin-top:30px; }
 .hero-cta .btn{ padding:15px 28px; font-size:16px; }
 
+/* ============================================================
+   BRAIN STAGE — pinned cinematic scene (BrainStage.tsx + src/lib/brain.ts)
+   Section is tall; .bs-pin sticks for the whole scroll while Motion.tsx scrubs
+   the Blender frame sequence, the intro, three captions and the cream hand-off.
+   ============================================================ */
+.brain-stage{ --bs-bg:#10291F; padding:0; height:330vh; }
+.bs-pin{ position:sticky; top:0; height:100svh; overflow:hidden; isolation:isolate;
+  background:var(--bs-bg); perspective:1400px; }
+.bs-canvas{ position:absolute; inset:0; width:100%; height:100%; z-index:0; transform:scale(1.04); }
+/* soft gold light that follows the cursor (Motion.tsx sets --mx / --my) */
+.bs-spot{ position:absolute; inset:0; z-index:1; pointer-events:none; mix-blend-mode:screen;
+  background:radial-gradient(520px 520px at var(--mx,70%) var(--my,45%), rgba(231,178,76,.14), rgba(231,178,76,0) 70%); }
+.bs-vignette{ position:absolute; inset:0; z-index:1; pointer-events:none;
+  background:radial-gradient(120% 90% at 50% 50%, rgba(16,41,31,0) 55%, rgba(9,26,20,.78) 100%); }
+
+.bs-intro{ position:absolute; inset:0; z-index:2; display:flex; flex-direction:column; justify-content:center;
+  pointer-events:none; }
+.bs-eyebrow{ align-self:flex-start; display:inline-flex; align-items:center; gap:9px;
+  font-family:var(--font-display), "Sora", system-ui, sans-serif; font-weight:600; font-size:13px;
+  letter-spacing:.16em; text-transform:uppercase; color:var(--gold);
+  border:1px solid rgba(231,178,76,.3); background:rgba(231,178,76,.08); padding:7px 15px; border-radius:999px; }
+.bs-eyebrow .dot{ width:7px; height:7px; border-radius:50%; background:var(--gold); box-shadow:0 0 12px var(--gold); }
+.bs-title{ font-family:var(--font-display), "Sora", system-ui, sans-serif; font-weight:800; color:var(--cream);
+  font-size:clamp(2.4rem,5.6vw,4.9rem); line-height:1; letter-spacing:-.045em; margin-top:22px; max-width:11.5ch; }
+.bs-title em, .bs-cap-t em{ font-style:normal;
+  background:linear-gradient(100deg, var(--coral) 0%, var(--orange) 45%, var(--gold) 100%);
+  -webkit-background-clip:text; background-clip:text; color:transparent; }
+
+.bs-caps{ position:absolute; left:0; right:0; bottom:13vh; z-index:2; pointer-events:none; }
+.bs-cap{ position:absolute; left:28px; bottom:0; opacity:0; }
+.bs-cap-k{ display:block; font-family:var(--font-display), "Sora", system-ui, sans-serif; font-size:12.5px; font-weight:600;
+  letter-spacing:.14em; text-transform:uppercase; color:rgba(255,247,239,.62); margin-bottom:12px; }
+.bs-cap-t{ font-family:var(--font-display), "Sora", system-ui, sans-serif; font-weight:800; color:var(--cream);
+  font-size:clamp(2.2rem,5.4vw,4.6rem); line-height:1; letter-spacing:-.045em; }
+
+.bs-cue{ position:absolute; left:50%; bottom:28px; z-index:2; transform:translateX(-50%);
+  display:flex; flex-direction:column; align-items:center; gap:10px;
+  font-size:11.5px; font-weight:600; letter-spacing:.24em; text-transform:uppercase; color:rgba(255,247,239,.55); }
+.bs-cue span{ width:1.5px; height:42px; border-radius:2px; overflow:hidden; position:relative; background:rgba(255,247,239,.16); }
+.bs-cue span::after{ content:""; position:absolute; left:0; right:0; top:-40%; height:40%;
+  background:linear-gradient(transparent, var(--gold)); animation:cueDrop 1.8s var(--ease) infinite; }
+@keyframes cueDrop{ to{ top:100%; } }
+
+/* cream edges: the scene fades in from the Hero and hands off to the Marquee */
+.bs-fade-in{ position:absolute; inset:0 0 auto 0; height:34vh; z-index:3; pointer-events:none;
+  background:linear-gradient(var(--cream-2), rgba(253,239,228,0)); }
+.bs-handoff{ position:absolute; inset:-30vh 0 0 0; z-index:4; pointer-events:none; transform:translateY(101%);
+  background:linear-gradient(rgba(253,239,228,0) 0%, var(--cream-2) 30vh); }
+
+/* nav over the dark scene */
+.nav.on-dark .brand .name{ color:var(--cream); }
+.nav.on-dark::before{ background:linear-gradient(to bottom, rgba(16,41,31,.9) 0%, rgba(16,41,31,.55) 52%, rgba(16,41,31,0) 100%); }
+
+@media (max-width:760px){
+  .brain-stage{ height:270vh; }
+  .bs-intro{ justify-content:flex-start; padding-top:calc(var(--nav-h) + 24px); }
+  .bs-caps{ bottom:15vh; }
+  .bs-cap{ left:20px; right:20px; }
+}
+@media (prefers-reduced-motion:reduce){
+  .brain-stage{ height:auto; }
+  .bs-pin{ position:relative; height:auto; min-height:100svh; padding:140px 0 120px; }
+  .bs-intro, .bs-caps{ position:relative; inset:auto; }
+  .bs-caps{ display:grid; gap:34px; margin-top:56px; }
+  .bs-cap{ position:relative; left:auto; opacity:1; }
+  .bs-cue, .bs-fade-in{ display:none; }
+}
+
 /* feature chips row */
 .chips{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:34px; max-width:520px; }
 .chip{ background:var(--card); border:1px solid rgba(237,106,69,.12); border-radius:18px; padding:16px;

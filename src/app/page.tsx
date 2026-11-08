@@ -1,6 +1,7 @@
 import BgLayers from '@/components/BgLayers';
 import Nav from '@/components/Nav';
 import Hero from '@/components/Hero';
+import BrainStage from '@/components/BrainStage';
 import About from '@/components/About';
 import Skills from '@/components/Skills';
 import Projects from '@/components/Projects';
@@ -26,6 +27,7 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
+        <BrainStage />
         <Marquee />
         <About />
         <Skills />

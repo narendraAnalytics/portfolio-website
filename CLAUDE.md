@@ -44,6 +44,7 @@ Tailwind CSS v4 via `@tailwindcss/postcss` (configured in `postcss.config.mjs`).
 <Nav />            ← fixed navigation
 <main>
   <Hero />
+  <BrainStage />   ← pinned dark scene: scroll-scrubbed Blender "AI brain"
   <Marquee />      ← stack keyword band (CSS animation, aria-hidden)
   <About />
   <Skills />
@@ -70,6 +71,7 @@ Tailwind CSS v4 via `@tailwindcss/postcss` (configured in `postcss.config.mjs`).
 | `BgLayers.tsx` | Fixed background layers, grid overlay, canvas effects, scroll progress bar |
 | `Nav.tsx` | Top navigation + mobile drawer |
 | `Hero.tsx` | Hero section — video served from Cloudinary (not local); `data-count` on counter drives animated number |
+| `BrainStage.tsx` | Pinned cinematic scene after the Hero (`.brain-stage` is 330vh, `.bs-pin` is sticky). Canvas plays the pre-rendered brain frames via `src/lib/brain.ts` (`initBrain` loads `public/brain/{d,m}/NNN.webp` — `m` under 760px — and draws the nearest loaded frame). Motion.tsx `brainStage()` scrubs one timeline: frame progress, intro title out, three `.bs-cap` captions, `.bs-handoff` cream wash; toggles `.nav.on-dark` while active; pointer tilt + `--mx/--my` spotlight |
 | `Marquee.tsx` | Two opposing CSS marquee rows of stack keywords |
 | `About.tsx` | About card + stats (paragraphs get a scroll-scrubbed word highlight) |
 | `Skills.tsx` | Tech stack bento (data-driven `groups` array): tall ink-green Agentic AI card + frosted glass cards (Full-Stack, Data, Cloud) + a full-width "Brand, Motion & Launch Video" card (Claude Code, Remotion, Blender…); layout is `.stack-grid` `grid-template-areas` in `globals.css` (add a group → add its area in all 3 breakpoints), tool chips with auto monograms, oversized watermark icon |
@@ -149,6 +151,24 @@ All video and image assets are hosted on **Cloudinary** (`res.cloudinary.com/dkq
 
 Production URL: **https://buildflows.shop/**
 Hosting: Vercel (linked to custom domain `buildflows.shop`)
+
+## Brain frames (separate project)
+
+The BrainStage frames are built in the **sibling folder `../portfolio-3d`** (outside this repo), tuned for a low-spec laptop (i3, Intel HD 5500): Cycles on CPU, emission-only, 0 bounces, 10 samples, ~10s/frame.
+
+```bash
+cd ../portfolio-3d
+D:\blender\blender.exe -b -P brain.py -- --frames 1,60,120   # quick test → renders/raw/
+D:\blender\blender.exe -b -P brain.py -- --frames 1-120      # full (~20 min)
+node postprocess.mjs --preview   # glow preview PNGs → renders/preview/
+node postprocess.mjs             # → public/brain/d (1280px) + public/brain/m (720px) WebP
+```
+
+- `brain.py` builds the brain procedurally: hemispheres are iso-lines (marching triangles) of a domain-warped noise field, smoothed and beveled as curves, plus a rim-glow shell, neuron points, ridged cerebellum and a wire core. Animation is linear (turn + camera push; halves part from frame 55).
+- `postprocess.mjs` adds bloom and the `#10291F` background with `sharp` (loaded from this repo's `node_modules`). That colour must match `BRAIN_BG` in `src/lib/brain.ts` and `--bs-bg` in `globals.css`.
+- Changing the frame count → update `BRAIN_FRAMES` in `src/lib/brain.ts`.
+- Frames live in `public/brain/` (~7 MB total), not Cloudinary.
+- If `next dev` serves CSS without new rules after heavy CPU load, stop it and delete `.next/dev` (stale Turbopack cache).
 
 ## Promo Video (separate project)
 

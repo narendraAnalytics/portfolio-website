@@ -5,6 +5,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SplitText } from 'gsap/SplitText';
 import { getLenis } from '@/lib/lenis';
+import { setBrainProgress } from '@/lib/brain';
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -120,6 +121,62 @@ export default function Motion() {
       cleanups.push(() => {
         hero.removeEventListener('pointermove', move);
         hero.removeEventListener('pointerleave', leave);
+      });
+    }
+
+    /* ---------- brain stage: Blender frame sequence + intro, captions, hand-off on one scrubbed timeline ---------- */
+    function brainStage() {
+      const stage = document.querySelector<HTMLElement>('.brain-stage');
+      const pin = stage?.querySelector<HTMLElement>('.bs-pin');
+      if (!stage || !pin) return;
+      const nav = document.querySelector('.nav');
+      const brain = { p: 0 };
+      const caps = gsap.utils.toArray<HTMLElement>('.bs-cap');
+
+      // timeline length 1 = whole pinned scroll, so positions below read as progress
+      const tl = gsap.timeline({
+        defaults: { ease: 'none' },
+        scrollTrigger: {
+          trigger: stage, start: 'top top', end: 'bottom bottom', scrub: 0.6,
+          onToggle: self => nav?.classList.toggle('on-dark', self.isActive),
+        },
+      });
+      tl.to(brain, { p: 1, duration: 1, onUpdate: () => setBrainProgress(brain.p) }, 0)
+        .to('.bs-fade-in', { opacity: 0, duration: 0.06 }, 0)
+        .to('.bs-cue', { opacity: 0, duration: 0.05 }, 0.04)
+        .to('.bs-intro', { opacity: 0, y: -60, duration: 0.14, ease: 'power1.in' }, 0.12);
+      caps.forEach((cap, i) => {
+        const at = 0.3 + i * 0.19;
+        tl.fromTo(cap, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.07, ease: 'power2.out' }, at)
+          .to(cap, { opacity: 0, y: -40, duration: 0.06, ease: 'power1.in' }, at + 0.13);
+      });
+      tl.fromTo('.bs-handoff', { y: 0, yPercent: 101 }, { yPercent: 0, duration: 0.12 }, 0.88);
+      cleanups.push(() => nav?.classList.remove('on-dark'));
+
+      // the scene arriving from below: a little camera "rise" before it pins
+      gsap.fromTo('.bs-canvas', { yPercent: 8 }, {
+        yPercent: 0, ease: 'none',
+        scrollTrigger: { trigger: stage, start: 'top bottom', end: 'top top', scrub: true },
+      });
+
+      if (!fine) return;
+      const canvas = pin.querySelector<HTMLElement>('.bs-canvas');
+      const rx = gsap.quickTo(canvas, 'rotationX', { duration: 1.1, ease: 'power3' });
+      const ry = gsap.quickTo(canvas, 'rotationY', { duration: 1.1, ease: 'power3' });
+      const move = (e: PointerEvent) => {
+        const r = pin.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+        ry((x - 0.5) * 7);
+        rx((0.5 - y) * 5);
+        pin.style.setProperty('--mx', `${x * 100}%`);
+        pin.style.setProperty('--my', `${y * 100}%`);
+      };
+      const leave = () => { rx(0); ry(0); };
+      pin.addEventListener('pointermove', move);
+      pin.addEventListener('pointerleave', leave);
+      cleanups.push(() => {
+        pin.removeEventListener('pointermove', move);
+        pin.removeEventListener('pointerleave', leave);
       });
     }
 
@@ -328,6 +385,7 @@ export default function Motion() {
         headings();
         readingHighlight();
         parallax();
+        brainStage();
         timeline();
         process();
         bentoPlay();
