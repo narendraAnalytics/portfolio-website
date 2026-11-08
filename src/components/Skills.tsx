@@ -69,6 +69,7 @@ const groups: Group[] = [
     ),
     tools: [
       'Claude Code', 'Remotion', 'Blender', 'GSAP', 'Lenis', 'Product Launch Videos',
+      'Video Editing', 'CapCut',
       'Motion Graphics', 'Brand Websites', 'Dashboard Design', 'Design Systems',
     ],
   },
